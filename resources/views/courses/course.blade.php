@@ -53,7 +53,7 @@
                         <i class="la la-share mr-1"></i>Share
                     </button>
                     <button class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mb-2" data-toggle="modal" data-target="#reportModal">
-                        <i class="la la-flag mr-1"></i>Report abuse
+                        <i class="la la-flag mr-1"></i>Download Outline
                     </button>
                 </div>
             </div><!-- end breadcrumb-content -->
@@ -75,39 +75,65 @@
                    <div class="course-overview-card">
                        <h3 class="fs-24 font-weight-semi-bold pb-3">Description</h3>
                        {!! $course->description !!}
+                       <div class="table-responsive mt-1">
+                            <table class="table table-striped table-bordered table-hover">
+                                    <tr style="color:white; background-color:#FF0302;">
+                                        <th colspan="4"> <i class="la la-clock"></i> Upcoming Batches </th>
+                                    </tr>
+                                    <tr class="table-bg fee-table">
+                                        <th>Starting Date</th>
+                                        <th>Timing</th>
+                                        <th>Days</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                    @foreach($course->badges->where('status',0) as $badge)
+                                    <tr>
+                                        <td>
+                                            {{ substr($badge->start,'8') }} {{ date("F", strtotime($badge->start));  }}
+                                            {{ date("Y", strtotime($badge->start));  }}
+                                        </td>
+                                        <td>
+                                            {{ date("g:i a", strtotime($badge->slot->start)) }} -   {{ date("g:i a", strtotime($badge->slot->end)) }}
+                                        </td>
+                                        <td>{{ $badge->days }}</td>
+                                        <td>
+                                            {{ $badge->course->duration }}
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                            </table>
+                        </div>
                    </div><!-- end course-overview-card -->
                    <div class="course-overview-card pt-4">
-                       <h3 class="fs-24 font-weight-semi-bold pb-4">About the instructor</h3>
-                       <div class="instructor-wrap">
-                           <div class="media media-card">
-                               <div class="instructor-img">
-                                   <a href="teacher-detail.html" class="media-img d-block">
-                                       <img class="lazy" src="images/img-loading.png" data-src="images/small-avatar-1.jpg" alt="Avatar image">
-                                   </a>
-                                   <ul class="generic-list-item pt-3">
-                                       <li><i class="la la-star mr-2 text-color-3"></i> 4.6 Instructor Rating</li>
-                                       <li><i class="la la-user mr-2 text-color-3"></i> 45,786 Students</li>
-                                       <li><i class="la la-comment-o mr-2 text-color-3"></i> 2,533 Reviews</li>
-                                       <li><i class="la la-play-circle-o mr-2 text-color-3"></i> 24 Courses</li>
-                                       <li><a href="teacher-detail.html">View all Courses</a></li>
-                                   </ul>
-                               </div><!-- end instructor-img -->
-                               <div class="media-body">
-                                   <h5><a href="teacher-detail.html">Tim Buchalka</a></h5>
-                                   <span class="d-block lh-18 pt-2 pb-3">Joined 4 years ago</span>
-                                   <p class="text-black lh-18 pb-3">Java Python Android and C# Expert Developer - 878K+ students</p>
-                                   <p class="pb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                   <div class="collapse" id="collapseMoreTwo">
-                                       <p class="pb-3">After learning the hard way, Tim was determined to become the best teacher he could, and to make his training as painless as possible, so that you, or anyone else with the desire to become a software developer, could become one.</p>
-                                       <p class="pb-3">If you want to become a financial analyst, a finance manager, an FP&A analyst, an investment banker, a business executive, an entrepreneur, a business intelligence analyst, a data analyst, or a data scientist, <strong class="text-black font-weight-semi-bold">Tim Buchalka's courses are the perfect course to start</strong>.</p>
-                                   </div>
-                                   <a class="collapse-btn collapse--btn fs-15" data-toggle="collapse" href="#collapseMoreTwo" role="button" aria-expanded="false" aria-controls="collapseMoreTwo">
-                                       <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-14"></i></span>
-                                       <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-14"></i></span>
-                                   </a>
-                               </div>
-                           </div>
-                       </div><!-- end instructor-wrap -->
+                       <h3 class="fs-24 font-weight-semi-bold pb-4">About the instructors</h3>
+                       @php
+                         $teachers = App\Models\trainer::where('category_id',$course->category_id)->get();
+                       @endphp  
+                       @foreach($teachers as $teacher)
+                        <div class="instructor-wrap">
+                            <div class="media media-card">
+                                <div class="instructor-img">
+                                    <a href="teacher-detail.html" class="media-img d-block">
+                                        <img class="lazy" src="images/img-loading.png" data-src="images/small-avatar-1.jpg" alt="Avatar image">
+                                    </a>
+                                    <ul class="generic-list-item pt-3">
+                                        <li><i class="la la-star mr-2 text-color-3"></i> 4.6 Instructor Rating</li>
+                                        <li><i class="la la-user mr-2 text-color-3"></i> 45,786 Students</li>
+                                        <li><i class="la la-comment-o mr-2 text-color-3"></i> 2,533 Reviews</li>
+                                        <li><i class="la la-play-circle-o mr-2 text-color-3"></i> 24 Courses</li>
+                                        <li><a href="teacher-detail.html">View all Courses</a></li>
+                                    </ul>
+                                </div><!-- end instructor-img -->
+                                <div class="media-body">
+                                    <h5><a href="teacher-detail.html">{{ ucfirst($teacher->name) }}</a></h5>
+                                    <span class="d-block lh-18 pt-2 pb-3">Joined 4 years ago</span>
+                                    <p class="text-black lh-18 pb-3">{{ ucfirst($teacher->category->category) }}</p>
+                                    <p class="pb-3">{!! substr($teacher->description,0,100) !!}</p>
+                                </div>
+                            </div>
+                        </div><!-- end instructor-wrap -->
+                        <hr />
+                       @endforeach
                    </div><!-- end course-overview-card -->
                </div><!-- end course-details-content-wrap -->
            </div><!-- end col-lg-8 -->
@@ -137,35 +163,27 @@
                             </div><!-- end preview-course-video -->
                             <div class="preview-course-feature-content pt-40px">
                                 <p class="d-flex align-items-center pb-2">
-                                    <span class="fs-35 font-weight-semi-bold text-black">$76.99</span>
-                                    <span class="before-price mx-1">$104.99</span>
-                                    <span class="price-discount">24% off</span>
-                                </p>
-                                <p class="preview-price-discount-text pb-35px">
-                                    <span class="text-color-3">4 days</span> left at this price!
+                                    <span class="fs-35 font-weight-semi-bold text-black">Rs {{ $course->fee }}</span>
+                                    <span class="before-price mx-1">{{ $course->regular_fee }}</span>
+                                    <span class="price-discount">{{ $course->disocunt }} % Off</span>
                                 </p>
                                 <div class="buy-course-btn-box">
-                                    <button type="button" class="btn theme-btn w-100 mb-2"><i class="la la-shopping-cart fs-18 mr-1"></i> Add to cart</button>
-                                    <button type="button" class="btn theme-btn w-100 theme-btn-white mb-2"><i class="la la-shopping-bag mr-1"></i> Buy this course</button>
+                                    <a href="{{ route('apply.online') }}">
+                                    <button type="button" class="btn theme-btn w-100 mb-2"><i class="la la-arrow-right fs-18 mr-1"></i> Enroll Now</button>
+                                    </a>
                                 </div>
-                                <p class="fs-14 text-center pb-4">30-Day Money-Back Guarantee</p>
                                 <div class="preview-course-incentives">
                                     <h3 class="card-title fs-18 pb-2">This course includes</h3>
                                     <ul class="generic-list-item pb-3">
-                                        <li><i class="la la-play-circle-o mr-2 text-color"></i>2.5 hours on-demand video</li>
-                                        <li><i class="la la-file mr-2 text-color"></i>34 articles</li>
-                                        <li><i class="la la-file-text mr-2 text-color"></i>12 downloadable resources</li>
-                                        <li><i class="la la-code mr-2 text-color"></i>51 coding exercises</li>
-                                        <li><i class="la la-key mr-2 text-color"></i>Full lifetime access</li>
-                                        <li><i class="la la-television mr-2 text-color"></i>Access on mobile and TV</li>
-                                        <li><i class="la la-certificate mr-2 text-color"></i>Certificate of Completion</li>
+                                        <li><i class="la la-play-circle-o mr-2 text-color"></i>Online & Recording Lectures</li>
+                                        <li><i class="la la-file mr-2 text-color"></i>Online</li>
+                                        <li><i class="la la-file-text mr-2 text-color"></i>Complete Practical Training</li>
+                                        <li><i class="la la-code mr-2 text-color"></i>Certification</li>
+                                        <li><i class="la la-key mr-2 text-color"></i>Job Guarantee</li>
+                                        <li><i class="la la-television mr-2 text-color"></i>Internship</li>
+                                        <li><i class="la la-certificate mr-2 text-color"></i>Freelancing Training</li>
                                     </ul>
                                     <div class="section-block"></div>
-                                    <div class="buy-for-team-container pt-4">
-                                        <h3 class="fs-18 font-weight-semi-bold pb-2">Training 5 or more people?</h3>
-                                        <p class="lh-24 pb-3">Get your team access to 3,000+ top Aduca courses anytime, anywhere.</p>
-                                        <a href="for-business.html" class="btn theme-btn theme-btn-sm theme-btn-transparent lh-30 w-100">Try Aduca for Business</a>
-                                    </div>
                                 </div><!-- end preview-course-incentives -->
                             </div><!-- end preview-course-content -->
                         </div>
@@ -175,14 +193,13 @@
                             <h3 class="card-title fs-18 pb-2">Course Features</h3>
                             <div class="divider"><span></span></div>
                             <ul class="generic-list-item generic-list-item-flash">
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-clock mr-2 text-color"></i>Duration</span> 2.5 hours</li>
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-play-circle-o mr-2 text-color"></i>Lectures</span> 17</li>
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-file-text-o mr-2 text-color"></i>Resources</span> 12</li>
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-bolt mr-2 text-color"></i>Quizzes</span> 26</li>
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-eye mr-2 text-color"></i>Preview Lessons</span> 4</li>
+                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-clock mr-2 text-color"></i>Duration</span> {{ $course->duration }}</li>
+                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-play-circle-o mr-2 text-color"></i>Lectures</span> {{ $course->noc }}</li>
+                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-file-text-o mr-2 text-color"></i>Classes in a week</span> {{ $course->schedual }}</li>
+                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-eye mr-2 text-color"></i>Course Code</span> {{ $course->code }}</li>
                                 <li class="d-flex align-items-center justify-content-between"><span><i class="la la-language mr-2 text-color"></i>Language</span> English</li>
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-lightbulb mr-2 text-color"></i>Skill level</span> All levels</li>
-                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-users mr-2 text-color"></i>Students</span> 30,506</li>
+                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-money mr-2 text-color"></i>Admission Fee</span> Rs {{ $course->adm_fee }}</li>
+                                <li class="d-flex align-items-center justify-content-between"><span><i class="la la-money mr-2 text-color"></i>Discounted Fee</span> Rs {{ $course->fee }}</li>
                                 <li class="d-flex align-items-center justify-content-between"><span><i class="la la-certificate mr-2 text-color"></i>Certificate</span> Yes</li>
                             </ul>
                         </div>
