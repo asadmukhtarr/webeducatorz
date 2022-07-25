@@ -47,6 +47,8 @@ Route::post('/subscriber','pagescontroller@subscriber')->name('subscriber');
 Route::get('email',function(){
     return view('email');
 });
+
+
 Route::get('/login','logincontroller@login')->name('login');
 Route::get('/dashboard','logincontroller@dashboard')->name('dashboard');
 Route::post('/login','logincontroller@authlogin')->name('authlogin');
@@ -60,3 +62,5 @@ Route::get('/accounts','DashboardController@accounts')->name('accounts');
 Route::get('/workshops','DashboardController@workshops')->name('workshops');
 Route::get('/feeds','DashboardController@feeds')->name('feeds');
 Route::get('/settings','DashboardController@settings')->name('settings');
+
+Route::post('/trail_form','DashboardController@trail_form')->name('trail_form');
