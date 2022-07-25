@@ -18,7 +18,8 @@
                     <div class="card-body">
                         <h3 class="card-title text-center fs-24 lh-35 pb-4">Login to Your LMS!</h3>
                         <div class="section-block"></div>
-                        <form method="post" class="pt-4">
+                        <form method="POST" action="{{route('authlogin')}}" class="pt-4">
+                            @csrf
                             <!--
                             <div class="d-flex flex-wrap align-items-center pb-4">
                                 <button class="btn theme-btn flex-grow-1 mx-2 mb-2"><i class="la la-google mr-2"></i>Google</button>
@@ -32,7 +33,7 @@
                             <div class="input-box">
                                 <label class="label-text">Email or Username</label>
                                 <div class="form-group">
-                                    <input class="form-control form--control" type="text" name="name" placeholder="Email or Username">
+                                    <input class="form-control form--control" type="text" name="email" placeholder="Email or Username">
                                     <span class="la la-user input-icon"></span>
                                 </div>
                             </div><!-- end input-box -->
@@ -57,7 +58,7 @@
                                     </div><!-- end custom-control -->
                                     <a href="recover.html" class="btn-text">Forgot my password?</a>
                                 </div>
-                                <button class="btn theme-btn" type="submit">Login Account <i class="la la-arrow-right icon ml-1"></i></button>
+                                <button class="btn theme-btn" type="submit" name="submit">Login Account <i class="la la-arrow-right icon ml-1"></i></button>
                                 <p class="fs-14 pt-2">Don't have an account? <a href="sign-up.html" class="text-color hover-underline">Register</a></p>
                             </div><!-- end btn-box -->
                         </form>

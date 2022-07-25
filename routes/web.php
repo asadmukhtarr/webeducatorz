@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,3 +48,15 @@ Route::get('email',function(){
     return view('email');
 });
 Route::get('/login','logincontroller@login')->name('login');
+Route::get('/dashboard','logincontroller@dashboard')->name('dashboard');
+Route::post('/login','logincontroller@authlogin')->name('authlogin');
+Route::post('/logout','logincontroller@logout')->name('logout');
+
+
+Route::get('/profile','DashboardController@profile')->name('profile');
+Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
+Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
+Route::get('/accounts','DashboardController@accounts')->name('accounts');
+Route::get('/workshops','DashboardController@workshops')->name('workshops');
+Route::get('/feeds','DashboardController@feeds')->name('feeds');
+Route::get('/settings','DashboardController@settings')->name('settings');
