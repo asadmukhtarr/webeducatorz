@@ -108,32 +108,24 @@
                        <h3 class="fs-24 font-weight-semi-bold pb-4">About the instructors</h3>
                        @php
                          $teachers = App\Models\trainer::where('category_id',$course->category_id)->get();
-                       @endphp  
+                       @endphp 
                        @foreach($teachers as $teacher)
-                        <div class="instructor-wrap">
+                       <div class="instructor-wrap">
                             <div class="media media-card">
                                 <div class="instructor-img">
                                     <a href="teacher-detail.html" class="media-img d-block">
-                                        <img class="lazy" src="images/img-loading.png" data-src="images/small-avatar-1.jpg" alt="Avatar image">
+                                        <img class="lazy" src="{{ asset('images/img-loading.png') }}" data-src="images/small-avatar-1.jpg" alt="Avatar image">
                                     </a>
-                                    <ul class="generic-list-item pt-3">
-                                        <li><i class="la la-star mr-2 text-color-3"></i> 4.6 Instructor Rating</li>
-                                        <li><i class="la la-user mr-2 text-color-3"></i> 45,786 Students</li>
-                                        <li><i class="la la-comment-o mr-2 text-color-3"></i> 2,533 Reviews</li>
-                                        <li><i class="la la-play-circle-o mr-2 text-color-3"></i> 24 Courses</li>
-                                        <li><a href="teacher-detail.html">View all Courses</a></li>
-                                    </ul>
                                 </div><!-- end instructor-img -->
                                 <div class="media-body">
                                     <h5><a href="teacher-detail.html">{{ ucfirst($teacher->name) }}</a></h5>
-                                    <span class="d-block lh-18 pt-2 pb-3">Joined 4 years ago</span>
-                                    <p class="text-black lh-18 pb-3">{{ ucfirst($teacher->category->category) }}</p>
-                                    <p class="pb-3">{!! substr($teacher->description,0,100) !!}</p>
+                                    <span class="d-block lh-18 pt-2 pb-3">{{ $teacher->created_at }}</span>
+                                    <p class="text-black lh-18 pb-3">{!! $teacher->description !!}</p>
+                                    <p class="pb-3">asdas</p>
                                 </div>
                             </div>
                         </div><!-- end instructor-wrap -->
-                        <hr />
-                       @endforeach
+                       @endforeach 
                    </div><!-- end course-overview-card -->
                </div><!-- end course-details-content-wrap -->
            </div><!-- end col-lg-8 -->
@@ -143,19 +135,11 @@
                         <div class="card-body">
                             <div class="preview-course-video">
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#previewModal">
-                                    <img src="images/img-loading.png" data-src="images/preview-img.jpg" alt="course-img" class="w-100 rounded lazy">
+                                    <img src="{{ asset('images/img-loading.png') }}" data-src="images/preview-img.jpg" alt="course-img" class="w-100 rounded lazy">
                                     <div class="preview-course-video-content">
                                         <div class="overlay"></div>
                                         <div class="play-button">
-                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-307.4 338.8 91.8 91.8" style=" enable-background:new -307.4 338.8 91.8 91.8;" xml:space="preserve">
-                                              <style type="text/css">
-                                                  .st0{fill:#ffffff; border-radius: 100px;}
-                                                  .st1{fill:#000000;}
-                                              </style>
-                                                <g>
-                                                 <circle class="st0" cx="-261.5" cy="384.7" r="45.9"></circle><path class="st1" d="M-272.9,363.2l35.8,20.7c0.7,0.4,0.7,1.3,0,1.7l-35.8,20.7c-0.7,0.4-1.5-0.1-1.5-0.9V364C-274.4,363.3-273.5,362.8-272.9,363.2z"></path>
-                                             </g>
-                                         </svg>
+                                            
                                         </div>
                                         <p class="fs-15 font-weight-bold text-white pt-3">Preview this course</p>
                                     </div>
@@ -208,38 +192,20 @@
                         <div class="card-body">
                             <h3 class="card-title fs-18 pb-2">Related Courses</h3>
                             <div class="divider"><span></span></div>
+                            @foreach(App\Models\course::where('category_id',$course->category_id)->get() as $course)
                             <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
                                 <a href="course-details.html" class="media-img">
-                                    <img class="mr-3 lazy" src="images/img-loading.png" data-src="images/small-img-2.jpg" alt="Related course image">
+                                    <img class="mr-3 lazy" src="images/img-loading.png" data-src="{{ asset('images/small-img-2.jpg') }}" alt="Related course image">
                                 </a>
                                 <div class="media-body">
-                                    <h5 class="fs-15"><a href="course-details.html">The Complete JavaScript Course 2021</a></h5>
-                                    <span class="d-block lh-18 py-1 fs-14">Kamran Ahmed</span>
-                                    <p class="text-black font-weight-semi-bold lh-18 fs-15">$12.99 <span class="before-price fs-14">$129.99</span></p>
+                                    <h5 class="fs-15"><a href="{{ route('course',$course->slug) }}">{{ ucfirst($course->title) }}</a></h5>
+                                    <span class="d-block lh-18 py-1 fs-14">{{ $course->duration }}</span>
+                                    <p class="text-black font-weight-semi-bold lh-18 fs-15">Rs {{ $course->fee }} <span class="before-price fs-14">Rs {{ $course->regular_fee }}</span></p>
                                 </div>
                             </div><!-- end media -->
-                            <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
-                                <a href="course-details.html" class="media-img">
-                                    <img class="mr-3 lazy" src="images/img-loading.png" data-src="images/small-img-3.jpg" alt="Related course image">
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="fs-15"><a href="course-details.html">Learning jQuery Mobile for Beginners</a></h5>
-                                    <span class="d-block lh-18 py-1 fs-14">Kamran Ahmed</span>
-                                    <p class="text-black font-weight-semi-bold lh-18 fs-15">$129.99</p>
-                                </div>
-                            </div><!-- end media -->
-                            <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
-                                <a href="course-details.html" class="media-img">
-                                    <img class="mr-3 lazy" src="images/img-loading.png" data-src="images/small-img-4.jpg" alt="Related course image">
-                                </a>
-                                <div class="media-body">
-                                    <h5 class="fs-15"><a href="course-details.html">Introduction LearnPress – LMS plugin</a></h5>
-                                    <span class="d-block lh-18 py-1 fs-14">Kamran Ahmed</span>
-                                    <p class="text-black font-weight-semi-bold lh-18 fs-15">Free</p>
-                                </div>
-                            </div><!-- end media -->
+                            @endforeach
                             <div class="view-all-course-btn-box">
-                                <a href="course-grid.html" class="btn theme-btn w-100">View All Courses <i class="la la-arrow-right icon ml-1"></i></a>
+                                <a href="{{ route('courses') }}" class="btn theme-btn w-100">View All Courses <i class="la la-arrow-right icon ml-1"></i></a>
                             </div>
                         </div>
                     </div><!-- end card -->
