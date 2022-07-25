@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+techydevs.com	TRUE	/	FALSE	1999999999	PHPSESSID	33a04e5d6b080bcbc75a50b6b29e6a0b
+techydevs.com	TRUE	/	FALSE	1999999999	dwqa_anonymous	aidZZpIvv5dguhFHmvP5X4yX2yaBfEsUh4AtKiqDvYs
+
