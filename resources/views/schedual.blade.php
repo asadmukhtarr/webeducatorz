@@ -4,7 +4,7 @@
 <section class="gray mt-3">
 	<div class="container-fluid">
         <div class="row course-row">
-            <div class="col-lg-10">
+            <div class="col-lg-12" style="padding-left: 70px; padding-right: 70px;">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                             <tr class="table-bg fee-table" style="color:white; background-color:#FF0302;">

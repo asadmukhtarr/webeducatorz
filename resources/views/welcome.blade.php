@@ -809,7 +809,7 @@
                     <div class="card-body">
                         <h3 class="fs-24 font-weight-semi-bold pb-2">Receive Free Courses</h3>
                         <div class="divider"><span></span></div>
-                        <form method="post">
+                        <form method="post" action="{{route('trail_form')}}">
                             <div class="input-box">
                                 <label class="label-text">Name</label>
                                 <div class="form-group">
@@ -827,7 +827,7 @@
                             <div class="input-box">
                                 <label class="label-text">Phone Number</label>
                                 <div class="form-group">
-                                    <input class="form-control form--control" type="text" name="phone" placeholder="Phone Number">
+                                    <input class="form-control form--control" type="text" name="no" placeholder="Phone Number">
                                     <span class="la la-phone input-icon"></span>
                                 </div>
                             </div><!-- end input-box -->
@@ -839,7 +839,7 @@
                                 </div>
                             </div><!-- end input-box -->
                             <div class="btn-box pt-2">
-                                <button class="btn theme-btn" type="submit">Apply Now <i class="la la-arrow-right icon ml-1"></i></button>
+                                <button class="btn theme-btn" type="submit" name="submit">Apply Now <i class="la la-arrow-right icon ml-1"></i></button>
                             </div><!-- end btn-box -->
                         </form>
                     </div><!-- end card-body -->

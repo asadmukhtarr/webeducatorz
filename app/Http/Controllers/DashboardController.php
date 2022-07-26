@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\TrailForm;
 
 class DashboardController extends Controller
 {
@@ -33,5 +34,22 @@ class DashboardController extends Controller
 
     public function Settings(){
         return view('lms.settings');
+    }
+
+    public function trail_form(Request $request){
+        // $request->validate([
+        //     'name' => 'required|alpha',
+        //     'email' => 'required|email',
+        //     'department' => 'required|alpha',
+        //     'phone' => 'required|numeric',
+        //     'message' => 'required'
+        // ]);
+
+        $sendmsg = new TrailForm();
+        $sendmsg->name  = $request->name;
+        $sendmsg->email = $request->email;
+        $sendmsg->no = $request->no;
+        $sendmsg->subject = $request->subject;
+        $sendmsg->save();
     }
 }
