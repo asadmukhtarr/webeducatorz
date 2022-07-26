@@ -38,7 +38,7 @@ Route::get('/trainers','instructorsController@instructor')->name('instructors');
 Route::get('/trainer/{id}','instructorsController@singletrainer')->name('singletrainer');
 Route::get('/workshops','pagesController@workshop')->name('workshops.event');
 Route::get('/track-your-certificate','pagesController@certificate')->name('certificate');
-Route::get('frequesntly-asked-questions','pagesController@faq')->name('faq');
+Route::get('frequently-asked-questions','pagesController@faq')->name('faq');
 Route::get('/events','pagesController@events')->name('event');
 Route::get('/event/{id}','pagesController@singleevent')->name('singleevent');
 Route::get('/softwares','pagesController@software')->name('softwares');
