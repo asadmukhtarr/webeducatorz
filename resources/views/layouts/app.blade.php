@@ -476,9 +476,8 @@
 						<ul class="generic-list-item">
 							<li><a href="{{ route('home')}}">Home</a></li>
 							<li><a href="{{ route('courses')}}">Courses</a></li>
-							<li><a href="{{ route('fee.strcture') }}">Fee Structure</a></li>
-							<li><a href="{{ route('workshops.event')}}">Workshop</a></li>
-							<li><a href="{{ route('new.schedule')}}">Schedule</a></li>
+							<li><a href="{{ route('faq')}}">FAQ</a></li>
+							<li><a href="{{ route('terms')}}">Terms and Conditions</a></li>
 							<li><a href="{{ route('about')}}">About Us</a></li>
 							<li><a href="{{ route('contact')}}">Contact Us</a></li>
 						</ul>
