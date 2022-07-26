@@ -10,7 +10,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="description" content="{{ $meta->description }}">
 	<meta name="tags" content="{{ $meta->tags }}">
-	<title>{{ $meta->title }} | Professional Skills Hub In Pakistan</title>
+	<title>{{ $meta->title }}</title>
 	<!-- Google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com/">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
