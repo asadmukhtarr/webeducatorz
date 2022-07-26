@@ -13,7 +13,6 @@ class category extends Model
         return $this->hasMany(trainer::class);
     }
     public function course(){
-
         return $this->belongsTo(category::class);
     }
 }

@@ -4,7 +4,7 @@
 <div class="container">
     <h5 class="mt-5">Frequently Asked Questions</h5><hr>
     <div class="row">
-        <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12">
+        <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12">
             <div id="accordionExample" class="accordion">
                 <!-- Part 1 -->
                 <div class="card">
@@ -237,9 +237,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3 col-lg-10">
-            @include('sidebar.sidebar')
         </div>
     </div>
 </div>
