@@ -36,7 +36,7 @@ Route::get('/terms','pagesController@terms')->name('terms');
 Route::get('/privacy-policy','pagesController@privacy')->name('privacy');
 Route::get('/trainers','instructorsController@instructor')->name('instructors');
 Route::get('/trainer/{id}','instructorsController@singletrainer')->name('singletrainer');
-Route::get('/workshops','pagesController@workshop')->name('workshops');
+Route::get('/workshops','pagesController@workshop')->name('workshops.event');
 Route::get('/track-your-certificate','pagesController@certificate')->name('certificate');
 Route::get('frequesntly-asked-questions','pagesController@faq')->name('faq');
 Route::get('/events','pagesController@events')->name('event');
@@ -59,7 +59,7 @@ Route::get('/profile','DashboardController@profile')->name('profile');
 Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
 Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
 Route::get('/accounts','DashboardController@accounts')->name('accounts');
-Route::get('/workshops','DashboardController@workshops')->name('workshops');
+Route::get('/dashboard','DashboardController@workshops')->name('workshops');
 Route::get('/feeds','DashboardController@feeds')->name('feeds');
 Route::get('/settings','DashboardController@settings')->name('settings');
 

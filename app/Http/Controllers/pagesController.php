@@ -41,8 +41,8 @@ class pagesController extends Controller
        }
        // workshops
        public function workshop(){
-   
-           return view('workshops');
+        $meta = general::find(1);
+        return view('workshops', compact('meta'));
        }
        // subscriber
        public function subscriber(Request $request){
