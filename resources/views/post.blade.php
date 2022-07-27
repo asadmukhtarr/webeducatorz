@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Skillinsiderz | Pakistan Skills Professional Hub')
 @section('content')
-		<!-- ================================
+	<!-- ================================
     START BREADCRUMB AREA
 ================================= -->
 <section class="breadcrumb-area pt-80px pb-80px pattern-bg">
@@ -36,19 +36,49 @@
         <div class="row">
             <div class="col-lg-8 mb-5">
                 <div class="card card-item">
-					<div class="row pb-3">
-						<div class="col-lg-12">
-						   <div class="mt-3">
-							   <img src="https://management.infinitetechnologyinstitute.com/public/{{ $post->thumbnail }}" data-src="images/img1.jpg" alt="blog-img" class="img-fluid rounded-rounded lazy">
-						   </div>
-						</div><!-- end col-lg-6 -->
-					</div><!-- end row -->
                     <div class="card-body">
-						<h3 class="fs-20 font-weight-semi-bold">{{ ucfirst($post->title) }}</h3>
-                        <p class="card-text pb-3">{!! $post->description !!}</p>  
+                        <img src="images/img-loading.png" data-src="images/img1.jpg" alt="blog-img" class="img-fluid rounded-rounded lazy mb-3" style="display: block; margin:auto;">
+                        <p class="card-text pb-3">Investig ationes demons trave runt lectores legere liusry quod ii legunt saepius claritas Investig ationes. Pharetra dui, nec tincidunt ante mauris eu diam. Phasellus viverra nisl vitae cursus aei uismod suspendisse saepius claritas investig. Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborinu aliquip ex ea commodo consequat. Du aute irure dolor in reprehenderit inlore voluptate velit esse cillum dolore. Cras eget sollicitudin lorem.</p>
+                        <p class="card-text pb-3">Cras eget sollicitudin lorem. Etiam commodo ultricies luctus. Integer porttitor ligula eget quam blandit finibus. Suspendisse potenti. Nulla blandit augue orci, eget tristique massa fermentum sed. Duis ac maximus nulla, et pharetra turpis.</p>
+                        
+                        <p class="card-text pb-3">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores</p>
+                        <div class="section-block"></div>
+                        <h3 class="fs-18 font-weight-semi-bold pt-3">Tags</h3>
+                        <div class="d-flex flex-wrap justify-content-between align-items-center pt-3">
+                            <ul class="generic-list-item generic-list-item-boxed d-flex flex-wrap fs-15">
+                                <li class="mr-2"><a href="#">Web Design</a></li>
+                                <li class="mr-2"><a href="#">UI Design</a></li>
+                            </ul>
+                            <div class="share-wrap">
+                                <ul class="social-icons social-icons-styled">
+                                    <li class="mr-0"><a href="#" class="facebook-bg"><i class="la la-facebook"></i></a></li>
+                                    <li class="mr-0"><a href="#" class="twitter-bg"><i class="la la-twitter"></i></a></li>
+                                    <li class="mr-0"><a href="#" class="instagram-bg"><i class="la la-instagram"></i></a></li>
+                                </ul>
+                                <div class="icon-element icon-element-sm shadow-sm cursor-pointer share-toggle" title="Toggle to expand social icons"><i class="la la-share-alt"></i></div>
+                            </div>
                         </div>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
+                <div class="instructor-wrap py-5">
+                    <h3 class="fs-22 font-weight-semi-bold pb-4">About the author</h3>
+                    <div class="media media-card">
+                        <div class="media-img rounded-full avatar-lg mr-4">
+                            <img src="images/img-loading.png" data-src="images/small-avatar-1.jpg" alt="Avatar image" class="rounded-full lazy">
+                        </div>
+                        <div class="media-body">
+                            <h5>Alex Smith</h5>
+                            <span class="d-block lh-18 pt-2 pb-2">www.techydevs.com</span>
+                            <p class="pb-3">I'm a growth-oriented digital marketer with a passion for content marketing, social media marketing wonders, conversion rate optimization, and keyword research. I strongly support permission marketing and earned media. More than anything</p>
+                            <ul class="social-icons social-icons-styled social--icons-styled">
+                                <li><a href="#"><i class="la la-facebook"></i></a></li>
+                                <li><a href="#"><i class="la la-twitter"></i></a></li>
+                                <li><a href="#"><i class="la la-instagram"></i></a></li>
+                                <li><a href="#"><i class="la la-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- end instructor-wrap -->
                 <div class="section-block"></div>
                 <div class="comments-wrap pt-5" id="comments">
                     <div class="d-flex align-items-center justify-content-between pb-4">
@@ -155,84 +185,6 @@
                 <div class="sidebar">
                     <div class="card card-item">
                         <div class="card-body">
-                            <h3 class="card-title fs-18 pb-2">Search Field</h3>
-                            <div class="divider"><span></span></div>
-                            <form method="post">
-                                <div class="form-group mb-0">
-                                    <input class="form-control form--control pl-3" type="text" name="search" placeholder="Search courses">
-                                    <span class="la la-search search-icon"></span>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- end card -->
-                    <div class="card card-item">
-                        <div class="card-body">
-                            <h3 class="card-title fs-18 pb-2">Categories</h3>
-                            <div class="divider"><span></span></div>
-                            <div class="custom-control custom-checkbox mb-1 fs-15">
-                                <input type="checkbox" class="custom-control-input" id="catCheckbox" required>
-                                <label class="custom-control-label custom--control-label text-black" for="catCheckbox">
-                                    Business<span class="ml-1 text-gray">(12,300)</span>
-                                </label>
-                            </div><!-- end custom-control -->
-                            <div class="custom-control custom-checkbox mb-1 fs-15">
-                                <input type="checkbox" class="custom-control-input" id="catCheckbox2" required>
-                                <label class="custom-control-label custom--control-label text-black" for="catCheckbox2">
-                                    UI & UX<span class="ml-1 text-gray">(12,300)</span>
-                                </label>
-                            </div><!-- end custom-control -->
-                            <div class="custom-control custom-checkbox mb-1 fs-15">
-                                <input type="checkbox" class="custom-control-input" id="catCheckbox3" required>
-                                <label class="custom-control-label custom--control-label text-black" for="catCheckbox3">
-                                    Animation<span class="ml-1 text-gray">(12,300)</span>
-                                </label>
-                            </div><!-- end custom-control -->
-                            <div class="custom-control custom-checkbox mb-1 fs-15">
-                                <input type="checkbox" class="custom-control-input" id="catCheckbox4" required>
-                                <label class="custom-control-label custom--control-label text-black" for="catCheckbox4">
-                                    Game Design<span class="ml-1 text-gray">(12,300)</span>
-                                </label>
-                            </div><!-- end custom-control -->
-                            <div class="collapse" id="collapseMore">
-                                <div class="custom-control custom-checkbox mb-1 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="catCheckbox5" required>
-                                    <label class="custom-control-label custom--control-label text-black" for="catCheckbox5">
-                                        Graphic Design<span class="ml-1 text-gray">(12,300)</span>
-                                    </label>
-                                </div><!-- end custom-control -->
-                                <div class="custom-control custom-checkbox mb-1 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="catCheckbox6" required>
-                                    <label class="custom-control-label custom--control-label text-black" for="catCheckbox6">
-                                        Typography<span class="ml-1 text-gray">(12,300)</span>
-                                    </label>
-                                </div><!-- end custom-control -->
-                                <div class="custom-control custom-checkbox mb-1 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="catCheckbox7" required>
-                                    <label class="custom-control-label custom--control-label text-black" for="catCheckbox7">
-                                        Web Development<span class="ml-1 text-gray">(12,300)</span>
-                                    </label>
-                                </div><!-- end custom-control -->
-                                <div class="custom-control custom-checkbox mb-1 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="catCheckbox8" required>
-                                    <label class="custom-control-label custom--control-label text-black" for="catCheckbox8">
-                                        Photography<span class="ml-1 text-gray">(12,300)</span>
-                                    </label>
-                                </div><!-- end custom-control -->
-                                <div class="custom-control custom-checkbox mb-1 fs-15">
-                                    <input type="checkbox" class="custom-control-input" id="catCheckbox9" required>
-                                    <label class="custom-control-label custom--control-label text-black" for="catCheckbox9">
-                                        Finance<span class="ml-1 text-gray">(12,300)</span>
-                                    </label>
-                                </div><!-- end custom-control -->
-                            </div><!-- end collapse -->
-                            <a class="collapse-btn collapse--btn fs-15" data-toggle="collapse" href="#collapseMore" role="button" aria-expanded="false" aria-controls="collapseMore">
-                                <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-14"></i></span>
-                                <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-14"></i></span>
-                            </a>
-                        </div>
-                    </div><!-- end card -->
-                    <div class="card card-item">
-                        <div class="card-body">
                             <h3 class="card-title fs-18 pb-2">Recent Posts</h3>
                             <div class="divider"><span></span></div>
                             <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
@@ -289,6 +241,20 @@
                             </ul>
                         </div>
                     </div><!-- end card -->
+                    <div class="card card-item">
+                        <div class="card-body">
+                            <h3 class="card-title fs-18 pb-2">Subscribe</h3>
+                            <div class="divider"><span></span></div>
+                            <form method="post">
+                                <div class="input-group">
+                                    <input class="form-control form--control pl-3" type="email" name="email" placeholder="Enter email address">
+                                    <div class="input-group-append">
+                                        <button class="btn theme-btn"><i class="la la-arrow-right"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- end card -->
                 </div><!-- end sidebar -->
             </div><!-- end col-lg-4 -->
         </div><!-- end row -->
@@ -297,4 +263,5 @@
 <!-- ================================
        START BLOG AREA
 ================================= -->
+
 @endsection
