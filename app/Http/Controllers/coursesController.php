@@ -103,7 +103,7 @@ class coursesController extends Controller
         $addstu->degree = $request->degree;
         $addstu->marketing = $request->marketing;
         $addstu->course = $request->course;
-       
+               /*
         $data = $request->all();
         //$data = array('fname'=> $request->name , 'email' => $request->email , 'degree' => $request->degree, 'course' => $request->course);
         $user['to'] = $request->email;
@@ -113,7 +113,7 @@ class coursesController extends Controller
             $message->to($user['to']);
             $message->subject('We Received Your Admission Request On Our Website');
             $message->from($user['from'],'Hellow '.$user['name']);
-        });
+        }); */
         $addstu->save();
         return redirect(route('apply.online'))->with('message','Thank You For Apply Skillinsiderz, You Will Get Response In 2 Hours.');
     }
