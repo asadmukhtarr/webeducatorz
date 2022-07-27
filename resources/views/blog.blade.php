@@ -28,7 +28,7 @@
 <section class="course-area section-padding">
     <div class="container">
         <div class="row">
-			@foreach($$posts as $post)
+			@foreach($posts as $post)
             <div class="col-lg-4 responsive-column-half">
                 <div class="card card-item card-preview">
                     <div class="card-image">
