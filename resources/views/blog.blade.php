@@ -41,7 +41,6 @@
                     </div><!-- end card-image -->
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{ route('blog.post',$post->slug) }}">{{ ucfirst($post->title) }}</a></h5>
-                        <p class="card-text"><a href="{{ route('blog.post',$post->slug) }}">{!! substr($post->description,'0','80') !!}</a></p>
                         
                     </div><!-- end card-body -->
                 </div><!-- end card -->
