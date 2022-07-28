@@ -213,8 +213,8 @@
                @foreach(App\Models\course::all() as $course)
                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_3">
                     <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top" src="images/img8.jpg" alt="Card image cap">
+                        <a href="{{ route('course',$course->slug) }}" class="d-block">
+                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
                             <div class="course-badge">{{ ucfirst($course->category->category) }}</div>
