@@ -19,7 +19,7 @@
                         </div>
                     </div><!-- end card-image -->
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($course->title) }}</a></h5>
+                        <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->title) }}</a></h5>
                         <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Duration {{ $event->start }} - {{ $event->end }}</a></p>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="card-price text-black font-weight-bold">{{ $event->Type }} - {{ $event->date }}<span class="before-price font-weight-medium">{{ $course->regular_fee }}</span></p>
