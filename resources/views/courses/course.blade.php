@@ -135,14 +135,7 @@
                         <div class="card-body">
                             <div class="preview-course-video">
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#previewModal">
-                                    <img src="{{ asset('images/img-loading.png') }}" data-src="images/preview-img.jpg" alt="course-img" class="w-100 rounded lazy">
-                                    <div class="preview-course-video-content">
-                                        <div class="overlay"></div>
-                                        <div class="play-button">
-                                            
-                                        </div>
-                                        <p class="fs-15 font-weight-bold text-white pt-3">Preview this course</p>
-                                    </div>
+                                    <img src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="course-img" class="w-100 rounded lazy">
                                 </a>
                             </div><!-- end preview-course-video -->
                             <div class="preview-course-feature-content pt-40px">
