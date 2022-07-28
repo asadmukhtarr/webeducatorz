@@ -34,7 +34,7 @@
                 <div class="col-lg-3 responsive-column-half">
                     <div class="card card-item member-card text-center">
                         <div class="card-image">
-                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/content/{{ $trainer->picture }}" alt="team member">
+                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $trainer->picture }}" alt="team member">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><a href="{{ route('singletrainer',$trainer->id) }}">{{ ucfirst($trainer->name) }}</a></h5>

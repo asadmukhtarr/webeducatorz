@@ -9,12 +9,12 @@
         <div class="breadcrumb-content">
             <div class="media media-card align-items-center pb-4">
                 <div class="media-img media--img media-img-md rounded-full">
-                    <img class="rounded-full" src="images/small-avatar-1.jpg" alt="Student thumbnail image">
+                    <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ $trainer->picture }}" alt="Student thumbnail image">
                 </div>
                 <div class="media-body">
-                    <h2 class="section__title fs-30">Tim Buchalka</h2>
-                    <span class="d-block lh-18 pt-1 pb-2">Joined 4 years ago</span>
-                    <p class="lh-18">Web Developer, Designer, and Teacher</p>
+                    <h2 class="section__title fs-30">{{ ucfirst($trainer->name) }}</h2>
+                    <span class="d-block lh-18 pt-1 pb-2">{{ ucfirst($trainer->created_at->diffForHumans()) }}</span>
+                    <p class="lh-18">{!! $trainer->description !!}</p>
                 </div>
             </div><!-- end media -->
             <ul class="social-icons social-icons-styled social--icons-styled">
