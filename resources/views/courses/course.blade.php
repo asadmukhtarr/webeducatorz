@@ -185,7 +185,7 @@
                         <div class="card-body">
                             <h3 class="card-title fs-18 pb-2">Related Courses</h3>
                             <div class="divider"><span></span></div>
-                            @foreach(App\Models\course::where('category_id',$course->category_id)->get() as $course)
+                            @foreach(App\Models\course::where('category_id',$course->category_id)->where('status','1')->get() as $course)
                             <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
                                 <a href="course-details.html" class="media-img">
                                     <img class="mr-3 lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Related course image">
