@@ -195,7 +195,7 @@
                             @foreach(App\Models\course::where('category_id',$course->category_id)->get() as $course)
                             <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
                                 <a href="course-details.html" class="media-img">
-                                    <img class="mr-3 lazy" src="images/img-loading.png" data-src="{{ asset('images/small-img-2.jpg') }}" alt="Related course image">
+                                    <img class="mr-3 lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Related course image">
                                 </a>
                                 <div class="media-body">
                                     <h5 class="fs-15"><a href="{{ route('course',$course->slug) }}">{{ ucfirst($course->title) }}</a></h5>
