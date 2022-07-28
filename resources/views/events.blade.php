@@ -29,7 +29,7 @@
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
 			<div class="tooltip_templates">
-				<div id="tooltip_content_{{$course->id}}">
+				<div id="tooltip_content_{{$event->id}}">
 					<div class="card card-item">
 						<div class="card-body">
 							<p class="card-text pb-2"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->category->category) }}</a></p>
