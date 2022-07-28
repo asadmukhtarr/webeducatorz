@@ -135,14 +135,7 @@
                         <div class="card-body">
                             <div class="preview-course-video">
                                 <a href="javascript:void(0)" data-toggle="modal" data-target="#previewModal">
-                                    <img src="{{ asset('images/img-loading.png') }}" data-src="images/preview-img.jpg" alt="course-img" class="w-100 rounded lazy">
-                                    <div class="preview-course-video-content">
-                                        <div class="overlay"></div>
-                                        <div class="play-button">
-                                            
-                                        </div>
-                                        <p class="fs-15 font-weight-bold text-white pt-3">Preview this course</p>
-                                    </div>
+                                    <img src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="course-img" class="w-100 rounded lazy">
                                 </a>
                             </div><!-- end preview-course-video -->
                             <div class="preview-course-feature-content pt-40px">
@@ -192,10 +185,10 @@
                         <div class="card-body">
                             <h3 class="card-title fs-18 pb-2">Related Courses</h3>
                             <div class="divider"><span></span></div>
-                            @foreach(App\Models\course::where('category_id',$course->category_id)->get() as $course)
+                            @foreach(App\Models\course::where('category_id',$course->category_id)->where('status','1')->get() as $course)
                             <div class="media media-card border-bottom border-bottom-gray pb-4 mb-4">
                                 <a href="course-details.html" class="media-img">
-                                    <img class="mr-3 lazy" src="images/img-loading.png" data-src="{{ asset('images/small-img-2.jpg') }}" alt="Related course image">
+                                    <img class="mr-3 lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Related course image">
                                 </a>
                                 <div class="media-body">
                                     <h5 class="fs-15"><a href="{{ route('course',$course->slug) }}">{{ ucfirst($course->title) }}</a></h5>

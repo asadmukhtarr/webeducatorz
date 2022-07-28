@@ -9,12 +9,12 @@
         <div class="breadcrumb-content">
             <div class="media media-card align-items-center pb-4">
                 <div class="media-img media--img media-img-md rounded-full">
-                    <img class="rounded-full" src="images/small-avatar-1.jpg" alt="Student thumbnail image">
+                    <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ $trainer->picture }}" alt="Student thumbnail image">
                 </div>
                 <div class="media-body">
-                    <h2 class="section__title fs-30">Tim Buchalka</h2>
-                    <span class="d-block lh-18 pt-1 pb-2">Joined 4 years ago</span>
-                    <p class="lh-18">Web Developer, Designer, and Teacher</p>
+                    <h2 class="section__title fs-30">{{ ucfirst($trainer->name) }}</h2>
+                    <span class="d-block lh-18 pt-1 pb-2">{{ ucfirst($trainer->created_at->diffForHumans()) }}</span>
+                    <p class="lh-18">{!! $trainer->description !!}</p>
                 </div>
             </div><!-- end media -->
             <ul class="social-icons social-icons-styled social--icons-styled">
@@ -30,7 +30,47 @@
 <!-- ================================
     END BREADCRUMB AREA
 ================================= -->
-
+<!--======================================
+        START COURSE AREA
+======================================-->
+<section class="course-area section-padding">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between pb-3">
+            <h3 class="fs-24 font-weight-semi-bold">My courses</h3>
+            <span class="ribbon ribbon-lg">24</span>
+        </div>
+        <div class="divider"><span></span></div>
+        <div class="row pt-30px">
+        @foreach(App\Models\course::where('category_id',$trainer->category_id)->get() as $course)
+            <div class="col-lg-4 responsive-column-half">
+                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
+                    <div class="card-image">
+                        <a href="course-details.html" class="d-block">
+                            <img class="card-img-top lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="images/img8.jpg" alt="Card image cap">
+                        </a>
+                        <div class="course-badge-labels">
+                            <div class="course-badge">{{ ucfirst($course->category->category) }}</div>
+                            <div class="course-badge blue">{{ $course->discount }}% Off</div>
+                        </div>
+                    </div><!-- end card-image -->
+                    <div class="card-body">
+                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
+                        <h5 class="card-title"><a href="course-details.html">{{ ucfirst($course->title) }}</a></h5>
+                        <p class="card-text"><a href="teacher-detail.html">{{ ucfirst($course->category->category) }}</a></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-price text-black font-weight-bold">Rs {{ $course->fee }} <span class="before-price font-weight-medium">{{ $course->regular_fee }}</span></p>
+                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
+                        </div>
+                    </div><!-- end card-body -->
+                </div><!-- end card -->
+            </div><!-- end col-lg-4 -->
+        @endforeach
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end courses-area -->
+<!--======================================
+        END COURSE AREA
+======================================-->
 <!-- ================================
        START TEACHER DETAILS AREA
 ================================= -->
@@ -198,76 +238,11 @@
     </div><!-- end container -->
     <div class="bg-gray py-5">
         <div class="container">
-            <ul class="nav nav-tabs generic-tab justify-content-center" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="about-me-tab" data-toggle="tab" href="#about-me" role="tab" aria-controls="about-me" aria-selected="false">
-                        About Me
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="experience-tab" data-toggle="tab" href="#experience" role="tab" aria-controls="experience" aria-selected="false">
-                        Experience
-                    </a>
-                </li>
-            </ul>
             <div class="tab-content pt-40px" id="myTabContent">
                 <div class="tab-pane fade show active" id="about-me" role="tabpanel" aria-labelledby="about-me-tab">
                     <div class="card card-item">
                         <div class="card-body">
-                            <p class="card-text pb-3">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab corporis est fugiat ipsa laboriosam laudantium possimus quo? Aperiam architecto laborum provident rerum, totam ullam! Accusantium eius eum perferendis quasi, repellendus suscipit voluptate voluptatem! Delectus dolorem maxime nulla numquam quasi quod.</p>
-                            <p class="card-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque ipsa magnam, magni nobis quam ratione reiciendis totam? Accusantium aliquam aspernatur, assumenda cupiditate deleniti eius, ex fuga iusto minus, nihil perspiciatis porro provident quasi soluta ut! Consequuntur earum eos magnam?</p>
-                            <div class="collapse" id="collapseReadMore">
-                                <p class="card-text pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consequatur consequuntur dolorem enim error est fuga iure magnam voluptas, voluptates.</p>
-                            </div>
-                            <a class="collapse-btn collapse--btn fs-15" data-toggle="collapse" href="#collapseReadMore" role="button" aria-expanded="false" aria-controls="collapseReadMore">
-                                <span class="collapse-btn-hide">Read more<i class="la la-angle-down ml-1 fs-14"></i></span>
-                                <span class="collapse-btn-show">Read less<i class="la la-angle-up ml-1 fs-14"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div><!-- end tab-pane -->
-                <div class="tab-pane fade" id="experience" role="tabpanel" aria-labelledby="experience-tab">
-                    <div class="card card-item">
-                        <div class="card-body">
-                            <p>
-                                There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form, by injected humour,
-                                or randomised words which don't look even slightly believable.
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                cupiditate deleniti eius, ex fuga iusto minus,
-                                nihil perspiciatis porro provident quasi soluta ut! Consequuntur earum eos magnam?
-                            </p>
-                            <div class="skills-wrap pt-30px">
-                                <div class="skills">
-                                    <div class="skill">
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                            <span class="fs-16 text-black font-weight-semi-bold pr-3">HTML</span>
-                                            <span>99%</span>
-                                        </div>
-                                        <div class="progress_bg">
-                                            <div class="progress_bar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="skill">
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                            <span class="fs-16 text-black font-weight-semi-bold pr-3">CSS</span>
-                                            <span>99%</span>
-                                        </div>
-                                        <div class="progress_bg">
-                                            <div class="progress_bar"></div>
-                                        </div>
-                                    </div>
-                                    <div class="skill">
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                            <span class="fs-16 text-black font-weight-semi-bold pr-3">Javascript</span>
-                                            <span>95%</span>
-                                        </div>
-                                        <div class="progress_bg">
-                                            <div class="progress_bar"></div>
-                                        </div>
-                                    </div>
-                                </div><!-- end skills-->
-                            </div>
+                            {!! $trainer->description !!}
                         </div>
                     </div>
                 </div><!-- end tab-pane -->
@@ -278,231 +253,4 @@
 <!-- ================================
        START TEACHER DETAILS AREA
 ================================= -->
-
-<!--======================================
-        START COURSE AREA
-======================================-->
-<section class="course-area section-padding">
-    <div class="container">
-        <div class="d-flex align-items-center justify-content-between pb-3">
-            <h3 class="fs-24 font-weight-semi-bold">My courses</h3>
-            <span class="ribbon ribbon-lg">24</span>
-        </div>
-        <div class="divider"><span></span></div>
-        <div class="row pt-30px">
-            <div class="col-lg-4 responsive-column-half">
-                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                    <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img8.jpg" alt="Card image cap">
-                        </a>
-                        <div class="course-badge-labels">
-                            <div class="course-badge">Bestseller</div>
-                            <div class="course-badge blue">-39%</div>
-                        </div>
-                    </div><!-- end card-image -->
-                    <div class="card-body">
-                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
-                        <h5 class="card-title"><a href="course-details.html">The Business Intelligence Analyst Course 2021</a></h5>
-                        <p class="card-text"><a href="teacher-detail.html">Jose Portilla</a></p>
-                        <div class="rating-wrap d-flex align-items-center py-2">
-                            <div class="review-stars">
-                                <span class="rating-number">4.4</span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star-o"></span>
-                            </div>
-                            <span class="rating-total pl-1">(20,230)</span>
-                        </div><!-- end rating-wrap -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">12.99 <span class="before-price font-weight-medium">129.99</span></p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column-half">
-                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                    <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img9.jpg" alt="Card image cap">
-                        </a>
-                        <div class="course-badge-labels">
-                            <div class="course-badge red">Featured</div>
-                        </div>
-                    </div><!-- end card-image -->
-                    <div class="card-body">
-                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
-                        <h5 class="card-title"><a href="course-details.html">The Business Intelligence Analyst Course 2021</a></h5>
-                        <p class="card-text"><a href="teacher-detail.html">Jose Portilla</a></p>
-                        <div class="rating-wrap d-flex align-items-center py-2">
-                            <div class="review-stars">
-                                <span class="rating-number">4.4</span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star-o"></span>
-                            </div>
-                            <span class="rating-total pl-1">(20,230)</span>
-                        </div><!-- end rating-wrap -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">129.99</p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column-half">
-                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                    <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img10.jpg" alt="Card image cap">
-                        </a>
-                    </div><!-- end card-image -->
-                    <div class="card-body">
-                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
-                        <h5 class="card-title"><a href="course-details.html">The Business Intelligence Analyst Course 2021</a></h5>
-                        <p class="card-text"><a href="teacher-detail.html">Jose Portilla</a></p>
-                        <div class="rating-wrap d-flex align-items-center py-2">
-                            <div class="review-stars">
-                                <span class="rating-number">4.4</span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star-o"></span>
-                            </div>
-                            <span class="rating-total pl-1">(20,230)</span>
-                        </div><!-- end rating-wrap -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">129.99</p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column-half">
-                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                    <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img11.jpg" alt="Card image cap">
-                        </a>
-                    </div><!-- end card-image -->
-                    <div class="card-body">
-                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
-                        <h5 class="card-title"><a href="course-details.html">The Business Intelligence Analyst Course 2021</a></h5>
-                        <p class="card-text"><a href="teacher-detail.html">Jose Portilla</a></p>
-                        <div class="rating-wrap d-flex align-items-center py-2">
-                            <div class="review-stars">
-                                <span class="rating-number">4.4</span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star-o"></span>
-                            </div>
-                            <span class="rating-total pl-1">(20,230)</span>
-                        </div><!-- end rating-wrap -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">129.99</p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column-half">
-                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                    <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img12.jpg" alt="Card image cap">
-                        </a>
-                        <div class="course-badge-labels">
-                            <div class="course-badge green">Free</div>
-                        </div>
-                    </div><!-- end card-image -->
-                    <div class="card-body">
-                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
-                        <h5 class="card-title"><a href="course-details.html">The Business Intelligence Analyst Course 2021</a></h5>
-                        <p class="card-text"><a href="teacher-detail.html">Jose Portilla</a></p>
-                        <div class="rating-wrap d-flex align-items-center py-2">
-                            <div class="review-stars">
-                                <span class="rating-number">4.4</span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star-o"></span>
-                            </div>
-                            <span class="rating-total pl-1">(20,230)</span>
-                        </div><!-- end rating-wrap -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">Free</p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card -->
-            </div><!-- end col-lg-4 -->
-            <div class="col-lg-4 responsive-column-half">
-                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_1">
-                    <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img13.jpg" alt="Card image cap">
-                        </a>
-                        <div class="course-badge-labels">
-                            <div class="course-badge sky-blue">Highest rated</div>
-                        </div>
-                    </div><!-- end card-image -->
-                    <div class="card-body">
-                        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
-                        <h5 class="card-title"><a href="course-details.html">The Business Intelligence Analyst Course 2021</a></h5>
-                        <p class="card-text"><a href="teacher-detail.html">Jose Portilla</a></p>
-                        <div class="rating-wrap d-flex align-items-center py-2">
-                            <div class="review-stars">
-                                <span class="rating-number">4.4</span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star"></span>
-                                <span class="la la-star-o"></span>
-                            </div>
-                            <span class="rating-total pl-1">(20,230)</span>
-                        </div><!-- end rating-wrap -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">129.99</p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
-                    </div><!-- end card-body -->
-                </div><!-- end card -->
-            </div><!-- end col-lg-4 -->
-        </div><!-- end row -->
-        <div class="text-center pt-3">
-            <nav aria-label="Page navigation example" class="pagination-box">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <p class="fs-14 pt-2">Showing 1-6 of 24 results</p>
-        </div>
-    </div><!-- end container -->
-</section><!-- end courses-area -->
-<!--======================================
-        END COURSE AREA
-======================================-->
 @endsection				

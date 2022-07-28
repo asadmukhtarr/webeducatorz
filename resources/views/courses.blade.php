@@ -426,13 +426,9 @@
             <div class="col-lg-4 responsive-column-half">
                 <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_{{ $course->id }}">
                     <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img8.jpg" alt="Card image cap">
+                        <a href="{{ route('course',$course->slug) }}" class="d-block">
+                            <img class="card-img-top lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Card image cap">
                         </a>
-                        <div class="course-badge-labels">
-                            <div class="course-badge">{{ ucfirst($course->category->category) }}</div>
-                            <div class="course-badge blue">{{ $course->discount }}% Discount</div>
-                        </div>
                     </div><!-- end card-image -->
                     <div class="card-body">
                         <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">All Levels</h6>
