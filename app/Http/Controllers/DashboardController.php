@@ -12,6 +12,10 @@ class DashboardController extends Controller
         return view('lms.profile');
     }
 
+    public function dashbaord(){
+        return view('lms.dashboard');
+    }
+
     public function enrolled_courses(){
         return view('lms.enrolled_courses');
     }

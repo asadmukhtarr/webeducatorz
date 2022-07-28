@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\blog;
 use App\Models\category;
 use App\Models\workshop;
+use App\Models\course;
 use App\Models\subscriber;
 use stdClass;
 use App\Models\general;
@@ -42,7 +43,8 @@ class pagesController extends Controller
        // workshops
        public function workshop(){
         $meta = general::find(1);
-        return view('workshops', compact('meta'));
+        $courses = course::where('status','1')->get();
+        return view('workshops', compact('meta','courses'));
        }
        // subscriber
        public function subscriber(Request $request){

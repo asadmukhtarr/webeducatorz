@@ -82,7 +82,7 @@
 							</div>
 							<ul class="generic-list-item d-flex flex-wrap align-items-center fs-14 border-left border-left-gray pl-3 ml-3">
 								<li class="d-flex align-items-center pr-3 mr-3 border-right border-right-gray"><i class="la la-sign-in mr-1"></i><a href="{{ route('login') }}"> Login</a></li>
-								<li class="d-flex align-items-center"><i class="la la-arrow-right mr-1"></i><a href="{{route('teacher_admission')}}"> Become an Instructor</a></li>
+								<li class="d-flex align-items-center pr-3 mr-3 border-right border-right-gray"><i class="la la-arrow-right mr-1"></i><a href="{{route('teacher_admission')}}"> Become an Instructor </a></li>
 								<li class="d-flex align-items-center"><i class="la la-arrow-right mr-1"></i><a href="sign-up.html"> Request For Trail</a></li>
 							</ul>
 						</div><!-- end header-widget -->
@@ -287,7 +287,7 @@
 					<a href="{{route('fee.strcture')}}">Fee Structure</a>
 				</li>
 				<li>
-					<a href="{{route('workshops')}}">Workshop</a>
+					<a href="{{route('workshops.event')}}">Workshop</a>
 				</li>
 				<li>
 					<a href="{{route('new.schedule')}}">Schedule</a>
