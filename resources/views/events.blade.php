@@ -19,7 +19,7 @@
                         </div>
                     </div><!-- end card-image -->
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->title) }}</a></h5>
+                        <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}"> <b>Events: </b> {{ ucfirst($event->title) }}</a></h5>
                         <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Duration {{ $event->start }} - {{ $event->end }}</a></p>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="card-price text-black font-weight-bold">{{ $event->Type }} - {{ $event->date }}</p>
@@ -35,8 +35,8 @@
 							<p class="card-text pb-2"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->category->category) }}</a></p>
 							<h5 class="card-title pb-1"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->title) }}</a></h5>
 							<ul class="generic-list-item generic-list-item-bullet generic-list-item--bullet d-flex align-items-center fs-14">
-								<li>{{ $event->date }} Duration</li>
-								<li>{{ $event->type }} </li>
+								<li> Time:{{ $event->date }}</li>
+								<li> Type:{{ $event->type }} </li>
 							</ul>
 							<p class="card-text pt-1 fs-14 lh-22">
 								{{ ucfirst($event->meta) }}
