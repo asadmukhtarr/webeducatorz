@@ -30,6 +30,8 @@ Route::post('/send/message','coursesController@contactMessage')->name('contactMe
 Route::get('/blog','pagesController@blog')->name('blog');
 Route::get('/blog/{slug}','pagesController@post')->name('blog.post');
 Route::get('/apply-online','coursesController@apply')->name('apply.online');
+Route::get('/teacher_admission','coursesController@teacher_admission')->name('teacher_admission');
+Route::post('/teacher_admission_apply','coursesController@teacher_admission_apply')->name('teacher_admission_apply');
 Route::post('/admission-applied','coursesController@onlineAdmit')->name('onlineAdmit');
 Route::get('/about','pagesController@about')->name('about');
 Route::get('/terms','pagesController@terms')->name('terms');

@@ -10,6 +10,7 @@ use App\Models\general;
 use stdClass;
 use App\Models\contact;
 use App\Models\applyOnine;
+use App\Models\TeacherAdmission;
 use Mail;
 
 
@@ -79,6 +80,47 @@ class coursesController extends Controller
     }
 
     // apply online
+    public function teacher_admission(){
+        $courses = course::all();
+        $meta = general::find(1);
+        return view('teacher_admission')->with(compact('courses','meta'));
+    }
+    public function teacher_admission_apply(Request $request){
+        $request->validate([
+            'name'  => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+            'city'  => 'required|alpha',
+            'degree'=> 'required',
+            'marketing' => 'required',
+            'course' => 'required'
+
+        ]);
+        $addstu = new TeacherAdmission();
+        $addstu->name = $request->name;
+        $addstu->email = $request->email;
+        $addstu->phone = $request->phone;
+        $addstu->city = $request->city;
+        $addstu->degree = $request->degree;
+        $addstu->marketing = $request->marketing;
+        $addstu->course = $request->course;
+       
+        // $data = $request->all();
+        // //$data = array('fname'=> $request->name , 'email' => $request->email , 'degree' => $request->degree, 'course' => $request->course);
+        // $user['to'] = $request->email;
+        // $user['name'] = $request->name;
+        // $user['from'] = general::find(1)->email1;
+        // Mail::send('email.email',$data,function($message) use ($user,$request){
+        //     $message->to($user['to']);
+        //     $message->subject('We Received Your Admission Request On Our Website');
+        //     $message->from($user['from'],'Hellow '.$user['name']);
+        // });
+        $addstu->save();
+        return redirect(route('teacher_admission'))->with('message','Thank You For Apply Skillinsiderz, You Will Get Response In 2 Hours.');
+    }
+
+
+    // apply online
     public function apply(){
         $courses = course::all();
         $meta = general::find(1);
@@ -104,16 +146,16 @@ class coursesController extends Controller
         $addstu->marketing = $request->marketing;
         $addstu->course = $request->course;
        
-        $data = $request->all();
-        //$data = array('fname'=> $request->name , 'email' => $request->email , 'degree' => $request->degree, 'course' => $request->course);
-        $user['to'] = $request->email;
-        $user['name'] = $request->name;
-        $user['from'] = general::find(1)->email1;
-        Mail::send('email.email',$data,function($message) use ($user,$request){
-            $message->to($user['to']);
-            $message->subject('We Received Your Admission Request On Our Website');
-            $message->from($user['from'],'Hellow '.$user['name']);
-        });
+        // $data = $request->all();
+        // //$data = array('fname'=> $request->name , 'email' => $request->email , 'degree' => $request->degree, 'course' => $request->course);
+        // $user['to'] = $request->email;
+        // $user['name'] = $request->name;
+        // $user['from'] = general::find(1)->email1;
+        // Mail::send('email.email',$data,function($message) use ($user,$request){
+        //     $message->to($user['to']);
+        //     $message->subject('We Received Your Admission Request On Our Website');
+        //     $message->from($user['from'],'Hellow '.$user['name']);
+        // });
         $addstu->save();
         return redirect(route('apply.online'))->with('message','Thank You For Apply Skillinsiderz, You Will Get Response In 2 Hours.');
     }
