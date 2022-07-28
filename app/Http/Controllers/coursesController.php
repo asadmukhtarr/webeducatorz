@@ -116,7 +116,7 @@ class coursesController extends Controller
         //     $message->from($user['from'],'Hellow '.$user['name']);
         // });
         $addstu->save();
-        return redirect(route('teacher_admission'))->with('message','Thank You For Apply Skillinsiderz, You Will Get Response In 2 Hours.');
+        return redirect(route('teacher_admission'))->with('message','Thank You For Apply Webeducatorz, You Will Get Response In 2 Hours.');
     }
 
 
@@ -157,6 +157,6 @@ class coursesController extends Controller
         //     $message->from($user['from'],'Hellow '.$user['name']);
         // });
         $addstu->save();
-        return redirect(route('apply.online'))->with('message','Thank You For Apply Skillinsiderz, You Will Get Response In 2 Hours.');
+        return redirect(route('apply.online'))->with('message','Thank You For Apply Webeducatorz, You Will Get Response In 2 Hours.');
     }
 }
