@@ -20,15 +20,13 @@ class instructorsController extends Controller
       return view('trainers')->with(compact('trainers','meta'));
     }
     public function singletrainer($id){
-		$trainers = trainer::where('id',$id)->first();
+		$trainer = trainer::where('id',$id)->first();
     $courses = course::where('status','1')->orderby('id','desc')->get();
     $workshops = workshop::all();
     $finalArray = array();
-    $finalArray['trainers'] = $trainers;
-    $finalArray['courses'] = $courses;
-    $finalArray['workshops'] = $workshops;
+
     $meta = general::find(1);
     // return $workshops;
-    return view('singletrainer',compact('finalArray','meta'));
+    return view('singletrainer', compact('trainer','courses','workshops','meta'));
     }
 }
