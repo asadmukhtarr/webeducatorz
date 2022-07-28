@@ -14,7 +14,7 @@
                 <div class="media-body">
                     <h2 class="section__title fs-30">{{ ucfirst($trainer->name) }}</h2>
                     <span class="d-block lh-18 pt-1 pb-2">{{ ucfirst($trainer->created_at->diffForHumans()) }}</span>
-                    <p class="lh-18">{{ $trainer->category->category }}</p>
+                    <p class="lh-18">{!! $trainer->description !!}</p>
                 </div>
             </div><!-- end media -->
             <ul class="social-icons social-icons-styled social--icons-styled">
