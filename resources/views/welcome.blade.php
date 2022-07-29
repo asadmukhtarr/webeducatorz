@@ -210,7 +210,7 @@
                 <span class="section-divider"></span>
             </div><!-- end section-heading -->
             <div class="course-carousel owl-action-styled owl--action-styled mt-30px">
-               @foreach(App\Models\course::all() as $course)
+               @foreach(App\Models\course::where('status','1')->get() as $course)
                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_3">
                     <div class="card-image">
                         <a href="{{ route('course',$course->slug) }}" class="d-block">
