@@ -68,3 +68,4 @@ Route::prefix('lms')->middleware('auth')->group(function(){
 
 
 Route::post('/trail_form','DashboardController@trail_form')->name('trail_form');
+

@@ -12,7 +12,7 @@
                 <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_{{ $event->id }}">
                     <div class="card-image">
                         <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="images/img-loading.png" data-src="images/img8.jpg" alt="Card image cap">
+                            <img class="card-img-top lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" data-src="images/img8.jpg" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
                             <div class="course-badge">{{ ucfirst($event->category->category) }}</div>
