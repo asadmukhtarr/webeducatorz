@@ -287,7 +287,7 @@
 					<a href="{{route('fee.strcture')}}">Fee Structure</a>
 				</li>
 				<li>
-					<a href="{{route('workshops')}}">Workshop</a>
+					<a href="{{route('workshops.event')}}">Workshop</a>
 				</li>
 				<li>
 					<a href="{{route('new.schedule')}}">Schedule</a>

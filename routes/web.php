@@ -51,19 +51,19 @@ Route::get('email',function(){
 });
 
 Route::get('/login','loginController@login')->name('login');
-Route::get('/dashboard',function(){
-    return "Asad Dashboard";
-})->name('dashboard');
 Route::post('/login','loginController@authlogin')->name('authlogin');
 Route::post('/logout','loginController@logout')->name('logout');
 
+Route::prefix('lms')->middleware('auth')->group(function(){
+    Route::get('/dashboard',"DashboardController@dashbaord")->name('dashboard');
+    Route::get('/profile','DashboardController@profile')->name('profile');
+    Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
+    Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
+    Route::get('/accounts','DashboardController@accounts')->name('accounts');
+    Route::get('/workshop','DashboardController@workshops')->name('workshops');
+    Route::get('/feeds','DashboardController@feeds')->name('feeds');
+    Route::get('/settings','DashboardController@settings')->name('settings');
+});
 
-Route::get('/profile','DashboardController@profile')->name('profile');
-Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
-Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
-Route::get('/accounts','DashboardController@accounts')->name('accounts');
-//Route::get('/dashboard','DashboardController@workshops')->name('workshops');
-Route::get('/feeds','DashboardController@feeds')->name('feeds');
-Route::get('/settings','DashboardController@settings')->name('settings');
 
 Route::post('/trail_form','DashboardController@trail_form')->name('trail_form');
