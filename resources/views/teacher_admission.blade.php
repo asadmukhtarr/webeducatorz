@@ -7,7 +7,7 @@
 				<div class="col-lg-8">
 					<div class="card shadow">
 						<div class="card-header">
-							<h5>Teacher Apply Online</h5>
+							<h5> <i class="la la-user"></i> Teacher Apply Online</h5>
 						</div>
 						<div class="card-body">
 						@if(Session::has("message"))
