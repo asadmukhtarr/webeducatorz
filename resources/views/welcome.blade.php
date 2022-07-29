@@ -180,7 +180,7 @@
                 @foreach(App\Models\category::limit(6)->get() as $category)
                     <div class="col-lg-4 responsive-column-half">
                         <div class="category-item">
-                            <img  class="cat__img lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Category image">
+                            <img  class="cat__img lazy" src="images/img-loading.png" data-src="images/img1.jpg" alt="Category image">
                             <div class="category-content">
                                 <div class="category-inner">
                                     <h3 class="cat__title"><a href="#">{{ $category->category }}</a></h3>
@@ -213,8 +213,8 @@
                @foreach(App\Models\course::all() as $course)
                <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_3">
                     <div class="card-image">
-                        <a href="course-details.html" class="d-block">
-                            <img class="card-img-top" src="images/img8.jpg" alt="Card image cap">
+                        <a href="{{ route('course',$course->slug) }}" class="d-block">
+                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
                             <div class="course-badge">{{ ucfirst($course->category->category) }}</div>
