@@ -19,10 +19,10 @@
                         </div>
                     </div><!-- end card-image -->
                     <div class="card-body">
-                        <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}"> <b>Events: </b> {{ ucfirst($event->title) }}</a></h5>
-                        <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Duration {{ $event->start }} - {{ $event->end }}</a></p>
+                        <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}"> <b>Event: </b> {{ ucfirst($event->title) }}</a></h5>
+                        <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Duration: {{ $event->start }} - {{ $event->end }}</a></p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold">{{ $event->Type }} - {{ $event->date }}</p>
+                            <p class="card-price text-black font-weight-bold"><b>Type: </b>{{ $event->type }} - <b>Date: </b>{{ $event->date }}</p>
                             <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
                         </div>
                     </div><!-- end card-body -->
