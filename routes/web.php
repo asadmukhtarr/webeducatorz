@@ -50,9 +50,10 @@ Route::get('email',function(){
     return view('email');
 });
 
-
 Route::get('/login','loginController@login')->name('login');
-Route::get('/dashboard','loginController@dashboard')->name('dashboard');
+Route::get('/dashboard',function(){
+    return "Asad Dashboard";
+})->name('dashboard');
 Route::post('/login','loginController@authlogin')->name('authlogin');
 Route::post('/logout','loginController@logout')->name('logout');
 
@@ -61,7 +62,7 @@ Route::get('/profile','DashboardController@profile')->name('profile');
 Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
 Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
 Route::get('/accounts','DashboardController@accounts')->name('accounts');
-Route::get('/dashboard','DashboardController@workshops')->name('workshops');
+//Route::get('/dashboard','DashboardController@workshops')->name('workshops');
 Route::get('/feeds','DashboardController@feeds')->name('feeds');
 Route::get('/settings','DashboardController@settings')->name('settings');
 
