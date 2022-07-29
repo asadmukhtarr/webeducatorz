@@ -12,7 +12,7 @@
                 <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_{{ $event->id }}">
                     <div class="card-image">
                         <a href="course-details.html" class="d-block">
-                            <img class="card-img-top lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" data-src="images/img8.jpg" alt="Card image cap">
+                            <img class="card-img-top lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
                             <div class="course-badge">{{ ucfirst($event->category->category) }}</div>
@@ -21,11 +21,8 @@
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->title) }}</a></h5>
                         <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Duration: {{ $event->start }} - {{ $event->end }}</a></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-price text-black font-weight-bold"> Type: {{ $event->type }}</p>
-                            <p class="card-price text-black font-weight-bold">Date: {{ $event->date }}</p>
-                            <div class="icon-element icon-element-sm shadow-sm cursor-pointer" title="Add to Wishlist"><i class="la la-heart-o"></i></div>
-                        </div>
+                        <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Type: {{ $event->type }}</a></p>
+                        <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Date: {{ $event->date }}</a></p>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
             </div><!-- end col-lg-4 -->
