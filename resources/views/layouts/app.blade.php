@@ -118,7 +118,7 @@
 										<li>
 											<a href="#">Categories <i class="la la-angle-down fs-12"></i></a>
 											<ul class="cat-dropdown-menu">
-												@foreach(App\Models\Category::orderby('id','desc')->get() as $category)
+												@foreach(App\Models\category::orderby('id','desc')->get() as $category)
 												<li>
 													<a href="{{ route('category.search', $category->id) }}">{{ ucfirst($category->category) }}</a>
 												</li>
@@ -194,7 +194,7 @@
 				<i class="la la-times"></i>
 			</div><!-- end off-canvas-menu-close -->
 			<ul class="generic-list-item off-canvas-menu-list pt-90px">
-				@foreach(App\Models\Category::orderby('id','desc')->get() as $category)
+				@foreach(App\Models\category::orderby('id','desc')->get() as $category)
 				<li>
 					<a href="{{ route('category.search',$category->id) }}">{{ $category->category }}</a>
 				</li>
