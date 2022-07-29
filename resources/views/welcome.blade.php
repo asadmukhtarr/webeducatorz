@@ -217,7 +217,6 @@
                             <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $course->thumbnail }}" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
-                            <div class="course-badge">{{ ucfirst($course->category->category) }}</div>
                             <div class="course-badge blue">{{ $course->discount }}% Off</div>
                         </div>
                     </div><!-- end card-image -->
