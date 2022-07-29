@@ -39,6 +39,7 @@ Route::get('/privacy-policy','pagesController@privacy')->name('privacy');
 Route::get('/trainers','instructorsController@instructor')->name('instructors');
 Route::get('/trainer/{id}','instructorsController@singletrainer')->name('singletrainer');
 Route::get('/workshops','pagesController@workshop')->name('workshops.event');
+Route::get('/workshops/{slug}','pagesController@workshopspost')->name('workshops.post');
 Route::get('/track-your-certificate','pagesController@certificate')->name('certificate');
 Route::get('frequently-asked-questions','pagesController@faq')->name('faq');
 Route::get('/events','pagesController@events')->name('event');
@@ -68,3 +69,4 @@ Route::prefix('lms')->middleware('auth')->group(function(){
 
 
 Route::post('/trail_form','DashboardController@trail_form')->name('trail_form');
+

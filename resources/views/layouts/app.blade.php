@@ -145,7 +145,7 @@
 											<a href="{{ route('fee.strcture') }}">Fee Structure </a>
 										</li>
 										<li>
-											<a href="{{ route('workshops.event') }}"> Workshops </a>
+											<a href="{{ route('event') }}"> Workshops </a>
 										</li>
 										<li>
 											<a href="{{ route('new.schedule') }}">Schedule </a>
@@ -176,7 +176,7 @@
 					<a href="{{route('fee.strcture')}}">Fee Structure</a>
 				</li>
 				<li>
-					<a href="{{route('workshops.event')}}">Workshop</a>
+					<a href="{{route('event')}}">Workshop</a>
 				</li>
 				<li>
 					<a href="{{route('new.schedule')}}">Schedule</a>
@@ -259,7 +259,7 @@
 							<li><a href="{{ route('terms')}}">Terms and Conditions</a></li>
 							<li><a href="{{ route('about')}}">About Us</a></li>
 							<li><a href="{{ route('contact')}}">Contact Us</a></li>
-							<li><a href="{{ route('teacher_admission')}}">Become an Instructor</a></li>
+							<li><a href="{{ route('softwares')}}">Softwares</a></li>
 						</ul>
 					</div><!-- end footer-item -->
 				</div><!-- end col-lg-3 -->
