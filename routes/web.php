@@ -46,6 +46,7 @@ Route::get('/event/{id}','pagesController@singleevent')->name('singleevent');
 Route::get('/softwares','pagesController@software')->name('softwares');
 Route::get('/software/{slug}','pagesController@singlesoftware')->name('singlesoftwares');
 Route::post('/subscriber','pagescontroller@subscriber')->name('subscriber');
+Route::get('/category/{id}','pagesController@category')->name('category.search');
 Route::get('email',function(){
     return view('email');
 });
