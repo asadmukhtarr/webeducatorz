@@ -51,10 +51,10 @@ Route::get('email',function(){
 });
 
 
-Route::get('/login','logincontroller@login')->name('login');
-Route::get('/dashboard','logincontroller@dashboard')->name('dashboard');
-Route::post('/login','logincontroller@authlogin')->name('authlogin');
-Route::post('/logout','logincontroller@logout')->name('logout');
+Route::get('/login','loginController@login')->name('login');
+Route::get('/dashboard','loginController@dashboard')->name('dashboard');
+Route::post('/login','loginController@authlogin')->name('authlogin');
+Route::post('/logout','loginController@logout')->name('logout');
 
 
 Route::get('/profile','DashboardController@profile')->name('profile');
