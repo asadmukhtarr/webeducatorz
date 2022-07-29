@@ -256,7 +256,7 @@
 											<a href="{{ route('fee.strcture') }}">Fee Structure </a>
 										</li>
 										<li>
-											<a href="{{ route('workshops.event') }}"> Workshops </a>
+											<a href="{{ route('event') }}"> Workshops </a>
 										</li>
 										<li>
 											<a href="{{ route('new.schedule') }}">Schedule </a>
@@ -287,7 +287,7 @@
 					<a href="{{route('fee.strcture')}}">Fee Structure</a>
 				</li>
 				<li>
-					<a href="{{route('workshops.event')}}">Workshop</a>
+					<a href="{{route('event')}}">Workshop</a>
 				</li>
 				<li>
 					<a href="{{route('new.schedule')}}">Schedule</a>

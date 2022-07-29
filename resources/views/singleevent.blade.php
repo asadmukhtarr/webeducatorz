@@ -99,7 +99,7 @@
                             </div><!-- end preview-course-video -->
                             <div class="preview-course-feature-content pt-40px">
                                 <p class="d-flex align-items-center pb-2">
-                                    <span class="fs-35 font-weight-semi-bold text-black"> Category: {{ ucfirst($sevent->category->category) }}</span>
+                                    <span class="fs-35 font-weight-semi-bold text-black" style="line-height: 40px;"> Category: {{ ucfirst($sevent->category->category) }}</span>
                                 </p>
                                 {{-- <div class="buy-course-btn-box">
                                     <a href="{{ route('apply.online') }}">
