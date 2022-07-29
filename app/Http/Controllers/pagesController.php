@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\blog;
 use App\Models\category;
 use App\Models\workshop;
+use App\Models\course;
 use App\Models\subscriber;
 use stdClass;
 use App\Models\general;
