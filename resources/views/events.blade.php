@@ -11,7 +11,7 @@
             <div class="col-lg-4 responsive-column-half">
                 <div class="card card-item card-preview" data-tooltip-content="#tooltip_content_{{ $event->id }}">
                     <div class="card-image">
-                        <a href="course-details.html" class="d-block">
+                        <a href="{{ route('singleevent',$event->id) }}" class="d-block">
                             <img class="card-img-top lazy" src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" data-src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" alt="Card image cap">
                         </a>
                         <div class="course-badge-labels">
@@ -20,8 +20,6 @@
                     </div><!-- end card-image -->
                     <div class="card-body">
                         <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}">{{ ucfirst($event->title) }}</a></h5>
-                        <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Duration: {{ $event->start }} - {{ $event->end }}</a></p>
-                        <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Type: {{ $event->type }}</a></p>
                         <p class="card-text"><a href="{{ route('singleevent',$event->id) }}"> Date: {{ $event->date }}</a></p>
                     </div><!-- end card-body -->
                 </div><!-- end card -->
