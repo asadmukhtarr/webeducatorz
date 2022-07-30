@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TrailForm;
+use App\Models\general;
 use Auth;
 
 class DashboardController extends Controller
