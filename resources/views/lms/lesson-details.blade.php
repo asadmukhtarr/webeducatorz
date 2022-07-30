@@ -148,8 +148,6 @@
                             <div class="card">
                                 <div class="card-header" id="headingOne">
                                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <i class="la la-angle-down"></i>
-                                        <i class="la la-angle-up"></i>
                                         <span class="fs-15"> Section 1: Dive in and Discover After Effects</span>
                                     </button>
                                 </div><!-- end card-header -->
