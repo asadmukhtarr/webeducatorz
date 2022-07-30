@@ -12,21 +12,6 @@
             <i class="la la-bars mr-1"></i> Dashboard Nav
         </div>
         <div class="container-fluid">
-            <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between mb-5">
-                <div class="media media-card align-items-center">
-                    <div class="media-img media--img media-img-md rounded-full">
-                    @if(!empty(Auth::user()->thumbnail))
-                     <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Student thumbnail image">
-                    @else
-                    <img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-full" > 
-                    @endif
-                    </div>
-                    <div class="media-body">
-                        <h2 class="section__title fs-30">{{ ucfirst(Auth::user()->name) }}</h2>
-                    </div><!-- end media-body -->
-                </div><!-- end media -->
-            </div><!-- end breadcrumb-content -->
-            <div class="section-block mb-5"></div>
             <div class="dashboard-heading mb-5">
                 <h3 class="fs-22 font-weight-semi-bold">Dashboard</h3>
             </div>
