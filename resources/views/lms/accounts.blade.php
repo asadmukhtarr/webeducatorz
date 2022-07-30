@@ -201,6 +201,15 @@
                                     <th>Pending</th>
                                 </tr>
                             </thead>
+                            @foreach($accounts as $account)
+                                <tr>
+                                    <td>jkl;</td>
+                                    <td>Batch</td>
+                                    <td>Roll Number</td>
+                                    <td>{{ $account->paid }}</td>
+                                    <td>Pending</td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div><!-- end tab-pane -->

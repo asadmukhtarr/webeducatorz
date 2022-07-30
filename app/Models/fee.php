@@ -16,7 +16,7 @@ class fee extends Model
         return $this->hasMany(instalment::class);
 
     }
-    
+
     public function student(){
         return $this->belongsTo('App\Models\student','student_id');
     }
