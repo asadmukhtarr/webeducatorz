@@ -22,10 +22,6 @@ class DashboardController extends Controller
         return view('lms.enrolled_courses',compact('courses'));
     }
 
-    public function lessondetails($id){
-        return view('lms.lesson-details');
-    }
-
     public function newadmissions(){
         return view('lms.new_admissions');
     }
