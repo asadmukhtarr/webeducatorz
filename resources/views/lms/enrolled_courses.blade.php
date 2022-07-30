@@ -40,7 +40,8 @@
                                     </div><!-- end card-image -->
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
-                                        <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a><span>, Software Engineer and Developer</span></p>
+                                        <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p>
+                                        <button class="btn btn-danger"> <i class="la la-arrow-right"></i> Lectures</button>
                                     </div><!-- end card-body -->
                                 </div><!-- end card -->
                             </div>
