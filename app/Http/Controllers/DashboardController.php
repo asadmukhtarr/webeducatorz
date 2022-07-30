@@ -28,7 +28,7 @@ class DashboardController extends Controller
     public function lessondetails($id){
         $meta = general::find(1);
         $lectures = Lecture::where('badge_id',$id)->get();
-        $courses = badge::where('id',$id)->course;
+        $courses = badge::find($id)->course;
         return $courses;
         return view('lms.lesson-details', compact('meta','lectures'));
     }
