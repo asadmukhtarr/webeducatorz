@@ -35,12 +35,12 @@
                                 <div class="card card-item">
                                     <div class="card-image">
                                         <a href="lesson-details.html" class="d-block">
-                                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $c->picture }}" alt="Card image cap" />
+                                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $c->thumbnail }}" alt="Card image cap" />
                                         </a>
                                     </div><!-- end card-image -->
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
-                                        <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p>
+                                        <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p> <br />
                                         <button class="btn btn-danger"> <i class="la la-arrow-right"></i> Lectures</button>
                                     </div><!-- end card-body -->
                                 </div><!-- end card -->
