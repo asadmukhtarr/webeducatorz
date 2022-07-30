@@ -255,6 +255,7 @@
                                                             <img class="rounded-full img-fluid" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
                                                             @else
                                                             <img class="rounded-full img-fluid" src="{{ asset('public/img/demo.jpg') }}" alt="Avatar image">
+                                                            @endif
                                                         </div>
                                                         <span class="dot-status bg-1"></span>
                                                     </div>
