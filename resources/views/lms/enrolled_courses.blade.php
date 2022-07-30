@@ -32,7 +32,7 @@
                                 $c = App\Models\course::find($course->course_id);
                                 $b = App\Models\badge::find($course->badge_id);
                             @endphp
-                            @if($b->status == 0 && $b->status == 1)    
+                            @if($b->status == 0 || $b->status == 1)    
                                 <div class="col-lg-4 responsive-column-half">
                                     <div class="card card-item">
                                         <div class="card-image">
