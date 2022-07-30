@@ -122,4 +122,10 @@ class pagesController extends Controller
            $categories = category::all();
         return view('post',compact('post','posts','meta','categories'));
        }
+       
+       public function category($id){
+        $courses = course::where('category_id',$id)->get();
+        $meta = general::find(1);
+        return view('courses',compact('courses','meta'));
+       }
 }
