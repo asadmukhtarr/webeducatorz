@@ -29,7 +29,7 @@
                     <div class="row">
                         @foreach($courses as $course)
                             @php
-                                $c = App\Models\course::where('badge_id',$course->badge_id)->get();
+                                $c = App\Models\course::find($course->course_id);
                             @endphp
                             <div class="col-lg-4 responsive-column-half">
                                 <div class="card card-item">
