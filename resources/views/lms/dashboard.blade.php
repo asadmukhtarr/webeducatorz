@@ -18,7 +18,7 @@
                     @if(!empty(Auth::user()->thumbnail))
                      <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Student thumbnail image">
                     @else
-                    <img alt="image" src="{{ asset('img/demo.jpg') }}" class="rounded-full" > 
+                    <img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-full" > 
                     @endif
                         
                     </div>

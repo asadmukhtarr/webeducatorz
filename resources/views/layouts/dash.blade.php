@@ -261,8 +261,12 @@
                                                     </div>
                                                     <ul class="cart-dropdown-menu after-none p-0 notification-dropdown-menu">
                                                         <li class="menu-heading-block d-flex align-items-center">
-                                                            <a href="teacher-detail.html" class="avatar-sm flex-shrink-0 d-block">
-                                                                <img class="rounded-full img-fluid" src="images/small-avatar-1.jpg" alt="Avatar image">
+                                                            <a href="#" class="avatar-sm flex-shrink-0 d-block">
+                                                                @if(!empty(Auth::user()->thumbnail))
+                                                            <img class="rounded-full img-fluid" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
+                                                            @else
+                                                            <img class="rounded-full img-fluid" src="{{ asset('public/img/demo.jpg') }}" alt="Avatar image">
+                                                            @endif
                                                             </a>
                                                             <div class="ml-2">
                                                                 <h4><a href="teacher-detail.html" class="text-black">Alex Smith</a></h4>
