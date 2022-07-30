@@ -43,7 +43,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
                                             <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p> <br />
-                                            <button class="btn btn-danger" @if($b->status == 0) disabled @endif"> <i class="la la-arrow-right"></i> Lectures</button>
+                                            <a href="{{route('lesson-details',$c->id)}}" class="btn btn-danger" @if($b->status == 0) disabled @endif> <i class="la la-arrow-right"></i> Lectures</a>
                                         </div><!-- end card-body -->
                                     </div><!-- end card -->
                                 </div>

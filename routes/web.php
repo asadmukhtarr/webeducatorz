@@ -60,6 +60,7 @@ Route::prefix('lms')->middleware('auth')->group(function(){
     Route::get('/dashboard',"DashboardController@dashbaord")->name('dashboard');
     Route::get('/profile','DashboardController@profile')->name('profile');
     Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
+    Route::get('/lesson-details/{id}','DashboardController@lessondetails')->name('lesson-details');
     Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
     Route::get('/accounts','DashboardController@accounts')->name('accounts');
     Route::get('/workshop','DashboardController@workshops')->name('workshops');
