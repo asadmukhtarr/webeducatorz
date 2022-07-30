@@ -11,7 +11,7 @@
         <div class="dashboard-menu-toggler btn theme-btn theme-btn-sm lh-28 theme-btn-transparent mb-4 ml-3">
             <i class="la la-bars mr-1"></i> Dashboard Nav
         </div>
-        <div class="container-fluid">   
+        <div class="container-fluid"> 
             <ul class="nav nav-tabs generic-tab pb-30px" id="myTab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="active-course-tab" data-toggle="tab" href="#active-course" role="tab" aria-controls="active-course" aria-selected="true">
