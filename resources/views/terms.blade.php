@@ -97,9 +97,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-lg-10">
-            @include('sidebar.sidebar')
-        </div>
     </div>
 </div>
 @endsection
