@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TrailForm;
+use Auth;
 
 class DashboardController extends Controller
 {
@@ -17,6 +18,8 @@ class DashboardController extends Controller
     }
 
     public function enrolled_courses(){
+        $user =  Auth::user();
+        return $user;
         return view('lms.enrolled_courses');
     }
 
