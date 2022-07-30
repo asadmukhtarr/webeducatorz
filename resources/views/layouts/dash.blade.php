@@ -251,7 +251,10 @@
                                                 <li>
                                                     <div class="shop-cart-btn">
                                                         <div class="avatar-xs">
-                                                            <img class="rounded-full img-fluid" src="images/small-avatar-1.jpg" alt="Avatar image">
+                                                            @if(!empty(Auth::user()->thumbnail))
+                                                            <img class="rounded-full img-fluid" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
+                                                            @else
+                                                            <img class="rounded-full img-fluid" src="{{ asset('public/img/demo.jpg') }}" alt="Avatar image">
                                                         </div>
                                                         <span class="dot-status bg-1"></span>
                                                     </div>
