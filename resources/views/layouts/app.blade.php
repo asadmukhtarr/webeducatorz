@@ -97,7 +97,7 @@
 					<div class="row align-items-center">
 						<div class="col-lg-2">
 							<div class="logo-box">
-								<a href="{{ route('home') }}" class="logo"><img src="{{ asset('img/svg-logo.svg') }}" width="250px" alt="logo"></a>
+								<a href="{{ route('home') }}" class="logo"><img src="{{ asset('img/logo.gif') }}" width="250px" alt="logo"></a>
 								<div class="user-btn-action">
 									<div class="search-menu-toggle icon-element icon-element-sm shadow-sm mr-2" data-toggle="tooltip" data-placement="top" title="Search">
 										<i class="la la-search"></i>
