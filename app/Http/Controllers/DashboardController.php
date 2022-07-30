@@ -18,8 +18,8 @@ class DashboardController extends Controller
     }
 
     public function enrolled_courses(){
-        $user =  Auth::user()->student;
-        return $user;
+        $student =  Auth::user()->student->enrollment;
+        return $student;
         return view('lms.enrolled_courses');
     }
 
