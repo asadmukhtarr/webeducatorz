@@ -76,7 +76,7 @@
                 </div><!-- end course-dashboard-header-title -->
                 <div class="menu-wrapper ml-auto">
                     <div class="nav-right-button d-flex align-items-center">
-                        <a href="{{route('dashboard')}}" class="btn theme-btn theme-btn-sm theme-btn-transparent lh-26 text-white mr-2" data-toggle="modal" data-target="#ratingModal"> Back to Home</a>
+                        <a href="{{route('dashboard')}}" class="btn theme-btn theme-btn-sm theme-btn-transparent lh-26 text-white mr-2"> Back to Home</a>
                     </div><!-- end nav-right-button -->
                 </div><!-- end menu-wrapper -->
             </div><!-- end row -->
