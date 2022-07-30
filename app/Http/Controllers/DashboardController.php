@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TrailForm;
 use App\Models\general;
+use App\Models\Lecture;
 use Auth;
 
 class DashboardController extends Controller
@@ -25,6 +26,8 @@ class DashboardController extends Controller
 
     public function lessondetails($id){
         $meta = general::find(1);
+        $lecture = Lecture::where('badge_id',$id)->get();
+        return $lecture;
         return view('lms.lesson-details', compact('meta'));
     }
 
