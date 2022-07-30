@@ -38,7 +38,7 @@ class DashboardController extends Controller
     }
 
     public function accounts(){
-        $accounts = Auth::user()->student;
+        $accounts = Auth::user()->student->fee;
         return view('lms.accounts', compact('accounts'));
     }
 

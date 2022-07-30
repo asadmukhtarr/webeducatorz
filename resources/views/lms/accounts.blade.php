@@ -206,8 +206,8 @@
                                     <td>jkl;</td>
                                     <td>Batch</td>
                                     <td>Roll Number</td>
-                                    <td>{{ $account->paid }}</td>
-                                    <td>Pending</td>
+                                    <td>Rs {{ $account->paid }}</td>
+                                    <td>Rs {{ $account->paid }}</td>
                                 </tr>
                             @endforeach
                         </table>
