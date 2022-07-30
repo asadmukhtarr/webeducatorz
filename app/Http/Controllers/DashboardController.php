@@ -23,7 +23,8 @@ class DashboardController extends Controller
     }
 
     public function lessondetails($id){
-        return view('lms.lesson-details');
+        $meta = general::find(1);
+        return view('lms.lesson-details', compact('meta'));
     }
 
     public function newadmissions(){
