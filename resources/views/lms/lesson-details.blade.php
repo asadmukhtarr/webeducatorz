@@ -1,4 +1,3 @@
-@extends('layouts.dash')
 @section('title','Skillinsiderz')
 @section('content')
 
