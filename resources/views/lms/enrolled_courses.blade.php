@@ -30,39 +30,51 @@
                         @foreach($courses as $course)
                             @php
                                 $c = App\Models\course::find($course->course_id);
+                                $b = App\Models\badge::find($course->badge_id);
                             @endphp
-                            <div class="col-lg-4 responsive-column-half">
-                                <div class="card card-item">
-                                    <div class="card-image">
-                                        <a href="lesson-details.html" class="d-block">
-                                            <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $c->thumbnail }}" alt="Card image cap" />
-                                        </a>
-                                    </div><!-- end card-image -->
-                                    <div class="card-body">
-                                        <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
-                                        <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p> <br />
-                                        <button class="btn btn-danger"> <i class="la la-arrow-right"></i> Lectures</button>
-                                    </div><!-- end card-body -->
-                                </div><!-- end card -->
-                            </div>
+                            @if($b->status == 0 && $b->status == 1)    
+                                <div class="col-lg-4 responsive-column-half">
+                                    <div class="card card-item">
+                                        <div class="card-image">
+                                            <a href="lesson-details.html" class="d-block">
+                                                <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $c->thumbnail }}" alt="Card image cap" />
+                                            </a>
+                                        </div><!-- end card-image -->
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
+                                            <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p> <br />
+                                            <button class="btn btn-danger"> <i class="la la-arrow-right"></i> Lectures</button>
+                                        </div><!-- end card-body -->
+                                    </div><!-- end card -->
+                                </div>
+                            @endif
                         @endforeach
                     </div><!-- end row -->
                 </div><!-- end tab-pane -->
                 <div class="tab-pane fade" id="completed-course" role="tabpanel" aria-labelledby="completed-course-tab">
                     <div class="row">
-                    <div class="col-lg-4 responsive-column-half">
-                            <div class="card card-item">
-                                <div class="card-image">
-                                    <a href="lesson-details.html" class="d-block">
-                                        <img class="card-img-top" src="images/img9.jpg" alt="Card image cap" />
-                                    </a>
-                                </div><!-- end card-image -->
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="lesson-details.html">Complete Microsoft SQL Server 2021 for Everyone</a></h5>
-                                    <p class="card-text lh-22 pt-2"><a href="teacher-detail.html">Jose Portilla</a><span>, Software Engineer and Developer</span></p>
-                                </div><!-- end card-body -->
-                            </div><!-- end card -->
-                        </div><!-- end col-lg-4 -->
+                        @foreach($courses as $course)
+                            @php
+                                $c = App\Models\course::find($course->course_id);
+                                $b = App\Models\badge::find($course->badge_id);
+                            @endphp
+                            @if($b->status == 2)    
+                                <div class="col-lg-4 responsive-column-half">
+                                    <div class="card card-item">
+                                        <div class="card-image">
+                                            <a href="lesson-details.html" class="d-block">
+                                                <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $c->thumbnail }}" alt="Card image cap" />
+                                            </a>
+                                        </div><!-- end card-image -->
+                                        <div class="card-body">
+                                            <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
+                                            <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p> <br />
+                                            <button class="btn btn-danger"> <i class="la la-arrow-right"></i> Lectures</button>
+                                        </div><!-- end card-body -->
+                                    </div><!-- end card -->
+                                </div>
+                            @endif
+                        @endforeach
                     </div><!-- end row -->
                 </div><!-- end tab-pane -->
             </div><!-- end tab-content -->
