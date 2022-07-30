@@ -25,7 +25,7 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade  show" id="active-course" role="tabpanel" aria-labelledby="active-course-tab">
+                <div class="tab-pane fade active show" id="active-course" role="tabpanel" aria-labelledby="active-course-tab">
                     <div class="row">
                         <div class="col-lg-4 responsive-column-half">
                             <div class="card card-item">
