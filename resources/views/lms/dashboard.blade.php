@@ -20,7 +20,6 @@
                     @else
                     <img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-full" > 
                     @endif
-                        
                     </div>
                     <div class="media-body">
                         <h2 class="section__title fs-30">{{ ucfirst(Auth::user()->name) }}</h2>

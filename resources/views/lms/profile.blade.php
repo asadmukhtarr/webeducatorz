@@ -15,10 +15,14 @@
             <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between mb-5">
                 <div class="media media-card align-items-center">
                     <div class="media-img media--img media-img-md rounded-full">
-                        <img class="rounded-full" src="images/small-avatar-1.jpg" alt="Student thumbnail image">
+                        @if(!empty(Auth::user()->thumbnail))
+                            <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Student thumbnail image">
+                        @else
+                            <img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-full" > 
+                        @endif
                     </div>
                     <div class="media-body">
-                        <h2 class="section__title fs-30">Howdy, Tim Buchalka</h2>
+                        <h2 class="section__title fs-30">{{ Auth::user()->name }}</h2>
                         <div class="rating-wrap d-flex align-items-center pt-2">
                             <div class="review-stars">
                                 <span class="rating-number">4.4</span>
@@ -32,10 +36,6 @@
                         </div><!-- end rating-wrap -->
                     </div><!-- end media-body -->
                 </div><!-- end media -->
-                <div class="file-upload-wrap file-upload-wrap-2 file--upload-wrap">
-                    <input type="file" name="files[]" class="multi file-upload-input">
-                    <span class="file-upload-text"><i class="la la-upload mr-2"></i>Upload a course</span>
-                </div><!-- file-upload-wrap -->
             </div><!-- end breadcrumb-content -->
             <div class="section-block mb-5"></div>
             <div class="dashboard-heading mb-5">
@@ -43,26 +43,24 @@
             </div>
             <div class="profile-detail mb-5">
                 <ul class="generic-list-item generic-list-item-flash">
-                    <li><span class="profile-name">Registration Date:</span><span class="profile-desc">Sat 20 Apr 2019, 03:50:30 AM</span></li>
-                    <li><span class="profile-name">First Name:</span><span class="profile-desc">Alex</span></li>
-                    <li><span class="profile-name">Last Name:</span><span class="profile-desc">Smith</span></li>
-                    <li><span class="profile-name">User Name:</span><span class="profile-desc">alex-admin</span></li>
-                    <li><span class="profile-name">Email:</span><span class="profile-desc">alexsmith@gmail.com</span></li>
-                    <li><span class="profile-name">Phone Number:</span><span class="profile-desc">(91) 7547 622250</span></li>
+                    <li><span class="profile-name">Registration Date:</span><span class="profile-desc">{{ Auth::user()->created_at }}</span></li>
+                    <li><span class="profile-name">Full Name:</span><span class="profile-desc">{{ Auth::user()->name }}</span></li>
+                    <li><span class="profile-name">Email:</span><span class="profile-desc">{{ Auth::user()->email }}</span></li>
+                    <li><span class="profile-name">Phone Number:</span><span class="profile-desc">{{ Auth::user()->phone }}</span></li>
                     <li>
                         <span class="profile-name">Bio:</span>
-                        <span class="profile-desc">Hello! I am a Alex Smith, Washington area graphic designer with over 6 years of graphic design experience. I specialize in designing infographics, icons, brochures, and flyers.</span>
+                        <span class="profile-desc">{{ Auth::user()->desrciption }}</span>
                     </li>
                 </ul>
             </div>
             <div class="row align-items-center dashboard-copyright-content pb-4">
                 <div class="col-lg-6">
-                    <p class="copy-desc">&copy; 2021 Aduca. All Rights Reserved. by <a href="https://techydevs.com/">TechyDevs</a></p>
+                    <p class="copy-desc">&copy; 2022 webeducatorz. All Rights Reserved. by <a href="https://webeducatorz.com/">webeducatorz</a></p>
                 </div><!-- end col-lg-6 -->
                 <div class="col-lg-6">
                     <ul class="generic-list-item d-flex flex-wrap align-items-center fs-14 justify-content-end">
-                        <li class="mr-3"><a href="terms-and-conditions.html">Terms & Conditions</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li class="mr-3"><a href="{{route('terms')}}">Terms & Conditions</a></li>
+                        <li><a href="{{route('privacy')}}">Privacy Policy</a></li>
                     </ul>
                 </div><!-- end col-lg-6 -->
             </div><!-- end row -->
