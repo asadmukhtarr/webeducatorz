@@ -18,7 +18,7 @@
                     @if(!empty(Auth::user()->thumbnail))
                      <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Student thumbnail image">
                     @else
-                    <img alt="image" src="{{ asset('img/demo.jpg') }}" class="rounded-full" > 
+                    <img alt="image" src="{{ asset('img/demo.jpg') }}" alt="Student thumbnail image" class="rounded-full" > 
                     @endif
                         
                     </div>
@@ -28,9 +28,6 @@
                 </div><!-- end media -->
             </div><!-- end breadcrumb-content -->
             <div class="section-block mb-5"></div>
-            <div class="dashboard-heading mb-5">
-                <h3 class="fs-22 font-weight-semi-bold">Dashboard</h3>
-            </div>
             <div class="row">
                 <div class="col-lg-4 responsive-column-half">
                     <div class="card card-item dashboard-info-card">
