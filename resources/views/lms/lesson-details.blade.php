@@ -31,7 +31,11 @@
 	<!-- end inject -->
 </head>
 <body>
-
+<style>
+    .active {
+        background-color:#339BC5 !important;
+    }
+</style>
 <!-- start cssload-loader -->
 <div class="preloader">
     <div class="loader">
@@ -136,7 +140,8 @@
     $(document).ready(function(){
         $("[lec='video']").on("click",function(){
             var l = $(this).val();
-            alert(l);
+            $(this).removeClass('btn-link');
+            $(this).addClass('active');
             var c = "https://www.youtube.com/embed/"+l;
             $("#lecvideo").attr('src',c);
 
