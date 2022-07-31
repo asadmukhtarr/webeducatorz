@@ -203,10 +203,10 @@
                             </thead>
                             @foreach($accounts as $account)
                                 <tr>
-                                    <td>{{ $account->course }}</td>
+                                    <td>jkl;</td>
                                     <td>Batch</td>
                                     <td>Roll Number</td>
-                                    <td>Paid</td>
+                                    <td>{{ $account->paid }}</td>
                                     <td>Pending</td>
                                 </tr>
                             @endforeach
