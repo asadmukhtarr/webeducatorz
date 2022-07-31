@@ -76,10 +76,10 @@
                                 </svg>
                             </div>
                             @php
-                                $b = App\Models\badge::find($courses-id);
+                                $b = App\Models\badge::find($courses->badge_id);
                             @endphp
                             <div class="pl-4">
-                                <p class="card-text fs-18">Active Courses</p>
+                                <p class="card-text fs-18">{{$b}}Active Courses</p>
                                 <h5 class="card-title pt-2 fs-26">5</h5>
                             </div>
                         </div><!-- end card-body -->
