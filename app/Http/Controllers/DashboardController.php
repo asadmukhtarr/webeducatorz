@@ -9,9 +9,9 @@ use App\Models\general;
 use App\Models\Lecture;
 use App\Models\badge;
 use App\Models\workshop;
+use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic;
 
 class DashboardController extends Controller
 {
@@ -86,11 +86,11 @@ class DashboardController extends Controller
     }
 
     public function update_user(Request $request,$id){
-        $imageName = time().'.'. $request->image->extension();
-        $img = ImageManagerStatic::make($request->image)->encode('jpg');
-        Storage::disk('public')->put($imageName, $img);
+        $imageName = time().'.'. $request->image->getClientOriginalName();
+        $file= $request->file('image');
+        Storage::disk('public')->put($imageName, $file);
 
-        $update = user::where('id',$id)->first();
+        $update = User::where('id',$id)->first();
         $update->thumbnail = $imageName;
         $update->name = $request->name;
         $update->email = $request->email;
