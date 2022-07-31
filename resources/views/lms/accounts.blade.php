@@ -102,7 +102,7 @@
                                                 </svg>
                                     </div>
                                     <div class="pl-4">
-                                        <p class="card-text fs-18">My Earning</p>
+                                        <p class="card-text fs-18">Paid Fee</p>
                                         <h5 class="card-title pt-2 fs-26">255.30</h5>
                                     </div>
                                 </div><!-- end card-body -->
@@ -183,7 +183,7 @@
                                                 </svg>
                                     </div>
                                     <div class="pl-4">
-                                        <p class="card-text fs-18">All time sales</p>
+                                        <p class="card-text fs-18">Total Fee</p>
                                         <h5 class="card-title pt-2 fs-26">504.10</h5>
                                     </div>
                                 </div><!-- end card-body -->

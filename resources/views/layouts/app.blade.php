@@ -81,7 +81,11 @@
 								</button>
 							</div>
 							<ul class="generic-list-item d-flex flex-wrap align-items-center fs-14 border-left border-left-gray pl-3 ml-3">
+								@guest
 								<li class="d-flex align-items-center pr-3 mr-3 border-right border-right-gray"><i class="la la-sign-in mr-1"></i><a href="{{ route('login') }}"> Login</a></li>
+								@else
+								<li class="d-flex align-items-center pr-3 mr-3 border-right border-right-gray"><i class="la la-sign-in mr-1"></i><a href="{{ route('dashboard') }}"> Dashboard</a></li>
+								@endguest
 								<li class="d-flex align-items-center pr-3 mr-3 border-right border-right-gray"><i class="la la-arrow-right mr-1"></i><a href="{{route('teacher_admission')}}"> Become an Instructor </a></li>
 								<li class="d-flex align-items-center"><i class="la la-arrow-right mr-1"></i><a href="sign-up.html"> Request For Trail</a></li>
 							</ul>
