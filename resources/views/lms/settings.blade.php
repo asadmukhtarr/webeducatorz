@@ -79,7 +79,7 @@
                         aria-labelledby="edit-profile-tab">
                         <div class="setting-body">
                             <h3 class="fs-17 font-weight-semi-bold pb-4">Edit Profile</h3>
-                            <form action="{{route('update_user'), Auth::user()->id}}" method="POST">
+                            <form action="{{route('update_user', Auth::user()->id)}}" method="POST">
                                 @csrf
                                 <div class="media media-card align-items-center">
                                     <div class="media-img media-img-lg mr-4 bg-gray">
