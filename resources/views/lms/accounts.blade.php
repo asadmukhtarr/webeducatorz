@@ -196,7 +196,6 @@
                                 <tr>
                                     <th>Course </th>
                                     <th>Batch</th>
-                                    <th>Roll Number</th>
                                     <th>Paid</th>
                                     <th>Pending</th>
                                 </tr>
@@ -205,7 +204,6 @@
                                 <tr>
                                     <td>{{ $account->course->title }}</td>
                                     <td>{{ $account->badge->code }}</td>
-                                    <td>{{ $account->student->enrollment->stuid }}</td>
                                     <td>Rs {{ $account->paid }}</td>
                                     <td>Rs {{ $account->pending }}</td>
                                 </tr>
