@@ -1,6 +1,46 @@
-@section('title','Skillinsiderz')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
 
+<!-- Mirrored from techydevs.com/demos/themes/html/aduca-demo/aduca/lesson-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Jul 2022 08:02:31 GMT -->
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="author" content="TechyDevs">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="description" content="{{ $meta->description }}">
+	<meta name="tags" content="{{ $meta->tags }}">
+	<title>{{ $meta->title }}</title>
+	<!-- Google fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+	<!-- Favicon -->
+	<link rel="icon" sizes="16x16" href="{{asset('images/favicon.png')}}">
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/line-awesome.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/fancybox.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animated-headline.css')}}">
+    <link rel="stylesheet" href="{{asset('css/plyr.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jquery-te-1.4.0.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+	<!-- end inject -->
+</head>
+<body>
+
+<!-- start cssload-loader -->
+<div class="preloader">
+    <div class="loader">
+        <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+    </div>
+</div>
+<!-- end cssload-loader -->
 
 <!--======================================
         START HEADER AREA
@@ -1512,4 +1552,207 @@
         END COURSE-DASHBOARD
 ======================================-->
 
-@endsection
+<!-- start scroll top -->
+<div id="scroll-top">
+    <i class="la la-arrow-up" title="Go top"></i>
+</div>
+<!-- end scroll top -->
+
+<!-- Modal -->
+<div class="modal fade modal-container" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="ratingModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-gray">
+                <div class="pr-2">
+                    <h5 class="modal-title fs-19 font-weight-semi-bold lh-24" id="ratingModalTitle">
+                        How would you rate this course?
+                    </h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la la-times"></span>
+                </button>
+            </div><!-- end modal-header -->
+            <div class="modal-body text-center py-5">
+                <div class="leave-rating mt-5">
+                    <input type="radio" name='rate' id="star5"/>
+                    <label for="star5" class="fs-45"></label>
+                    <input type="radio" name='rate' id="star4"/>
+                    <label for="star4" class="fs-45"></label>
+                    <input type="radio" name='rate' id="star3"/>
+                    <label for="star3" class="fs-45"></label>
+                    <input type="radio" name='rate' id="star2"/>
+                    <label for="star2" class="fs-45"></label>
+                    <input type="radio" name='rate' id="star1"/>
+                    <label for="star1" class="fs-45"></label>
+                    <div class="rating-result-text fs-20 pb-4"></div>
+                </div><!-- end leave-rating -->
+            </div><!-- end modal-body -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end modal -->
+
+<!-- Modal -->
+<div class="modal fade modal-container" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-gray">
+                <h5 class="modal-title fs-19 font-weight-semi-bold" id="shareModalTitle">Share this course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la la-times"></span>
+                </button>
+            </div><!-- end modal-header -->
+            <div class="modal-body">
+                <div class="copy-to-clipboard">
+                    <span class="success-message">Copied!</span>
+                    <div class="input-group">
+                        <input type="text" class="form-control form--control copy-input pl-3" value="https://www.aduca.com/share/101WxMB0oac1hVQQ==/">
+                        <div class="input-group-append">
+                            <button class="btn theme-btn theme-btn-sm copy-btn shadow-none"><i class="la la-copy mr-1"></i> Copy</button>
+                        </div>
+                    </div>
+                </div><!-- end copy-to-clipboard -->
+            </div><!-- end modal-body -->
+            <div class="modal-footer justify-content-center border-top-gray">
+                <ul class="social-icons social-icons-styled">
+                    <li><a href="#" class="facebook-bg"><i class="la la-facebook"></i></a></li>
+                    <li><a href="#" class="twitter-bg"><i class="la la-twitter"></i></a></li>
+                    <li><a href="#" class="instagram-bg"><i class="la la-instagram"></i></a></li>
+                </ul>
+            </div><!-- end modal-footer -->
+        </div><!-- end modal-content-->
+    </div><!-- end modal-dialog -->
+</div><!-- end modal -->
+
+<!-- Modal -->
+<div class="modal fade modal-container" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-gray">
+                <div class="pr-2">
+                    <h5 class="modal-title fs-19 font-weight-semi-bold lh-24" id="reportModalTitle">Report Abuse</h5>
+                    <p class="pt-1 fs-14 lh-24">Flagged content is reviewed by Aduca staff to determine whether it violates Terms of Service or Community Guidelines. If you have a question or technical issue, please contact our
+                        <a href="contact.html" class="text-color hover-underline">Support team here</a>.</p>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la la-times"></span>
+                </button>
+            </div><!-- end modal-header -->
+            <div class="modal-body">
+                <form method="post">
+                    <div class="input-box">
+                        <label class="label-text">Select Report Type</label>
+                        <div class="form-group">
+                            <div class="select-container w-auto">
+                                <select class="select-container-select">
+                                    <option value>-- Select One --</option>
+                                    <option value="1">Inappropriate Course Content</option>
+                                    <option value="2">Inappropriate Behavior</option>
+                                    <option value="3">Aduca Policy Violation</option>
+                                    <option value="4">Spammy Content</option>
+                                    <option value="5">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label class="label-text">Write Message</label>
+                        <div class="form-group">
+                            <textarea class="form-control form--control pl-3" name="message" placeholder="Provide additional details here..." rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="btn-box text-right pt-2">
+                        <button type="button" class="btn font-weight-medium mr-3" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn theme-btn theme-btn-sm lh-30">Submit <i class="la la-arrow-right icon ml-1"></i></button>
+                    </div>
+                </form>
+            </div><!-- end modal-body -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end modal -->
+
+<!-- Modal -->
+<div class="modal fade modal-container" id="insertLinkModal" tabindex="-1" role="dialog" aria-labelledby="insertLinkModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-gray">
+                <div class="pr-2">
+                    <h5 class="modal-title fs-19 font-weight-semi-bold lh-24" id="insertLinkModalTitle">Insert Link</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la la-times"></span>
+                </button>
+            </div><!-- end modal-header -->
+            <div class="modal-body">
+                <form action="#">
+                    <div class="input-box">
+                        <label class="label-text">URL</label>
+                        <div class="form-group">
+                            <input class="form-control form--control" type="text" name="text" placeholder="Url">
+                            <i class="la la-link input-icon"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label class="label-text">Text</label>
+                        <div class="form-group">
+                            <input class="form-control form--control" type="text" name="text" placeholder="Text">
+                            <i class="la la-pencil input-icon"></i>
+                        </div>
+                    </div>
+                    <div class="btn-box text-right pt-2">
+                        <button type="button" class="btn font-weight-medium mr-3" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn theme-btn theme-btn-sm lh-30">Insert <i class="la la-arrow-right icon ml-1"></i></button>
+                    </div>
+                </form>
+            </div><!-- end modal-body -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end modal -->
+
+<!-- Modal -->
+<div class="modal fade modal-container" id="uploadPhotoModal" tabindex="-1" role="dialog" aria-labelledby="uploadPhotoModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-gray">
+                <div class="pr-2">
+                    <h5 class="modal-title fs-19 font-weight-semi-bold lh-24" id="uploadPhotoModalTitle">Upload an Image</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="la la-times"></span>
+                </button>
+            </div><!-- end modal-header -->
+            <div class="modal-body">
+                <div class="file-upload-wrap">
+                    <input type="file" name="files[]" class="multi file-upload-input" multiple>
+                    <span class="file-upload-text"><i class="la la-upload mr-2"></i>Drop files here or click to upload</span>
+                </div><!-- file-upload-wrap -->
+                <div class="btn-box text-right pt-2">
+                    <button type="button" class="btn font-weight-medium mr-3" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn theme-btn theme-btn-sm lh-30">Submit <i class="la la-arrow-right icon ml-1"></i></button>
+                </div>
+            </div><!-- end modal-body -->
+        </div><!-- end modal-content -->
+    </div><!-- end modal-dialog -->
+</div><!-- end modal -->
+
+<!-- template js files -->
+<script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+<script src="{{asset('js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/isotope.js')}}"></script>
+<script src="{{asset('js/waypoint.min.js')}}"></script>
+<script src="{{asset('js/jquery.counterup.min.js')}}"></script>
+<script src="{{asset('js/fancybox.js')}}"></script>
+<script src="{{asset('js/plyr.js')}}"></script>
+<script src="{{asset('js/datedropper.min.js')}}"></script>
+<script src="{{asset('js/emojionearea.min.js')}}"></script>
+<script src="{{asset('js/jquery-te-1.4.0.min.js')}}"></script>
+<script src="{{asset('js/jquery.MultiFile.min.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
+<script>
+    var player = new Plyr('#player');
+</script>
+</body>
+
+<!-- Mirrored from techydevs.com/demos/themes/html/aduca-demo/aduca/lesson-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Jul 2022 08:02:34 GMT -->
+</html>

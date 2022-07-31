@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\TrailForm;
+use App\Models\general;
 use Auth;
 
 class DashboardController extends Controller
@@ -23,7 +24,8 @@ class DashboardController extends Controller
     }
 
     public function lessondetails($id){
-        return view('lms.lesson-details');
+        $meta = general::find(1);
+        return view('lms.lesson-details', compact('meta'));
     }
 
     public function newadmissions(){
