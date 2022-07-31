@@ -8,6 +8,7 @@ use App\Models\TrailForm;
 use App\Models\general;
 use App\Models\Lecture;
 use App\Models\badge;
+use App\Models\workshop;
 use Auth;
 
 class DashboardController extends Controller
@@ -42,11 +43,13 @@ class DashboardController extends Controller
     }
 
     public function workshops(){
-        return view('lms.workshops');
+        $events = workshop::orderBy('id','DESC')->get();
+        return view('lms.workshops', compact('events'));
     }
 
     public function feeds(){
-        return view('lms.feeds');
+        $events = workshop::orderBy('id','DESC')->get();
+        return view('lms.feeds', compact('events'));
     }
 
     public function Settings(){

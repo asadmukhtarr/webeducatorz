@@ -16,16 +16,19 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="all-course" role="tabpanel" aria-labelledby="all-course-tab">
                     <div class="row">
+                        @foreach ($events as $event)
+                            
+                        @endforeach
                         <div class="col-lg-4 responsive-column-half">
                             <div class="card card-item">
                                 <div class="card-image">
-                                    <a href="lesson-details.html" class="d-block">
-                                        <img class="card-img-top" src="images/img8.jpg" alt="Card image cap">
+                                    <a href="{{ route('singleevent',$event->id) }}" class="d-block">
+                                        <img class="card-img-top" src="https://management.webeducatorz.com/storage/app/public/{{ $event->thumbnail }}" alt="Card image cap">
                                     </a>
                                 </div><!-- end card-image -->
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="lesson-details.html">The Complete Full-Stack JavaScript Course!</a></h5>
-                                    <p class="card-text lh-22 pt-2"><a href="teacher-detail.html">Jose Portilla</a><span>, Software Engineer and Developer</span></p>
+                                    <h5 class="card-title"><a href="{{ route('singleevent',$event->id) }}"></a></h5>
+                                    <p class="card-text lh-22 pt-2"><a href="{{ route('singleevent',$event->id) }}"> Date: {{ $event->date }}</a></p>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
                         </div><!-- end col-lg-4 -->

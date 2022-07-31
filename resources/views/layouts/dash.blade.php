@@ -300,67 +300,23 @@
                                                         <li>
                                                             <ul class="generic-list-item">
                                                                 <li>
-                                                                    <a href="my-courses.html">
+                                                                    <a href="{{route('enrolled_courses')}}">
                                                                         <i class="la la-file-video-o mr-1"></i> My courses
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="shopping-cart.html">
-                                                                        <i class="la la-shopping-basket mr-1"></i> My cart
+                                                                    <a href="{{route('workshops')}}">
+                                                                        <i class="la la-bell mr-1"></i> Workshops
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="my-courses.html">
-                                                                        <i class="la la-heart-o mr-1"></i> My wishlist
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="section-block"></div>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="dashboard.html">
-                                                                        <i class="la la-bell mr-1"></i> Notifications
-                                                                        <span class="badge bg-info text-white ml-2 p-1">9+</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="dashboard-message.html">
-                                                                        <i class="la la-envelope mr-1"></i> Messages
-                                                                        <span class="badge bg-info text-white ml-2 p-1">12+</span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="section-block"></div>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="dashboard-settings.html">
+                                                                    <a href="{{route('settings')}}">
                                                                         <i class="la la-gear mr-1"></i> Settings
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="dashboard-purchase-history.html">
-                                                                        <i class="la la-history mr-1"></i> Purchase history
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="section-block"></div>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="student-detail.html">
-                                                                        <i class="la la-user mr-1"></i> Public profile
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="dashboard-settings.html">
-                                                                        <i class="la la-edit mr-1"></i> Edit profile
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <div class="section-block"></div>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#">
-                                                                        <i class="la la-question mr-1"></i> Help
+                                                                    <a href="{{route('profile')}}">
+                                                                        <i class="la la-user mr-1"></i> Profile
                                                                     </a>
                                                                 </li>
                                                                 <li>
@@ -377,9 +333,8 @@
                                                                     <div class="section-block"></div>
                                                                 </li>
                                                                 <li>
-                                                                    <a href="#" class="position-relative">
-                                                                        <span class="fs-17 font-weight-semi-bold d-block">Aduca for Business</span>
-                                                                        <span class="lh-20 d-block fs-14 text-gray">Bring learning to your company</span>
+                                                                    <a href="{{route('home')}}" class="position-relative">
+                                                                        <span class="fs-17 font-weight-semi-bold d-block">Web Educatorz</span>
                                                                         <span class="position-absolute top-0 right-0 mt-3 mr-3 fs-18 text-gray">
                                                                             <i class="la la-external-link"></i>
                                                                         </span>
