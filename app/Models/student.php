@@ -9,6 +9,7 @@ use App\Models\course;
 use App\Models\fee;
 class student extends Model
 {
+    protected $table = "students";
     use HasFactory;
     public function enrollment(){
 

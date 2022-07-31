@@ -9,7 +9,7 @@
    @include('layouts.sidbar')
     <div class="dashboard-content-wrap">
         <div class="dashboard-menu-toggler btn theme-btn theme-btn-sm lh-28 theme-btn-transparent mb-4 ml-3">
-            <i class="la la-bars mr-1"></i> Dashboard Nav
+            <i class="la la-bars mr-1"></i> Dashboard
         </div>
         <div class="container-fluid">
             <div class="dashboard-heading mb-5">

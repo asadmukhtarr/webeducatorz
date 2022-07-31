@@ -10,7 +10,8 @@ use App\Models\room;
 use App\Models\slot;
 use App\Models\enrollment;
 class badge extends Model
-{
+{   
+    protected $table = "badges";
     use HasFactory;
     public function course(){
         return $this->belongsTo(course::class);

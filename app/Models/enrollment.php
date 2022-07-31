@@ -8,7 +8,9 @@ use App\Models\course;
 use App\Models\student;
 class enrollment extends Model
 {
+    protected $table = "enrollments";
     use HasFactory;
+
     // course
     public function course(){
 
@@ -23,7 +25,7 @@ class enrollment extends Model
     // badge
     public function badge(){
 
-        return $this->belongsToMany(badge::class);
+        return $this->hasMany(badge::class);
 
     }
 }
