@@ -87,8 +87,9 @@ class DashboardController extends Controller
 
     public function update_user(Request $request,$id){
         $file= $request->file('image');
-        $filename= date('YmdHi').$file->getClientOriginalName();
-        Storage::disk('public')->put($filename, $file);
+        $filename= $file->getClientOriginalName();
+        $file->move('storage/app/public/',$filename);
+        // Storage::disk('public')->put($filename, $file);
 
         $update = User::where('id',$id)->first();
         $update->thumbnail = $filename;
