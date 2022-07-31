@@ -205,7 +205,7 @@
                                 <tr>
                                     <td>{{ $account->course->title }}</td>
                                     <td>{{ $account->badge->code }}</td>
-                                    <td>Roll Number</td>
+                                    <td>{{ $account->student->enrollment->stuid }}</td>
                                     <td>Rs {{ $account->paid }}</td>
                                     <td>Rs {{ $account->pending }}</td>
                                 </tr>
