@@ -123,7 +123,7 @@
 											<a href="#">Categories <i class="la la-angle-down fs-12"></i></a>
 											<ul class="cat-dropdown-menu">
 												@php
-												$cat = App\Models\Categories::all();
+												$cat = App\Models\category::all();
 												@endphp
 												@foreach ($cat as $item)
 												<li>
