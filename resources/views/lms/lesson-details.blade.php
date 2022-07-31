@@ -136,6 +136,7 @@
     $(document).ready(function(){
         $("#lecture").on("click",function(){
             var l = $(this).val();
+            alert(l);
             var c = "https://www.youtube.com/embed/"+l;
             $("#lecvideo").attr('src',c);
 
