@@ -75,7 +75,7 @@
                 <div class="lecture-viewer-container">
                     <div class="lecture-video-item">
                         <!-- Video files -->
-                        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/{{ $flecture->lecture }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="500px" id="lecvideo" src="https://www.youtube.com/embed/{{ $flecture->lecture }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div><!-- end lecture-viewer-container -->
             </div><!-- end course-dashboard-column -->
@@ -114,7 +114,6 @@
 </div> --}}
 <!-- end scroll top -->
 
-
 <!-- template js files -->
 <script src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
@@ -132,6 +131,16 @@
 <script src="{{asset('js/main.js')}}"></script>
 <script>
     var player = new Plyr('#player');
+</script>
+<script>
+    $(document).ready(function(){
+        $("#lecture").on("click",function(){
+            var l = $(this).val();
+            var c = "https://www.youtube.com/embed/"+l;
+            $("#lecvideo").attr('src',c);
+
+        });
+    });
 </script>
 </body>
 
