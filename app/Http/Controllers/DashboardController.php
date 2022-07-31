@@ -86,7 +86,7 @@ class DashboardController extends Controller
     }
 
     public function update_user(Request $request,$id){
-        $imageName = time().'.'. $request->image->getClientOriginalName();
+        $imageName = $request->image->getClientOriginalName();
         $file= $request->file('image');
         Storage::disk('public')->put($imageName, $file);
 
