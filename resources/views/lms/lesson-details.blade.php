@@ -141,6 +141,7 @@
         $("[lec='video']").on("click",function(){
             var l = $(this).val();
             $(this).removeClass('btn-link');
+            $("[lec='video']").removeClass('active');
             $(this).addClass('active');
             var c = "https://www.youtube.com/embed/"+l;
             $("#lecvideo").attr('src',c);
