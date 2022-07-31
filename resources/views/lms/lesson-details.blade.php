@@ -91,7 +91,7 @@
                             <div class="card">
                                 @foreach ($lectures as $lecture)
                                 <div class="card-header" id="headingOne">
-                                    <button class="btn btn-link" value="{{ $lecture->lecture }}" id="lecture" type="button">
+                                    <button class="btn btn-link" value="{{ $lecture->lecture }}" lec="video" type="button">
                                         <span class="fs-15">{{$lecture->title}}</span>
                                     </button>
                                 </div><!-- end card-header -->
@@ -134,7 +134,7 @@
 </script>
 <script>
     $(document).ready(function(){
-        $("#lecture").on("click",function(){
+        $("[lec='video']").on("click",function(){
             var l = $(this).val();
             alert(l);
             var c = "https://www.youtube.com/embed/"+l;
