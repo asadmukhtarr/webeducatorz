@@ -85,7 +85,7 @@
                                     <div class="media-img media-img-lg mr-4 bg-gray">
                                         @if (!empty(Auth::user()->thumbnail))
                                             <img class="rounded-full"
-                                                src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}"
+                                                src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}"
                                                 alt="Student thumbnail image">
                                         @else
                                             <img alt="image" src="{{ asset('public/img/demo.jpg') }}"
