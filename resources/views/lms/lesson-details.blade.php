@@ -75,7 +75,7 @@
                 <div class="lecture-viewer-container">
                     <div class="lecture-video-item">
                         <!-- Video files -->
-                        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/iYPMBoB_u5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/{{ $flecture->lecture }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div><!-- end lecture-viewer-container -->
             </div><!-- end course-dashboard-column -->
