@@ -190,6 +190,19 @@
                             </div><!-- end card -->
                         </div><!-- end col-lg-4 -->
                     </div><!-- end row -->
+                    <div class="row">
+                        <table class="table table-bordered tabler-hovered">
+                            <thead>
+                                <tr>
+                                    <th>Course </th>
+                                    <th>Batch</th>
+                                    <th>Roll Number</th>
+                                    <th>Paid</th>
+                                    <th>Pending</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div><!-- end tab-pane -->
             </div><!-- end tab-content -->
             <div class="row align-items-center dashboard-copyright-content pb-4">
