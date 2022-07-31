@@ -50,7 +50,7 @@
         <div class="container-fluid">
             <div class="main-menu-content d-flex align-items-center">
                 <div class="course-dashboard-header-title pl-4">
-                    <a href="#" class="text-white fs-15">Java Programming Masterclass for Software Developers</a>
+                    <a href="#" class="text-white fs-15">{{$course->title}}</a>
                 </div><!-- end course-dashboard-header-title -->
                 <div class="menu-wrapper ml-auto">
                     <div class="nav-right-button d-flex align-items-center">
@@ -97,11 +97,13 @@
                     <div class="course-dashboard-side-content">
                         <div class="accordion generic-accordion generic--accordion" id="accordionCourseExample">
                             <div class="card">
+                                @foreach ($lectures as $lecture)
                                 <div class="card-header" id="headingOne">
                                     <button class="btn btn-link" type="button">
-                                        <span class="fs-15"> Section 1: Dive in and Discover After Effects</span>
+                                        <span class="fs-15">{{$lecture->title}}</span>
                                     </button>
                                 </div><!-- end card-header -->
+                                @endforeach
                             </div><!-- end card -->
                         </div><!-- end accordion-->
                     </div><!-- end course-dashboard-side-content -->
