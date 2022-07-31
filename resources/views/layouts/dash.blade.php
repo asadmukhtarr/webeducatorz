@@ -334,7 +334,7 @@
                                                                 </li>
                                                                 <li>
                                                                     <a href="{{route('home')}}" class="position-relative">
-                                                                        <span class="fs-17 font-weight-semi-bold d-block m-3">Web Educatorz</span>
+                                                                        <span class="fs-17 font-weight-semi-bold d-block m-1">Web Educatorz</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
