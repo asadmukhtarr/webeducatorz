@@ -25,7 +25,7 @@ class enrollment extends Model
     // badge
     public function badge(){
 
-        return $this->hasMany(badge::class);
+        return $this->belongsToMany(badge::class);
 
     }
 }
