@@ -191,24 +191,26 @@
                         </div><!-- end col-lg-4 -->
                     </div><!-- end row -->
                     <div class="row">
-                        <table class="table table-bordered tabler-hovered">
-                            <thead>
-                                <tr>
-                                    <th>Course </th>
-                                    <th>Batch</th>
-                                    <th>Paid</th>
-                                    <th>Pending</th>
-                                </tr>
-                            </thead>
-                            @foreach($accounts as $account)
-                                <tr>
-                                    <td>{{ $account->course->title }}</td>
-                                    <td>{{ $account->badge->code }}</td>
-                                    <td>Rs {{ $account->paid }}</td>
-                                    <td>Rs {{ $account->pending }}</td>
-                                </tr>
-                            @endforeach
-                        </table>
+                        <div class="col-lg-12">
+                            <table class="table table-bordered tabler-hovered">
+                                <thead>
+                                    <tr>
+                                        <th>Course </th>
+                                        <th>Batch</th>
+                                        <th>Paid</th>
+                                        <th>Pending</th>
+                                    </tr>
+                                </thead>
+                                @foreach($accounts as $account)
+                                    <tr>
+                                        <td>{{ $account->course->title }}</td>
+                                        <td>{{ $account->badge->code }}</td>
+                                        <td>Rs {{ $account->paid }}</td>
+                                        <td>Rs {{ $account->pending }}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
                     </div>
                 </div><!-- end tab-pane -->
             </div><!-- end tab-content -->
