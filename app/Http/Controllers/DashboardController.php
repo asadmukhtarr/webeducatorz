@@ -18,7 +18,16 @@ class DashboardController extends Controller
     }
 
     public function dashbaord(){
-        return view('lms.dashboard');
+        $balance = Auth::user()->student->fee->sum('pending');
+        $paid = Auth::user()->student->fee->sum('paid');
+        $total = Auth::user()->student->fee->sum('total_amount');
+        $accounts = Auth::user()->student->fee;
+        $courses =  Auth::user()->student->enrollment;
+        $course = $courses->count();
+        $active =  Auth::user()->student->enrollment->badge->count();
+        return $course - $active ;
+
+        return view('lms.dashboard', compact('accounts','balance','paid','total'));
     }
 
     public function enrolled_courses(){
