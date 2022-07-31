@@ -74,10 +74,8 @@
             <div class="course-dashboard-column">
                 <div class="lecture-viewer-container">
                     <div class="lecture-video-item">
-                        <video controls crossorigin playsinline id="player">
-                            <!-- Video files -->
-                            <iframe width="100%" height="500px" src="https://www.youtube.com/embed/iYPMBoB_u5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </video>
+                        <!-- Video files -->
+                        <iframe width="100%" height="500px" src="https://www.youtube.com/embed/iYPMBoB_u5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div><!-- end lecture-viewer-container -->
             </div><!-- end course-dashboard-column -->
