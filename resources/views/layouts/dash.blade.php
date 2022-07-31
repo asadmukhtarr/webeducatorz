@@ -269,8 +269,8 @@
                                                                 @endif
                                                             </a>
                                                             <div class="ml-2">
-                                                                <h4><a href="teacher-detail.html" class="text-black">Alex Smith</a></h4>
-                                                                <span class="d-block fs-14 lh-20">alexsmith@example.com</span>
+                                                                <h4><a href="teacher-detail.html" class="text-black">{{Auth::user()->name}}</a></h4>
+                                                                <span class="d-block fs-14 lh-20">{{Auth::user()->email}}</span>
                                                             </div>
                                                         </li>
                                                         <li>
@@ -334,10 +334,7 @@
                                                                 </li>
                                                                 <li>
                                                                     <a href="{{route('home')}}" class="position-relative">
-                                                                        <span class="fs-17 font-weight-semi-bold d-block">Web Educatorz</span>
-                                                                        <span class="position-absolute top-0 right-0 mt-3 mr-3 fs-18 text-gray">
-                                                                            <i class="la la-external-link"></i>
-                                                                        </span>
+                                                                        <span class="fs-17 font-weight-semi-bold d-block m-3">Web Educatorz</span>
                                                                     </a>
                                                                 </li>
                                                             </ul>
