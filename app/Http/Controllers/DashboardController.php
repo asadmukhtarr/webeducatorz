@@ -38,7 +38,9 @@ class DashboardController extends Controller
     }
 
     public function accounts(){
+        $balance = Auth::user()->student->fee->sum('pending');
         $accounts = Auth::user()->student->fee;
+        return $balance;
         return view('lms.accounts', compact('accounts'));
     }
 
