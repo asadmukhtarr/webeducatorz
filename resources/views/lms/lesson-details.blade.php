@@ -91,7 +91,7 @@
                             <div class="card">
                                 @foreach ($lectures as $lecture)
                                 <div class="card-header" id="headingOne">
-                                    <button class="btn btn-link" type="button">
+                                    <button class="btn btn-link" value="{{ $lecture->lecture }}" id="lecture" type="button">
                                         <span class="fs-15">{{$lecture->title}}</span>
                                     </button>
                                 </div><!-- end card-header -->
