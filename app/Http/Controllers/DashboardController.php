@@ -39,9 +39,10 @@ class DashboardController extends Controller
 
     public function accounts(){
         $balance = Auth::user()->student->fee->sum('pending');
+        $paid = Auth::user()->student->fee->sum('paid');
+        $total = Auth::user()->student->fee->sum('total_amount');
         $accounts = Auth::user()->student->fee;
-        return $balance;
-        return view('lms.accounts', compact('accounts'));
+        return view('lms.accounts', compact('accounts','balance','paid','total'));
     }
 
     public function workshops(){

@@ -25,7 +25,7 @@
                                     </div>
                                     <div class="pl-4">
                                         <p class="card-text fs-18">My Balance</p>
-                                        <h5 class="card-title pt-2 fs-26">120.20</h5>
+                                        <h5 class="card-title pt-2 fs-26">Rs {{ $balance }}</h5>
                                     </div>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="pl-4">
                                         <p class="card-text fs-18">Paid Fee</p>
-                                        <h5 class="card-title pt-2 fs-26">255.30</h5>
+                                        <h5 class="card-title pt-2 fs-26">Rs {{ $paid }}</h5>
                                     </div>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
@@ -184,7 +184,7 @@
                                     </div>
                                     <div class="pl-4">
                                         <p class="card-text fs-18">Total Fee</p>
-                                        <h5 class="card-title pt-2 fs-26">504.10</h5>
+                                        <h5 class="card-title pt-2 fs-26">Rs {{ $total }}</h5>
                                     </div>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
