@@ -82,4 +82,8 @@ class DashboardController extends Controller
         $sendmsg->subject = $request->subject;
         $sendmsg->save();
     }
+
+    public function update_user(Request $request,$id){
+        return $request;
+    }
 }
