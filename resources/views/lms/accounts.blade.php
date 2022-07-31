@@ -206,7 +206,7 @@
                                     <td>jkl;</td>
                                     <td>Batch</td>
                                     <td>Roll Number</td>
-                                    <td>{{ $account->paid }}</td>
+                                    <td>Paid</td>
                                     <td>Pending</td>
                                 </tr>
                             @endforeach
