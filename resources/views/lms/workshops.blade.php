@@ -18,7 +18,6 @@
                     <div class="row">
                         @foreach ($events as $event)
                             
-                        @endforeach
                         <div class="col-lg-4 responsive-column-half">
                             <div class="card card-item">
                                 <div class="card-image">
@@ -33,6 +32,7 @@
                             </div><!-- end card -->
                         </div><!-- end col-lg-4 -->
                        
+                        @endforeach
                     </div><!-- end row -->
                 </div><!-- end tab-pane -->
                 
