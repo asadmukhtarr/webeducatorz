@@ -84,10 +84,10 @@ class DashboardController extends Controller
     }
 
     public function update_user(Request $request,$id){
-        $imageName = time().'.'.$request->image->extension();
+        $imageName = time().'.'. $request->image->extension();
         $img = ImageManagerStatic::make($request->image)->encode('jpg');
         Storage::disk('public')->put($imageName, $img);
-        
+
         $update = user::where('id',$id)->first();
         $update->thumbnail = $imageName;
         $update->name = $request->name;
