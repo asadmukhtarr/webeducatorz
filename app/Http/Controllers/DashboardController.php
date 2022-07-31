@@ -10,6 +10,8 @@ use App\Models\Lecture;
 use App\Models\badge;
 use App\Models\workshop;
 use Auth;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic;
 
 class DashboardController extends Controller
 {
