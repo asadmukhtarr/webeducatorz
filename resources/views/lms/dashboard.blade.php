@@ -77,8 +77,8 @@
                             </div>
                             @foreach ($courses as $item)
                             @php
-                                $b = App\Models\badge::find($courses->badge_id);
-                            @endphp     
+                                $b = App\Models\badge::find($item->badge_id);
+                            @endphp    
                             @endforeach
                             
                             <div class="pl-4">
