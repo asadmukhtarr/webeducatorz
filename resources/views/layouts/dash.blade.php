@@ -554,15 +554,6 @@
     <script src="{{asset('js/animated-skills.js')}}"></script>
     <script src="{{asset('js/jquery.MultiFile.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
-
-    <script>
-        $(document).ready(function(){
-            $("[add='change']").on("click",function(){
-                $("[add='change']").addClass("page-active");
-            });
-        });
-    </script>
-
 </body>
 
 <!-- Mirrored from techydevs.com/demos/themes/html/aduca-demo/aduca/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 24 Jul 2022 08:02:48 GMT -->
