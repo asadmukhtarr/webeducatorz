@@ -8,6 +8,7 @@ use App\Models\TrailForm;
 use App\Models\general;
 use App\Models\Lecture;
 use App\Models\badge;
+use App\Models\student;
 use App\Models\workshop;
 use App\Models\User;
 use Auth;
@@ -89,15 +90,21 @@ class DashboardController extends Controller
         $file= $request->file('image');
         $filename= $file->getClientOriginalName();
         $file->move('storage/app/public/',$filename);
-        // Storage::disk('public')->put($filename, $file);
-
         $update = User::where('id',$id)->first();
         $update->thumbnail = $filename;
         $update->name = $request->name;
         $update->email = $request->email;
         $update->phone = $request->phone;
         $update->desrciption = $request->description;
+        $update->password = $request->password;
         $update->save();
+
+        $std_update = student::where('user_id',$id)->first();
+        $std_update->name = $request->name;
+        $std_update->email = $request->email;
+        $std_update->phone = $request->phone;
+        $std_update->save();
+
         return redirect()->back();
     }
 }

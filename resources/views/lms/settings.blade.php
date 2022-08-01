@@ -68,7 +68,7 @@
                                         </div>
                                     </div><!-- end input-box -->
                                     <div class="input-box col-lg-6">
-                                        <label class="label-text">Password</label>
+                                        <label class="label-text">New Password</label>
                                         <div class="form-group">
                                             <input class="form-control form--control" type="text" name="password">
                                             <span class="la la-lock input-icon"></span>
