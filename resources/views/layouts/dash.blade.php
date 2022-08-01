@@ -557,8 +557,8 @@
 
     <script>
         $(document).ready(function(){
-            $("[link='change']").on("click",function(){
-                $("[link='change']").removeClass('page-active');
+            $("[add='change']").on("click",function(){
+                $("[add='change']").removeClass('page-active');
                 $(this).addClass('page-active');
             });
         });
