@@ -14,6 +14,8 @@ use App\Models\User;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
+use function PHPUnit\Framework\isEmpty;
+
 class DashboardController extends Controller
 {
     public function profile(){
@@ -87,9 +89,13 @@ class DashboardController extends Controller
     }
 
     public function update_user(Request $request,$id){
-        $file= $request->file('image');
-        $filename= $file->getClientOriginalName();
-        $file->move('storage/app/public/',$filename);
+        if(isEmpty($request->file('image'))){
+            $filename = "demo.jpg";    
+        }else{
+            $file= $request->file('image');
+            $filename= $file->getClientOriginalName();
+            $file->move('storage/app/public/',$filename);
+        }
         $update = User::where('id',$id)->first();
         $update->thumbnail = $filename;
         $update->name = $request->name;
