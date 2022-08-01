@@ -73,8 +73,8 @@
                                     </div>
                                 </form>
                                 <div class="nav-right-button d-flex align-items-center">
-                                    {{-- <div class="user-action-wrap d-flex align-items-center">
-                                        <div class="shop-cart pr-3 mr-3 border-right border-right-gray">
+                                    <div class="user-action-wrap d-flex align-items-center">
+                                        {{-- <div class="shop-cart pr-3 mr-3 border-right border-right-gray">
                                             <ul>
                                                 <li>
                                                     <p class="shop-cart-btn d-flex align-items-center">
@@ -113,8 +113,8 @@
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </div><!-- end shop-cart -->
-                                        <div class="shop-cart wishlist-cart pr-3 mr-3 border-right border-right-gray">
+                                        </div><!-- end shop-cart --> --}}
+                                        {{-- <div class="shop-cart wishlist-cart pr-3 mr-3 border-right border-right-gray">
                                             <ul>
                                                 <li>
                                                     <p class="shop-cart-btn">
@@ -154,7 +154,7 @@
                                                     </ul>
                                                 </li>
                                             </ul>
-                                        </div><!-- end shop-cart -->
+                                        </div><!-- end shop-cart --> --}}
                                         <div class="shop-cart notification-cart pr-3 mr-3 border-right border-right-gray">
                                             <ul>
                                                 <li>
@@ -302,7 +302,7 @@
                                                 </li>
                                             </ul>
                                         </div><!-- end shop-cart -->
-                                    </div> --}}
+                                    </div>
                                 </div><!-- end nav-right-button -->
                             </div><!-- end menu-wrapper -->
                         </div><!-- end col-lg-10 -->
