@@ -73,7 +73,7 @@
                                     </div>
                                 </form>
                                 <div class="nav-right-button d-flex align-items-center">
-                                    <div class="user-action-wrap d-flex align-items-center">
+                                    {{-- <div class="user-action-wrap d-flex align-items-center">
                                         <div class="shop-cart pr-3 mr-3 border-right border-right-gray">
                                             <ul>
                                                 <li>
@@ -302,7 +302,7 @@
                                                 </li>
                                             </ul>
                                         </div><!-- end shop-cart -->
-                                    </div>
+                                    </div> --}}
                                 </div><!-- end nav-right-button -->
                             </div><!-- end menu-wrapper -->
                         </div><!-- end col-lg-10 -->
