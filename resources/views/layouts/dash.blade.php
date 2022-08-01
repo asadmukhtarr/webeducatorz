@@ -74,47 +74,6 @@
                                 </form>
                                 <div class="nav-right-button d-flex align-items-center">
                                     <div class="user-action-wrap d-flex align-items-center">
-                                        <div class="shop-cart course-cart pr-3 mr-3 border-right border-right-gray">
-                                            <ul>
-                                                <li>
-                                                    <p class="shop-cart-btn d-flex align-items-center fs-16">
-                                                        My Courses
-                                                        <span class="la la-angle-down fs-13 ml-1"></span>
-                                                    </p>
-                                                    <ul class="cart-dropdown-menu after-none">
-                                                        <li class="media media-card">
-                                                            <a href="lesson-details.html" class="media-img">
-                                                                <img class="mr-3" src="images/small-img-3.jpg" alt="Course thumbnail image">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <h5><a href="lesson-details.html">The Complete JavaScript Course 2021: From Zero to Expert!</a></h5>
-                                                                <div class="skillbar-box pt-3">
-                                                                    <div class="skillbar skillbar-skillbar" data-percent="36%">
-                                                                        <div class="skillbar-bar skillbar--bar bg-1"></div>
-                                                                    </div><!-- End Skill Bar -->
-                                                                </div><!-- End skillbar-box -->
-                                                            </div>
-                                                        </li>
-                                                        <li class="media media-card">
-                                                            <a href="lesson-details.html" class="media-img">
-                                                                <img class="mr-3" src="images/small-img-4.jpg" alt="Course thumbnail image">
-                                                            </a>
-                                                            <div class="media-body">
-                                                                <h5><a href="lesson-details.html">The Complete JavaScript Course 2021: From Zero to Expert!</a></h5>
-                                                                <div class="skillbar-box pt-3">
-                                                                    <div class="skillbar skillbar-skillbar" data-percent="77%">
-                                                                        <div class="skillbar-bar skillbar--bar bg-1"></div>
-                                                                    </div><!-- End Skill Bar -->
-                                                                </div><!-- End skillbar-box -->
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <a href="my-courses.html" class="btn theme-btn w-100">Got to my course <i class="la la-arrow-right icon ml-1"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </div><!-- end course-cart -->
                                         <div class="shop-cart pr-3 mr-3 border-right border-right-gray">
                                             <ul>
                                                 <li>
