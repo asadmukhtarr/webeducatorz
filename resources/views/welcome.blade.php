@@ -180,7 +180,7 @@
                 @foreach(App\Models\category::limit(6)->get() as $category)
                     <div class="col-lg-4 responsive-column-half">
                         <div class="category-item">
-                            <img  class="cat__img lazy" src="images/img-loading.png" data-src="images/img1.jpg" alt="Category image">
+                            <img  class="cat__img lazy" src="https://webeducatorz.com/storage/app/public/{{ $category->thumbnail }}" data-src="images/img1.jpg" alt="Category image">
                             <div class="category-content">
                                 <div class="category-inner">
                                     <h3 class="cat__title"><a href="#">{{ $category->category }}</a></h3>
