@@ -18,9 +18,8 @@
                         <div class="card-body">
                             <h3 class="card-title text-center fs-24 lh-35 pb-4">Login to Your LMS!</h3>
                             <div class="section-block"></div>
-                            @if(Session::has('error')){
+                            @if(Session::has('error'))
                                 <div class="alert alert-danger">{{Session('error')}}</div>
-                            }
                             @endif
                             <form method="POST" action="{{ route('authlogin') }}" class="pt-4">
                                 @csrf
@@ -41,6 +40,9 @@
                                             placeholder="Email or Username">
                                         <span class="la la-user input-icon"></span>
                                     </div>
+                                    <font color="red"> 
+                                        <b> @error('email') <span class="error">{{ $message }}</span> @enderror </b>
+                                    </font>
                                 </div><!-- end input-box -->
                                 <div class="input-box">
                                     <label class="label-text">Password</label>
@@ -67,6 +69,9 @@
                                             </button>
                                         </div>
                                     </div>
+                                    <font color="red"> 
+                                        <b> @error('password') <span class="error">{{ $message }}</span> @enderror </b>
+                                    </font>
                                 </div><!-- end input-box -->
                                 <div class="btn-box">
                                     <div class="d-flex align-items-center justify-content-between pb-4">
