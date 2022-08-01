@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-select.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/fancybox.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <script src="https://kit.fontawesome.com/260a19cfaa.js" crossorigin="anonymous"></script>
     <!-- end inject -->
 </head>
 
