@@ -12,58 +12,9 @@
                 <i class="la la-bars mr-1"></i> Dashboard
             </div>
             <div class="container-fluid">
-                <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between mb-5">
-                    <div class="media media-card align-items-center">
-                        <div class="media-img media--img media-img-md rounded-full">
-                            @if (!empty(Auth::user()->thumbnail))
-                                <img class="rounded-full"
-                                    src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}"
-                                    alt="Student thumbnail image">
-                            @else
-                                <img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-full">
-                            @endif
-                        </div>
-                        <div class="media-body">
-                            <h2 class="section__title fs-30">{{ Auth::user()->name }}</h2>
-                            <div class="rating-wrap d-flex align-items-center pt-2">
-                                <div class="review-stars">
-                                    <span class="rating-number">4.4</span>
-                                    <span class="la la-star"></span>
-                                    <span class="la la-star"></span>
-                                    <span class="la la-star"></span>
-                                    <span class="la la-star"></span>
-                                    <span class="la la-star-o"></span>
-                                </div>
-                            </div><!-- end rating-wrap -->
-                        </div><!-- end media-body -->
-                    </div><!-- end media -->
-                </div><!-- end breadcrumb-content -->
                 <div class="section-block mb-5"></div>
-                <div class="dashboard-heading mb-5">
-                    <h3 class="fs-22 font-weight-semi-bold">Settings</h3>
-                </div>
-                <ul class="nav nav-tabs generic-tab pb-30px" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="edit-profile-tab" data-toggle="tab" href="#edit-profile"
-                            role="tab" aria-controls="edit-profile" aria-selected="false">
-                            Profile
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab"
-                            aria-controls="password" aria-selected="true">
-                            Password
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="change-email-tab" data-toggle="tab" href="#change-email" role="tab"
-                            aria-controls="change-email" aria-selected="false">
-                            Change Email
-                        </a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="edit-profile" role="tabpanel"
+                <div class="tab-content">
+                    <div class="tab-pane fade show active"
                         aria-labelledby="edit-profile-tab">
                         <div class="setting-body">
                             <h3 class="fs-17 font-weight-semi-bold pb-4">Edit Profile</h3>
@@ -109,11 +60,18 @@
                                             <span class="la la-envelope input-icon"></span>
                                         </div>
                                     </div><!-- end input-box -->
-                                    <div class="input-box col-lg-12">
+                                    <div class="input-box col-lg-6">
                                         <label class="label-text">Phone Number</label>
                                         <div class="form-group">
                                             <input class="form-control form--control" type="text" name="phone"
                                                 value="{{Auth::user()->phone}}">
+                                            <span class="la la-phone input-icon"></span>
+                                        </div>
+                                    </div><!-- end input-box -->
+                                    <div class="input-box col-lg-6">
+                                        <label class="label-text">Password</label>
+                                        <div class="form-group">
+                                            <input class="form-control form--control" type="text" name="password">
                                             <span class="la la-phone input-icon"></span>
                                         </div>
                                     </div><!-- end input-box -->
