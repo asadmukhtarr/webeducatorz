@@ -88,103 +88,15 @@
                             </form>
                         </div><!-- end setting-body -->
                     </div><!-- end tab-pane -->
-                    <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
-                        <div class="setting-body">
-                            <h3 class="fs-17 font-weight-semi-bold pb-4">Change Password</h3>
-                            <form method="post" class="row">
-                                <div class="input-box col-lg-4">
-                                    <label class="label-text">Old Password</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="text"
-                                            placeholder="Old Password">
-                                        <span class="la la-lock input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box col-lg-4">
-                                    <label class="label-text">New Password</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="text"
-                                            placeholder="New Password">
-                                        <span class="la la-lock input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box col-lg-4">
-                                    <label class="label-text">Confirm New Password</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="text"
-                                            placeholder="Confirm New Password">
-                                        <span class="la la-lock input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box col-lg-12 py-2">
-                                    <button class="btn theme-btn">Change Password</button>
-                                </div><!-- end input-box -->
-                            </form>
-                            <form method="post" class="pt-5 mt-5 border-top border-top-gray">
-                                <h3 class="fs-17 font-weight-semi-bold pb-1">Forgot Password then Recover Password</h3>
-                                <p class="pb-4">Enter the email of your account to reset password. Then you will receive
-                                    a link to email
-                                    to reset the password. If you have any issue about reset password
-                                    <a href="contact.html" class="text-color">contact us</a>
-                                </p>
-                                <div class="input-box">
-                                    <label class="label-text">Email Address</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="email" name="email"
-                                            placeholder="Enter email address">
-                                        <span class="la la-envelope input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box py-2">
-                                    <button class="btn theme-btn">Recover Password</button>
-                                </div><!-- end input-box -->
-                            </form>
-                        </div><!-- end setting-body -->
-                    </div><!-- end tab-pane -->
-                    <div class="tab-pane fade" id="change-email" role="tabpanel" aria-labelledby="change-email-tab">
-                        <div class="setting-body">
-                            <h3 class="fs-17 font-weight-semi-bold pb-4">Change Email</h3>
-                            <form method="post" class="row">
-                                <div class="input-box col-lg-4">
-                                    <label class="label-text">Old Email</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="text"
-                                            placeholder="Old Email">
-                                        <span class="la la-envelope input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box col-lg-4">
-                                    <label class="label-text">New Email</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="text"
-                                            placeholder="New Email">
-                                        <span class="la la-envelope input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box col-lg-4">
-                                    <label class="label-text">Confirm New Email</label>
-                                    <div class="form-group">
-                                        <input class="form-control form--control" type="text" name="text"
-                                            placeholder="Confirm New Email">
-                                        <span class="la la-envelope input-icon"></span>
-                                    </div>
-                                </div><!-- end input-box -->
-                                <div class="input-box col-lg-12 py-2">
-                                    <button class="btn theme-btn">Change Email</button>
-                                </div><!-- end input-box -->
-                            </form>
-                        </div><!-- end setting-body -->
-                    </div><!-- end tab-pane -->
                 </div><!-- end tab-content -->
                 <div class="row align-items-center dashboard-copyright-content pb-4">
                     <div class="col-lg-6">
-                        <p class="copy-desc">&copy; 2021 Aduca. All Rights Reserved. by <a
-                                href="https://techydevs.com/">TechyDevs</a></p>
+                        <p class="copy-desc">&copy; 2022 webeducatorz. All Rights Reserved. by <a href="https://webeducatorz.com/">webeducatorz</a></p>
                     </div><!-- end col-lg-6 -->
                     <div class="col-lg-6">
                         <ul class="generic-list-item d-flex flex-wrap align-items-center fs-14 justify-content-end">
-                            <li class="mr-3"><a href="terms-and-conditions.html">Terms & Conditions</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li class="mr-3"><a href="{{route('terms')}}">Terms & Conditions</a></li>
+                            <li><a href="{{route('privacy')}}">Privacy Policy</a></li>
                         </ul>
                     </div><!-- end col-lg-6 -->
                 </div><!-- end row -->
