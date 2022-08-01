@@ -252,7 +252,7 @@
                                                     <div class="shop-cart-btn">
                                                         <div class="avatar-xs">
                                                             @if(!empty(Auth::user()->thumbnail))
-                                                            <img class="rounded-full img-fluid" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
+                                                            <img class="rounded-full img-fluid" src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
                                                             @else
                                                             <img class="rounded-full img-fluid" src="{{ asset('public/img/demo.jpg') }}" alt="Avatar image">
                                                             @endif
@@ -263,7 +263,7 @@
                                                         <li class="menu-heading-block d-flex align-items-center">
                                                             <a href="#" class="avatar-sm flex-shrink-0 d-block">
                                                                 @if(!empty(Auth::user()->thumbnail))
-                                                                    <img class="rounded-full img-fluid" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
+                                                                    <img class="rounded-full img-fluid" src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Avatar image">
                                                                 @else
                                                                     <img class="rounded-full img-fluid" src="{{ asset('public/img/demo.jpg') }}" alt="Avatar image">
                                                                 @endif

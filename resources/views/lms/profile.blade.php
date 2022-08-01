@@ -16,7 +16,7 @@
                 <div class="media media-card align-items-center">
                     <div class="media-img media--img media-img-md rounded-full">
                         @if(!empty(Auth::user()->thumbnail))
-                            <img class="rounded-full" src="https://management.webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Student thumbnail image">
+                            <img class="rounded-full" src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" alt="Student thumbnail image">
                         @else
                             <img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-full" > 
                         @endif
