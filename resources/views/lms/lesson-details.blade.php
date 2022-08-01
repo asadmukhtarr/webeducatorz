@@ -13,6 +13,7 @@
 	<!-- Google fonts -->
 	<link rel="preconnect" href="https://fonts.gstatic.com/">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/260a19cfaa.js" crossorigin="anonymous"></script>
 
 	<!-- Favicon -->
 	<link rel="icon" sizes="16x16" href="{{asset('images/favicon.png')}}">
@@ -54,7 +55,7 @@
         <div class="container-fluid">
             <div class="main-menu-content d-flex align-items-center">
                 <div class="course-dashboard-header-title pl-4">
-                    <a href="#" class="text-white fs-15">{{$course->title}}</a>
+                    <a href="#" class="text-white fs-15"><i class="fa-solid fa-circle-play"></i>{{$course->title}}</a>
                 </div><!-- end course-dashboard-header-title -->
                 <div class="menu-wrapper ml-auto">
                     <div class="nav-right-button d-flex align-items-center">
