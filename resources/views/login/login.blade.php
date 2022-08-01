@@ -74,8 +74,6 @@
                                     </div>
                                     <button class="btn theme-btn" type="submit" name="submit">Login Account <i
                                             class="la la-arrow-right icon ml-1"></i></button>
-                                    <p class="fs-14 pt-2">Don't have an account? <a href="sign-up.html"
-                                            class="text-color hover-underline">Register</a></p>
                                 </div><!-- end btn-box -->
                             </form>
                         </div><!-- end card-body -->
