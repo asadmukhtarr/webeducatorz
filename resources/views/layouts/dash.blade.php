@@ -558,7 +558,7 @@
     <script>
         $(document).ready(function(){
             $("[add='change']").on("click",function(){
-                alert('asdads');
+                $(this).addClass('page-active');
             });
         });
     </script>
