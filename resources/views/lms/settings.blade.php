@@ -12,7 +12,6 @@
                 <i class="la la-bars mr-1"></i> Dashboard
             </div>
             <div class="container-fluid">
-                <div class="section-block mb-5"></div>
                 <div class="tab-content">
                     <div class="tab-pane fade show active"
                         aria-labelledby="edit-profile-tab">
@@ -72,7 +71,7 @@
                                         <label class="label-text">Password</label>
                                         <div class="form-group">
                                             <input class="form-control form--control" type="text" name="password">
-                                            <span class="la la-phone input-icon"></span>
+                                            <span class="la la-lock input-icon"></span>
                                         </div>
                                     </div><!-- end input-box -->
                                     <div class="input-box col-lg-12">
