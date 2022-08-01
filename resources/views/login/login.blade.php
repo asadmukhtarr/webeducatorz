@@ -18,6 +18,10 @@
                         <div class="card-body">
                             <h3 class="card-title text-center fs-24 lh-35 pb-4">Login to Your LMS!</h3>
                             <div class="section-block"></div>
+                            @if(Session::has('error')){
+                                <div class="alert alert-danger">{{Session('error')}}</div>
+                            }
+                            @endif
                             <form method="POST" action="{{ route('authlogin') }}" class="pt-4">
                                 @csrf
                                 <!--
