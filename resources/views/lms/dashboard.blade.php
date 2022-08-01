@@ -33,7 +33,7 @@
                             </div>
                             <div class="pl-4">
                                 <p class="card-text fs-18">Enrolled Courses</p>
-                                <h5 class="card-title pt-2 fs-26">11</h5>
+                                <h5 class="card-title pt-2 fs-26">{{$all_courses}}</h5>
                             </div>
                         </div><!-- end card-body -->
                     </div><!-- end card -->
@@ -78,11 +78,12 @@
                             @foreach ($courses as $item)
                             @php
                                 $b = App\Models\badge::find($item->badge_id);
+                                return $b;
                             @endphp    
                             @endforeach
                             
                             <div class="pl-4">
-                                <p class="card-text fs-18">{{$b }}Active Courses</p>
+                                <p class="card-text fs-18">Active Courses</p>
                                 <h5 class="card-title pt-2 fs-26">5</h5>
                             </div>
                         </div><!-- end card-body -->
