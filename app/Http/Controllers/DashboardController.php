@@ -12,7 +12,7 @@ use App\Models\student;
 use App\Models\workshop;
 use App\Models\User;
 use Auth;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -96,7 +96,7 @@ class DashboardController extends Controller
         $update->email = $request->email;
         $update->phone = $request->phone;
         $update->desrciption = $request->description;
-        $update->password = $request->password;
+        $update->password = Hash::make($request->password);
         $update->save();
 
         $std_update = student::where('user_id',$id)->first();
