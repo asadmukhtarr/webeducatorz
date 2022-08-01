@@ -78,7 +78,7 @@
                             @foreach ($courses as $item)
                             @php
                                 $b = App\Models\badge::find($item->badge_id);
-                                return $b;
+                                dump($b);
                             @endphp    
                             @endforeach
                             
