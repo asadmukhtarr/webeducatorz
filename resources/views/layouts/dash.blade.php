@@ -558,7 +558,7 @@
     <script>
         $(document).ready(function(){
             $("[add='change']").on("click",function(){
-                $(this).addClass('page-active');
+                $(this).addClass("page-active");
             });
         });
     </script>
