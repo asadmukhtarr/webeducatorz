@@ -96,7 +96,7 @@
                                 @foreach ($lectures as $lecture)
                                 <div class="card-header" id="headingOne">
                                     <button class="btn btn-link" value="{{ $lecture->lecture }}" lec="video" type="button">
-                                       <i class="la la-play"></i> <span class="fs-15"><i class="fa-solid fa-circle-play"></i>{{$lecture->title}}</span>
+                                    <span class="fs-15"><i class="la la-play"></i>{{$lecture->title}}</span>
                                     </button>
                                 </div><!-- end card-header -->
                                 @endforeach
