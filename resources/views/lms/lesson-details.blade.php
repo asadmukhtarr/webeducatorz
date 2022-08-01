@@ -55,7 +55,7 @@
         <div class="container-fluid">
             <div class="main-menu-content d-flex align-items-center">
                 <div class="course-dashboard-header-title pl-4">
-                    <a href="#" class="text-white fs-15"><i class="fa-solid fa-circle-play"></i>{{$course->title}}</a>
+                    <a href="#" class="text-white fs-15">{{$course->title}}</a>
                 </div><!-- end course-dashboard-header-title -->
                 <div class="menu-wrapper ml-auto">
                     <div class="nav-right-button d-flex align-items-center">
@@ -97,7 +97,7 @@
                                 @foreach ($lectures as $lecture)
                                 <div class="card-header" id="headingOne">
                                     <button class="btn btn-link" value="{{ $lecture->lecture }}" lec="video" type="button">
-                                    <span class="fs-15"><i class="la la-play"></i>{{$lecture->title}}</span>
+                                    <span class="fs-15"><i class="fa-solid fa-circle-play p-1"></i>{{$lecture->title}}</span>
                                     </button>
                                 </div><!-- end card-header -->
                                 @endforeach
