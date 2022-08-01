@@ -55,7 +55,7 @@
         <div class="container-fluid">
             <div class="main-menu-content d-flex align-items-center">
                 <div class="course-dashboard-header-title pl-4">
-                    <a href="#" class="text-white fs-15">{{$course->title}}</a>
+                    <a href="#" class="text-white fs-15"><i style="padding-right: 8px" class="fa-solid fa-arrow-right-long-to-line"></i>{{$course->title}}</a>
                 </div><!-- end course-dashboard-header-title -->
                 <div class="menu-wrapper ml-auto">
                     <div class="nav-right-button d-flex align-items-center">
