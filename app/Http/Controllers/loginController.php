@@ -17,12 +17,7 @@ class loginController extends Controller
 
     public function authlogin(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email'  => 'required'
-        ]);
         $input = $request->all();
-
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
