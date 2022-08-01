@@ -37,9 +37,6 @@
                                             placeholder="Email or Username">
                                         <span class="la la-user input-icon"></span>
                                     </div>
-                                    <font color="red"> 
-                                        <b> @error('email') <span class="error">{{ $message }}</span> @enderror </b>
-                                    </font>
                                 </div><!-- end input-box -->
                                 <div class="input-box">
                                     <label class="label-text">Password</label>
@@ -65,9 +62,6 @@
                                                 </svg>
                                             </button>
                                         </div>
-                                        <font color="red"> 
-                                            <b> @error('password') <span class="error">{{ $message }}</span> @enderror </b>
-                                        </font>
                                     </div>
                                 </div><!-- end input-box -->
                                 <div class="btn-box">
