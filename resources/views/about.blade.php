@@ -9,7 +9,7 @@
     <div class="container">
         <div class="breadcrumb-content">
             <div class="section-heading">
-                <h5 class="ribbon ribbon-lg ribbon-white mb-2">Welcome to aduca</h5>
+                <h5 class="ribbon ribbon-lg ribbon-white mb-2">Welcome to webeducatorz</h5>
                 <h2 class="section__title fs-45 lh-60 text-white">Improve Your Lives <br> With Learning</h2>
             </div>
             <div class="breadcrumb-btn-box pt-40px pl-3">
@@ -39,7 +39,7 @@
                     <ul class="generic-list-item pt-3">
                         <li><i class="la la-check-circle mr-2 text-success"></i>Online Courses with full discount systems.</li>
                         <li><i class="la la-check-circle mr-2 text-success"></i>Online Certificates which can be used worldwide.</li>
-                        <li><i class="la la-check-circle mr-2 text-success"></i>An online leadership development program at Aduca.</li>
+                        <li><i class="la la-check-circle mr-2 text-success"></i>An online leadership development program at webeducatorz.</li>
                     </ul>
                 </div><!-- end about-content -->
             </div><!-- end col-lg-6 -->

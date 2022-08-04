@@ -428,7 +428,7 @@
                         </div>
                     </div><!-- end media -->
                     <p class="card-text">
-                        My children and I LOVE Aduca! The courses are fantastic and the
+                        My children and I LOVE webeducatorz! The courses are fantastic and the
                         instructors are so fun and knowledgeable.
                         I only wish we found it sooner.
                     </p>
@@ -1131,7 +1131,7 @@
                         <h5 class="card-title pt-4 pb-2">Find Best For You</h5>
                         <p class="card-text">Get lots of skills for your best and built your career</p>
                         <div class="btn-box mt-20px">
-                            <a href="{{ route('courses') }}" class="btn theme-btn theme-btn-sm theme-btn-white lh-30"><i class="la la-briefcase mr-1"></i>Get aduca for business</a>
+                            <a href="{{ route('courses') }}" class="btn theme-btn theme-btn-sm theme-btn-white lh-30"><i class="la la-briefcase mr-1"></i>Get webeducatorz for business</a>
                         </div><!-- end btn-box -->
                     </div><!-- end card-body -->
                 </div><!-- end card -->
