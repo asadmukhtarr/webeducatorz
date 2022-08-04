@@ -142,7 +142,7 @@
 			<div class="col-lg-7">
 				<div class="card card-item">
 					<div class="card-body">
-						<form method="post" action="http://techydevs.com/demos/themes/html/aduca-demo/aduca/php/contact.php" class="contact-form">
+						<form method="post" action="#" class="contact-form">
 							<div class="alert alert-success contact-success-message" role="alert">
 								Thank You! Your message has been sent.
 							</div>
