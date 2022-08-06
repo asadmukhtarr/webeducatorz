@@ -784,7 +784,7 @@
             <div class="col-lg-5 ml-auto">
                 <div class="generic-img-box">
                     <img src="images/img-loading.png" data-src="images/img13.jpg" alt="About image" class="img__item img__item-1 lazy">
-                    <img src="images/img-loading.png" data-src="images/img14.jpg" alt="About image" class="img__item img__item-2 lazy">
+                    <img src="https://webeducatorz.com/storage/app/public/amazon.web.png" data-src="https://webeducatorz.com/storage/app/public/amazon.web.png" alt="About image" class="img__item img__item-2 lazy">
                 </div><!-- end generic-img-box -->
             </div><!-- end col-lg-5 -->
         </div><!-- end row -->

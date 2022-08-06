@@ -52,9 +52,9 @@
                     <button class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mr-2 mb-2" data-toggle="modal" data-target="#shareModal">
                         <i class="la la-share mr-1"></i>Share
                     </button>
-                    <button class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mb-2" data-toggle="modal" data-target="#reportModal">
+                    <a href="https://management.webeducatorz.com/storage/app/public/{{ $course->outline }}" class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mb-2">
                         <i class="la la-flag mr-1"></i>Download Outline
-                    </button>
+                    </a>
                 </div>
             </div><!-- end breadcrumb-content -->
         </div><!-- end col-lg-8 -->
