@@ -127,7 +127,7 @@
 												@endphp
 												@foreach ($cat as $item)
 												<li>
-													<a href="{{ route('course',$item->slug) }}">{{$item->category}}</a>
+													<a href="{{ route('category.search',$item->id) }}">{{$item->category}}</a>
 												</li>	
 												@endforeach
 											</ul>

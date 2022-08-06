@@ -192,7 +192,7 @@
                                 </a>
                                 <div class="media-body">
                                     <h5 class="fs-15"><a href="{{ route('course',$course->slug) }}">{{ ucfirst($course->title) }}</a></h5>
-                                    <span class="d-block lh-18 py-1 fs-14">{{ $course->duration }}</span>
+                                    <span class="d-block lh-18 py-1 fs-14">{{ $course->duration }} Months</span>
                                     <p class="text-black font-weight-semi-bold lh-18 fs-15">Rs {{ $course->fee }} <span class="before-price fs-14">Rs {{ $course->regular_fee }}</span></p>
                                 </div>
                             </div><!-- end media -->
