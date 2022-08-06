@@ -808,6 +808,7 @@
                         <h3 class="fs-24 font-weight-semi-bold pb-2">Receive Free Courses</h3>
                         <div class="divider"><span></span></div>
                         <form method="post" action="{{route('trail_form')}}">
+                            @csrf
                             <div class="input-box">
                                 <label class="label-text">Name</label>
                                 <div class="form-group">
