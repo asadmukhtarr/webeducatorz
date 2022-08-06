@@ -66,6 +66,8 @@ Route::prefix('lms')->middleware('auth')->group(function(){
     Route::get('/workshop','DashboardController@workshops')->name('workshops');
     Route::get('/feeds','DashboardController@feeds')->name('feeds');
     Route::get('/settings','DashboardController@settings')->name('settings');
+    Route::post('/update_user/{id}','DashboardController@update_user')->name('update_user');
+     
 });
 
 

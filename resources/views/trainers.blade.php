@@ -73,7 +73,7 @@
             </div><!-- end col-lg-9 -->
             <div class="col-lg-3">
                 <div class="cta-btn-box text-right">
-                    <a href="become-a-teacher.html" class="btn theme-btn">Tech on Aduca <i class="la la-arrow-right icon ml-1"></i></a>
+                    <a href="{{route('apply.online')}}" class="btn theme-btn">Tech on webeducatorz <i class="la la-arrow-right icon ml-1"></i></a>
                 </div>
             </div><!-- end col-lg-3 -->
         </div><!-- end row -->

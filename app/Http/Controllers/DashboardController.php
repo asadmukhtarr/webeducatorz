@@ -8,8 +8,13 @@ use App\Models\TrailForm;
 use App\Models\general;
 use App\Models\Lecture;
 use App\Models\badge;
+use App\Models\student;
 use App\Models\workshop;
+use App\Models\User;
 use Auth;
+use Illuminate\Support\Facades\Hash;
+
+use function PHPUnit\Framework\isEmpty;
 
 class DashboardController extends Controller
 {
@@ -18,7 +23,13 @@ class DashboardController extends Controller
     }
 
     public function dashbaord(){
-        return view('lms.dashboard');
+        $balance = Auth::user()->student->fee->sum('pending');
+        $paid = Auth::user()->student->fee->sum('paid');
+        $total = Auth::user()->student->fee->sum('total_amount');
+        $accounts = Auth::user()->student->fee;
+        $all_courses =  Auth::user()->student->enrollment->count();
+        $courses =  Auth::user()->student->enrollment;
+        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','courses'));
     }
 
     public function enrolled_courses(){
@@ -75,5 +86,31 @@ class DashboardController extends Controller
         $sendmsg->no = $request->no;
         $sendmsg->subject = $request->subject;
         $sendmsg->save();
+    }
+
+    public function update_user(Request $request,$id){
+        if(isEmpty($request->file('image'))){
+            $filename = "demo.jpg";    
+        }else{
+            $file= $request->file('image');
+            $filename= $file->getClientOriginalName();
+            $file->move('storage/app/public/',$filename);
+        }
+        $update = User::where('id',$id)->first();
+        $update->thumbnail = $filename;
+        $update->name = $request->name;
+        $update->email = $request->email;
+        $update->phone = $request->phone;
+        $update->desrciption = $request->description;
+        $update->password = Hash::make($request->password);
+        $update->save();
+
+        $std_update = student::where('user_id',$id)->first();
+        $std_update->name = $request->name;
+        $std_update->email = $request->email;
+        $std_update->phone = $request->phone;
+        $std_update->save();
+
+        return redirect()->back();
     }
 }

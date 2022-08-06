@@ -8,7 +8,9 @@ use App\Models\course;
 use App\Models\student;
 class enrollment extends Model
 {
+    protected $table = "enrollments";
     use HasFactory;
+
     // course
     public function course(){
 
