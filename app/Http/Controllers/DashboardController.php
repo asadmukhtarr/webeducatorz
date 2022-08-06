@@ -86,6 +86,7 @@ class DashboardController extends Controller
         $sendmsg->no = $request->no;
         $sendmsg->subject = $request->subject;
         $sendmsg->save();
+        return redirect(route('home'));
     }
 
     public function update_user(Request $request,$id){
