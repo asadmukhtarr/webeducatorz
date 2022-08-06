@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class loginController extends Controller
 {
-    //
+    // 
     public function login()
     {
         $meta = general::find(1);
