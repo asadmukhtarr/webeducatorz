@@ -13,6 +13,7 @@
                                 <th>Category</th>
                                 <th>Date</th>
                                 <th>Time</th>
+								<th>Amount</th>
 								<th>Register Link</th>
 								<th>Meeting Link</th>
 								<th>Status</th>
@@ -33,10 +34,13 @@
                                         {{ date("g:i a", strtotime($event->start)) }} -   {{ date("g:i a", strtotime($event->end)) }}
                                     </td>
 									<td>
-										<a class="btn btn-sm btn-outline-primary" href="{{$event->reg_link}}">Register</a>
+										{{$event->amount}}
 									</td>
 									<td>
-										<a class="btn btn-sm btn-outline-primary" href="{{$event->meeting}}">Meeting Link</a>
+										<a target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger" href="{{$event->reg_link}}">Register</a>
+									</td>
+									<td>
+										<a target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger" href="{{$event->meeting}}">Meeting Link</a>
 										
 									</td>
                                     <td>
