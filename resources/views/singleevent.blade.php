@@ -27,16 +27,12 @@
                     </p>
                 </div><!-- end d-flex -->
                 <div class="bread-btn-box pt-3">
-                    <button class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mr-2 mb-2">
-                        <i class="la la-heart-o mr-1"></i>
-                        <span class="swapping-btn" data-text-swap="Wishlisted" data-text-original="Wishlist">Wishlist</span>
-                    </button>
-                    <button class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mr-2 mb-2" data-toggle="modal" data-target="#shareModal">
-                        <i class="la la-share mr-1"></i>Share
-                    </button>
-                    <button class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mb-2" data-toggle="modal" data-target="#reportModal">
-                        <i class="la la-flag mr-1"></i>Download Outline
-                    </button>
+                    <a class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mr-2 mb-2" href="{{ $sevent->date }}">
+                        <i class="la la-share mr-1"></i> Join Workshop Link
+                    </a>
+                    <a class="btn theme-btn theme-btn-sm theme-btn-transparent lh-28 mb-2" href="{{ $sevent->date }}">
+                        <i class="la la-flag mr-1"></i> Registration Link
+                    </a>
                 </div>
             </div><!-- end breadcrumb-content -->
         </div><!-- end col-lg-8 -->
