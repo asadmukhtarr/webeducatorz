@@ -21,7 +21,7 @@
                                         {{ $event->date }}
                                     </td>
                                     <td>
-                                        {{ $event->time }}
+                                        {{ date("g:i a", strtotime($event->start)) }} -   {{ date("g:i a", strtotime($event->end)) }}
                                     </td>
                                     <td>
                                         {{ ucfirst($event->category->category) }}
