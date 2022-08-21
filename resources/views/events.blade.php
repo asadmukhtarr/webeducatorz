@@ -16,7 +16,7 @@
 								<th>Amount</th>
 								<th>Register</th>
 								<th>Meeting</th>
-								<th>Status</th>
+								{{-- <th>Status</th> --}}
                             </tr>
                             @foreach ($events as $event)
                                 <tr>
@@ -43,9 +43,9 @@
 										<a target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger" href="{{$event->meeting}}">Meeting</a>
 										
 									</td>
-                                    <td>
+                                    {{-- <td>
                                         <span class="badge badge-primary">{{ucfirst($event->status)}}</span>
-                                    </td>
+                                    </td> --}}
 
                                 </tr>
                             @endforeach
