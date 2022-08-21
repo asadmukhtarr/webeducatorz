@@ -14,8 +14,8 @@
                                 <th>Date</th>
                                 <th>Time</th>
 								<th>Amount</th>
-								<th>Register Link</th>
-								<th>Meeting Link</th>
+								<th>Register</th>
+								<th>Meeting</th>
 								<th>Status</th>
                             </tr>
                             @foreach ($events as $event)
@@ -40,11 +40,11 @@
 										<a target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger" href="{{$event->reg_link}}">Register</a>
 									</td>
 									<td>
-										<a target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger" href="{{$event->meeting}}">Meeting Link</a>
+										<a target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-danger" href="{{$event->meeting}}">Meeting</a>
 										
 									</td>
                                     <td>
-                                        <span class="label label-primary">{{ucfirst($event->status)}}</span>
+                                        <span class="badge badge-primary">{{ucfirst($event->status)}}</span>
                                     </td>
 
                                 </tr>
