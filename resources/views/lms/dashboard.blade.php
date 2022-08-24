@@ -9,7 +9,7 @@
         @include('layouts.sidbar')
         <div class="dashboard-content-wrap">
             <div class="dashboard-menu-toggler btn theme-btn theme-btn-sm lh-28 theme-btn-transparent mb-4 ml-3">
-                <i class="la la-bars mr-1"></i> Dashboard
+                <i class="la la-bars mr-1"></i> Dashboard {{$b}}
             </div>
             <div class="container-fluid">
                 <div class="dashboard-heading mb-5">
@@ -49,7 +49,6 @@
                     @foreach ($courses as $item)
                         @php
                             $b = App\Models\badge::find($item->badge_id);
-                            return $b;
                         @endphp
 
                         <div class="col-lg-4 responsive-column-half">
