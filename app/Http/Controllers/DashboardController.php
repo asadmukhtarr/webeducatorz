@@ -29,7 +29,10 @@ class DashboardController extends Controller
         $accounts = Auth::user()->student->fee;
         $all_courses =  Auth::user()->student->enrollment->count();
         $courses =  Auth::user()->student->enrollment;
-        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','courses'));
+        $activecourses = $courses::where('status', 'active')->count();
+        $completedcourses = $courses::where('status', 'completed')->count();
+        
+        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','activecourses','completedcourses'));
     }
 
     public function enrolled_courses(){
