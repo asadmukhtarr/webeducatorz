@@ -3,8 +3,8 @@
 @section('content')
 
     <!-- ================================
-        START DASHBOARD AREA
-    ================================= -->
+            START DASHBOARD AREA
+        ================================= -->
     <section class="dashboard-area">
         @include('layouts.sidbar')
         <div class="dashboard-content-wrap">
@@ -47,9 +47,11 @@
                         </div><!-- end card -->
                     </div><!-- end col-lg-4 -->
                     @foreach ($courses as $item)
-
+                        @php
+                            $b = App\Models\enrollment::where('course_id', $item->badge_id );
+                        @endphp
                         <div class="col-lg-4 responsive-column-half">
-                            
+
                             <div class="card card-item dashboard-info-card">
                                 <div class="card-body d-flex align-items-center">
                                     <div class="icon-element flex-shrink-0 bg-2 text-white">
@@ -98,7 +100,8 @@
 
                                     <div class="pl-4">
                                         <p class="card-text fs-18">Active Courses</p>
-                                        <h5 class="card-title pt-2 fs-26">{{ $item::where('status', 'active')->count() }}</h5>
+                                        <h5 class="card-title pt-2 fs-26">{{ $b::where('status', 'active')->count() }}
+                                        </h5>
                                     </div>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
@@ -151,7 +154,8 @@
                                     </div>
                                     <div class="pl-4">
                                         <p class="card-text fs-18">Completed Courses</p>
-                                        <h5 class="card-title pt-2 fs-26">{{ $item::where('status', 'completed')->count() }}</h5>
+                                        <h5 class="card-title pt-2 fs-26">{{ $b::where('status', 'completed')->count() }}
+                                        </h5>
                                     </div>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
@@ -561,8 +565,8 @@
         </div><!-- end dashboard-content-wrap -->
     </section><!-- end dashboard-area -->
     <!-- ================================
-        END DASHBOARD AREA
-    ================================= -->
+            END DASHBOARD AREA
+        ================================= -->
 
 
 @endsection
