@@ -55,7 +55,7 @@
 						</svg>
 					</div>
 					<h3 class="info__title">Our Location</h3>
-					<p class="info__text">660 broklyn street , 88 new york, United states of america</p>
+					<p class="info__text">{{$meta->address}}</p>
 				</div><!-- end info-box -->
 			</div><!-- end col-lg-3 -->
 			<div class="col-lg-4 responsive-column-half">
@@ -81,8 +81,8 @@
 						</svg>
 					</div>
 					<h3 class="info__title">Email Us</h3>
-					<p class="info__text">info123@example.com</p>
-					<p class="info__text">info123@example.com</p>
+					<p class="info__text">{{$meta->email}}</p>
+					<p class="info__text">{{$meta->email1}}</p>
 				</div><!-- end info-box -->
 			</div><!-- end col-lg-3 -->
 			<div class="col-lg-4 responsive-column-half">
@@ -119,8 +119,8 @@
 						</svg>
 					</div>
 					<h3 class="info__title">Call Us</h3>
-					<p class="info__text">+163 123 7884</p>
-					<p class="info__text">+163 123 7884</p>
+					<p class="info__text">Info: {{$meta->phone}}</p>
+					<p class="info__text">Accounts: {{$meta->phone1}}</p>
 				</div><!-- end info-box -->
 			</div><!-- end col-lg-3 -->
 		</div><!-- end row -->
@@ -129,7 +129,8 @@
 				<div class="contact-content pb-5">
 					<div class="section-heading">
 						<h2 class="section__title pb-3">We'd love to hear from you</h2>
-						<p class="section__desc">Lorem ipsum is simply free text dolor sit amett quie adipiscing elit. When an unknown printer took a galley. quiaies lipsum dolor sit atur adip scing</p>
+						<p class="section__desc">One of the largest institute in the Pakistan where we offers a selection of online courses.
+						</p>
 					</div><!-- end section-heading -->
 					<ul class="social-icons social-icons-styled social--icons-styled pt-30px">
 						<li><a href="#"><i class="la la-facebook"></i></a></li>
