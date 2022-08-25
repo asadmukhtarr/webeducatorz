@@ -49,6 +49,7 @@
                     @foreach ($courses as $item)
                         @php
                             $b = App\Models\badge::find($item->badge_id);
+                            console.log($b);
                         @endphp
 
                         <div class="col-lg-4 responsive-column-half">
