@@ -49,10 +49,10 @@
                     @foreach ($courses as $item)
                         @php
                             $b = App\Models\badge::find($item->badge_id);
-                            console.log($b);
                         @endphp
 
                         <div class="col-lg-4 responsive-column-half">
+                            {{$b}}
                             <div class="card card-item dashboard-info-card">
                                 <div class="card-body d-flex align-items-center">
                                     <div class="icon-element flex-shrink-0 bg-2 text-white">
