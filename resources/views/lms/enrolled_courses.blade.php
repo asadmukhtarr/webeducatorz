@@ -31,7 +31,7 @@
                             @php
                                 $c = App\Models\course::find($course->course_id);
                                 $b = App\Models\badge::find($course->badge_id);
-                                $d = App\Models\Lecture::where('course_id', $course->course_id)->count();
+                                $d = App\Models\Lecture::find($course->course_id);
                             @endphp
                             @if($b->status == 0 || $b->status == 1)    
                                 <div class="col-lg-4 responsive-column-half">
