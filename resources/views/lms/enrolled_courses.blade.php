@@ -33,7 +33,7 @@
                                 $b = App\Models\badge::find($course->badge_id);
                                 $d = App\Models\Lecture::find($course->course_id);
                             @endphp
-                            @if($b->status == 0 || $b->status == 1)    
+                            @if($b->status == 0 || $b->status == 1)
                                 <div class="col-lg-4 responsive-column-half">
                                     <div class="card card-item">
                                         <div class="card-image">
@@ -44,7 +44,7 @@
                                         <div class="card-body">
                                             <h5 class="card-title"><a href="lesson-details.html">{{ ucfirst($c->title) }}</a></h5>
                                             <p class="card-text lh-22 pt-2"><a href="#">{{  $c->category->category }}</a></p> <br />
-                                            <a href="{{route('lesson-details',$b->id)}}" class="btn btn-danger" @if($d == 0) disabled @endif> <i class="la la-arrow-right"></i> Lectures</a>
+                                            <a href="{{route('lesson-details',$b->id)}}" @if($d == 0) style="pointer-events: none;"  @endif class="btn btn-danger"> <i class="la la-arrow-right"></i> Lectures</a>
                                         </div><!-- end card-body -->
                                     </div><!-- end card -->
                                 </div>
