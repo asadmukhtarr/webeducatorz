@@ -29,8 +29,8 @@ class DashboardController extends Controller
         $total = Auth::user()->student->fee->sum('total_amount');
         $accounts = Auth::user()->student->fee;
         $all_courses =  Auth::user()->student->enrollment->count();
-        $active_courses = enrollment::where('student_id',Auth::user()->student->id)>where('status','active')->count() ;
-        $completed_courses = enrollment::where('student_id',Auth::user()->student->id)>where('status','completed')->count() ;
+        $active_courses = enrollment::where('student_id',Auth::user()->student->id)->where('status','active')->count() ;
+        $completed_courses = enrollment::where('student_id',Auth::user()->student->id)->where('status','completed')->count() ;
         
         return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','active_courses','completed_courses'));
     }
