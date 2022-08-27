@@ -11,6 +11,7 @@ use App\Models\badge;
 use App\Models\student;
 use App\Models\workshop;
 use App\Models\User;
+use App\Models\enrollment;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,9 +29,10 @@ class DashboardController extends Controller
         $total = Auth::user()->student->fee->sum('total_amount');
         $accounts = Auth::user()->student->fee;
         $all_courses =  Auth::user()->student->enrollment->count();
-        $courses =  Auth::user()->student->enrollment;
+        $active_courses = enrollment::where('student_id',Auth::user()->student->id)>where('status','active')->count() ;
+        $completed_courses = enrollment::where('student_id',Auth::user()->student->id)>where('status','completed')->count() ;
         
-        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','courses'));
+        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','active_courses','completed_courses'));
     }
 
     public function enrolled_courses(){

@@ -46,11 +46,7 @@
                             </div><!-- end card-body -->
                         </div><!-- end card -->
                     </div><!-- end col-lg-4 -->
-                    @foreach ($courses as $item)
-                        @php
-                            $b = App\Models\enrollment::where('course_id', $item->badge_id );
-                        @endphp
-                        <div class="col-lg-4 responsive-column-half">
+                    <div class="col-lg-4 responsive-column-half">
 
                             <div class="card card-item dashboard-info-card">
                                 <div class="card-body d-flex align-items-center">
@@ -100,7 +96,7 @@
 
                                     <div class="pl-4">
                                         <p class="card-text fs-18">Active Courses</p>
-                                        <h5 class="card-title pt-2 fs-26">{{ $b::where('status', 'active')->count() }}
+                                        <h5 class="card-title pt-2 fs-26">{{ $active_courses }}
                                         </h5>
                                     </div>
                                 </div><!-- end card-body -->
@@ -154,13 +150,12 @@
                                     </div>
                                     <div class="pl-4">
                                         <p class="card-text fs-18">Completed Courses</p>
-                                        <h5 class="card-title pt-2 fs-26">{{ $b::where('status', 'completed')->count() }}
+                                        <h5 class="card-title pt-2 fs-26">{{ $completed_courses }}
                                         </h5>
                                     </div>
                                 </div><!-- end card-body -->
                             </div><!-- end card -->
                         </div><!-- end col-lg-4 -->
-                    @endforeach
                     <div class="col-lg-4 responsive-column-half">
                         <div class="card card-item dashboard-info-card">
                             <div class="card-body d-flex align-items-center">
