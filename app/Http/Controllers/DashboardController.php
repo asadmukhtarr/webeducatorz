@@ -81,7 +81,7 @@ class DashboardController extends Controller
     // ASSIGNMENTS  
     public function assignments(){
         $enrollments =  Auth::user()->student->enrollment;
-        return view('lms.assignment',compact('enrollments','total','gain'));
+        return view('lms.assignment',compact('enrollments'));
     }
     public function submit_assignments($id,Request $request){
         $request->validate([
