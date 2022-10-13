@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\trainer;
+use App\Models\course;
 
 class category extends Model
 {
@@ -13,6 +14,6 @@ class category extends Model
         return $this->hasMany(trainer::class);
     }
     public function course(){
-        return $this->belongsTo(category::class);
+        return $this->hasMany(course::class);
     }
 }

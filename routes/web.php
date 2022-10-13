@@ -51,25 +51,42 @@ Route::get('/category/{id}','pagesController@category')->name('category.search')
 Route::get('email',function(){
     return view('email');
 });
-
+// Login System .. 
 Route::get('/login','loginController@login')->name('login');
 Route::post('/login','loginController@authlogin')->name('authlogin');
 Route::post('/logout','loginController@logout')->name('logout');
-
-Route::prefix('lms')->middleware('auth')->group(function(){
+// learning Management System ..
+Route::prefix('lms')->middleware('student')->group(function(){
     Route::get('/dashboard',"DashboardController@dashbaord")->name('dashboard');
     Route::get('/profile','DashboardController@profile')->name('profile');
     Route::get('/enrolled/courses','DashboardController@enrolled_courses')->name('enrolled_courses');
     Route::get('/lesson-details/{id}','DashboardController@lessondetails')->name('lesson-details');
     Route::get('/new/admissions','DashboardController@newadmissions')->name('newadmissions');
+    Route::get('/assignments','DashboardController@assignments')->name('lms.assignments');
+    Route::post('/assignment/submit/{id}','DashboardController@submit_assignments')->name('submit.assignments');
     Route::get('/accounts','DashboardController@accounts')->name('accounts');
     Route::get('/workshop','DashboardController@workshops')->name('workshops');
     Route::get('/feeds','DashboardController@feeds')->name('feeds');
     Route::get('/settings','DashboardController@settings')->name('settings');
     Route::post('/update_user/{id}','DashboardController@update_user')->name('update_user');
-     
+    Route::post('/update-password','DashboardController@update_password')->name('update.password'); 
 });
-
-
+// teacher ..
+Route::prefix('teacher')->middleware('teacher')->group(function(){
+    Route::get('/dashboard','TeacherController@dashbaord')->name('teacher.dashboard');
+    Route::get('/courses','TeacherController@courses')->name('teacher.courses');
+    Route::get('/course/details/{id}','TeacherController@course_details')->name('course.details');
+    Route::get('/assignments','TeacherController@assingments')->name('teacher.assignments');
+    Route::post('/assignments/save','TeacherController@save_assignment')->name('save.assignments');
+    Route::get('/assignments/delete/{id}','TeacherController@delete_assignment')->name('delete.assignments');
+    Route::get('/assignments/close/{id}','TeacherController@close_assignment')->name('close.assignments');
+    Route::post('/assignments/answer/{id}','TeacherController@task_status')->name('task_status.assignments');
+    Route::get('/assignment/{id}','TeacherController@assignment')->name('single.assignment');
+    Route::get('/accounts','TeacherController@accounts')->name('teacher.accounts');
+    Route::get('/workshops','TeacherController@accounts')->name('teacher.workshops');
+    Route::get('/feeds','TeacherController@feeds')->name('teacher.feeds');
+    Route::get('/');
+});
+// trail ..
 Route::post('/trail_form','DashboardController@trail_form')->name('trail_form');
 

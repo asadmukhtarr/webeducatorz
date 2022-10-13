@@ -22,7 +22,7 @@ class coursesController extends Controller
                 'data' => null
             ];
         }
-        return $data;
-        //return repsonse()->json($fees);
+       return $fees;
+      //  return repsonse($fees)->json();
     }
 }

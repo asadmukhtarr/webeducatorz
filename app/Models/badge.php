@@ -28,7 +28,17 @@ class badge extends Model
     public function room(){
         return $this->belongsTo(room::class);
     }
+    
+    public function assignments(){
 
+        return $this->hasMany(assignment::class);
+    }
+
+    public function lectures(){
+
+        return $this->hasMany(lecture::class);
+    }
+    
     public function slot(){
         return $this->belongsTo(slot::class);
     }

@@ -11,6 +11,9 @@ use App\Models\badge;
 use App\Models\student;
 use App\Models\workshop;
 use App\Models\User;
+use App\Models\blog;
+use App\Models\assignment;
+use App\Models\task;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +22,8 @@ use function PHPUnit\Framework\isEmpty;
 class DashboardController extends Controller
 {
     public function profile(){
-        return view('lms.profile');
+        $courses =  Auth::user()->student->enrollment;
+        return view('lms.profile',compact('courses'));
     }
 
     public function dashbaord(){
@@ -29,7 +33,10 @@ class DashboardController extends Controller
         $accounts = Auth::user()->student->fee;
         $all_courses =  Auth::user()->student->enrollment->count();
         $courses =  Auth::user()->student->enrollment;
-        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','courses'));
+        $events = workshop::orderBy('id','DESC')->limit(5)->get();
+        $batches = badge::where('status',0)->limit(5)->get();
+        $fees = Auth::user()->student->fee;
+        return view('lms.dashboard', compact('fees','batches','events','accounts','balance','paid','total','all_courses','courses'));
     }
 
     public function enrolled_courses(){
@@ -53,8 +60,8 @@ class DashboardController extends Controller
         $balance = Auth::user()->student->fee->sum('pending');
         $paid = Auth::user()->student->fee->sum('paid');
         $total = Auth::user()->student->fee->sum('total_amount');
-        $accounts = Auth::user()->student->fee;
-        return view('lms.accounts', compact('accounts','balance','paid','total'));
+        $fees = Auth::user()->student->fee;
+        return view('lms.accounts', compact('fees','balance','paid','total'));
     }
 
     public function workshops(){
@@ -63,12 +70,30 @@ class DashboardController extends Controller
     }
 
     public function feeds(){
-        $events = workshop::orderBy('id','DESC')->get();
+        $events = blog::orderBy('id','DESC')->get();
         return view('lms.feeds', compact('events'));
     }
 
     public function Settings(){
         return view('lms.settings');
+    }
+    // ASSIGNMENTS  
+    public function assignments(){
+        $enrollments =  Auth::user()->student->enrollment;
+        return view('lms.assignment',compact('enrollments','total','gain'));
+    }
+    public function submit_assignments($id,Request $request){
+        $request->validate([
+            'answer' => 'required|mimes:zip',
+        ]);
+        $file= $request->file('answer');
+        $filename= time().$file->getClientOriginalName();
+        $file->move('storage/app/assignment/',$filename);  
+        $task = task::where('assignment_id',$id)->where('user_id',Auth::id())->first();
+        $task->answer = $filename;
+        $task->status = 1;
+        $task->save();
+        return redirect()->back()->with('message','Your Assignment Submitted Successfully And You Cant Edit Or Update Now');
     }
 
     public function trail_form(Request $request){
@@ -89,28 +114,51 @@ class DashboardController extends Controller
     }
 
     public function update_user(Request $request,$id){
-        if(isEmpty($request->file('image'))){
-            $filename = "demo.jpg";    
-        }else{
+        $i = 0;
+        if(!empty($request->file('image'))){
             $file= $request->file('image');
-            $filename= $file->getClientOriginalName();
-            $file->move('storage/app/public/',$filename);
+            $filename= time().$file->getClientOriginalName();
+            $file->move('storage/app/public/',$filename);   
+            $i=1;
         }
         $update = User::where('id',$id)->first();
-        $update->thumbnail = $filename;
+        if($i == 1){
+            $update->thumbnail = $filename;
+        }
         $update->name = $request->name;
         $update->email = $request->email;
         $update->phone = $request->phone;
         $update->desrciption = $request->description;
-        $update->password = Hash::make($request->password);
         $update->save();
 
         $std_update = student::where('user_id',$id)->first();
         $std_update->name = $request->name;
         $std_update->email = $request->email;
         $std_update->phone = $request->phone;
+        $std_update->address = $request->address;
+        $std_update->city = $request->city;
+        $std_update->state = $request->state;
+        $std_update->country = $request->country;
         $std_update->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('message','Your Profile Is Updated Successfully');
     }
+    // update password ..
+    function update_password(Request $request){
+        $this->validate($request, [
+            'cpassword' => 'required',
+            'password' => 'required|confirmed|min:6',
+        ]);
+
+        if (!(Hash::check($request->cpassword, Auth::user()->password))) {
+            return redirect()->back()->with("error","Your current password does not matches with the password.");
+        } else {
+            $user = User::find(Auth::id());
+            $user->password = Hash::make($request->password);
+            $user->save();
+            return redirect()->back()->With('message','Password Updated Successfully');
+        }
+    }
+    // trail ..
+
 }

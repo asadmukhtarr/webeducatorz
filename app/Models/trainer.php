@@ -14,7 +14,7 @@ class trainer extends Model
         return $this->belongsTo(category::class);
     }
 
-    public function badge(){
+    public function badges(){
         return $this->hasMany(badge::class);
     }
 }

@@ -26,7 +26,10 @@ class loginController extends Controller
 
         if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
             if (auth()->user()->is_student == '1') {
+                //return "Student is here";
                 return redirect()->route('dashboard');
+            } else if(auth()->user()->is_teacher == '1'){
+                return redirect()->route('teacher.dashboard');
             } else {
                 return redirect()->route('login')->with('error', 'Email-Address And Password Are Wrong.');
             }
