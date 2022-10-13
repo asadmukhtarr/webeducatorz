@@ -14,6 +14,7 @@ use App\Models\User;
 use App\Models\blog;
 use App\Models\assignment;
 use App\Models\task;
+use App\Models\enrollment;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,10 +38,6 @@ class DashboardController extends Controller
         $batches = badge::where('status',0)->limit(5)->get();
         $fees = Auth::user()->student->fee;
         return view('lms.dashboard', compact('fees','batches','events','accounts','balance','paid','total','all_courses','courses'));
-        $active_courses = enrollment::where('student_id',Auth::user()->student->id)->where('status','active')->count() ;
-        $completed_courses = enrollment::where('student_id',Auth::user()->student->id)->where('status','completed')->count() ;
-        
-        return view('lms.dashboard', compact('accounts','balance','paid','total','all_courses','active_courses','completed_courses'));
     }
 
     public function enrolled_courses(){
