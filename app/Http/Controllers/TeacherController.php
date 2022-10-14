@@ -12,7 +12,10 @@ class TeacherController extends Controller
 {
     //
     function dashbaord(){
-        $batches = Auth::user()->trainer->badges->count();
+        $batches = 0;
+        if(!empty(Auth::user()->trainer->badges->count()) > 0){
+            $batches = Auth::user()->trainer->badges->count();
+        }
         $badges = Auth::user()->trainer->badges;
         // batches ..
         $students = 0;
@@ -20,7 +23,10 @@ class TeacherController extends Controller
             $students = $badge->student->count();
             $students = $students + $students;
         }
-        $courses = Auth::user()->trainer->category->course->count();
+        $courses = 0;
+        if(!empty(Auth::user()->trainer->category->course->count()) > 0){
+            $courses = Auth::user()->trainer->category->course->count();
+        }
         return view('teacher.dashboard', compact('batches','students','courses'));
     }
     function courses(){
