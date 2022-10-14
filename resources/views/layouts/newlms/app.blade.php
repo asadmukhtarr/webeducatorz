@@ -148,7 +148,7 @@
 			<li class="nav-item nav-item-dropdown-lg dropdown dropdown-user h-100">
 				<a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown">
 				@if(!empty(Auth::user()->thumbnail))
-					<img src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" class="rounded-pill mr-lg-2" height="34" alt="">
+					<img src="https://webeducatorz.com/storage/app/{{ Auth::user()->thumbnail }}" class="rounded-pill mr-lg-2" height="34" alt="">
 				@else
 				<img src="{{ asset('img/demo.jpg') }}" class="rounded-pill mr-lg-2" height="34" alt="">
 				@endif
@@ -190,9 +190,9 @@
 						<div class="media">
 							<a href="{{ route('profile') }}" class="mr-3">
 							@if(!empty(Auth::user()->thumbnail))
-								<img class="rounded-full" src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" class="rounded-circle" alt="">
-								@else
-								<img alt="image" src="{{ asset('img/demo.jpg') }}" class="rounded-circle" alt="" > 
+								<img class="rounded-full" src="https://webeducatorz.com/storage/app/{{ Auth::user()->thumbnail }}" class="rounded-circle" alt="">
+							@else
+								<img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-circle" alt="" > 
 							@endif
 							</a>
 

@@ -55,7 +55,7 @@
 					<div class="card bg-primary text-white">
 						<div class="card-body">
 							<div class="d-flex">
-								<h3 class="font-weight-semibold mb-0">{{$b::where('status',0)->count()}}</h3>
+								<h3 class="font-weight-semibold mb-0">{{$b::where('status',2)->count()}}</h3>
 							</div>
 							<div>
 								Completed Courses
