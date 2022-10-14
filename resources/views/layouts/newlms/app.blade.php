@@ -190,7 +190,7 @@
 						<div class="media">
 							<a href="{{ route('profile') }}" class="mr-3">
 							@if(!empty(Auth::user()->thumbnail))
-								<img class="rounded-full" src="https://webeducatorz.com/storage/app/{{ Auth::user()->thumbnail }}" class="rounded-circle" alt="">
+								<img class="rounded-full" src="https://webeducatorz.com/storage/app/public/{{ Auth::user()->thumbnail }}" class="rounded-circle" alt="">
 							@else
 								<img alt="image" src="{{ asset('public/img/demo.jpg') }}" class="rounded-circle" alt="" > 
 							@endif
